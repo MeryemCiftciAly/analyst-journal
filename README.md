@@ -1,6 +1,5 @@
-# analyst-journal
 
-Analyst Journal: Meryem Çiftçi’s Data Analysis Portfolio
+##Analyst Journal: Meryem Çiftçi’s Data Analysis Portfolio
 Welcome to My Data-Driven Journey
 Welcome to Analyst Journal, a portfolio where I document my path as an emerging data analyst. Here, I showcase my projects, tools, and techniques as I explore real-world problems through data analysis. From sales forecasting to environmental insights, I aim to turn data into stories that inspire decisions and change.
 
@@ -20,4 +19,4 @@ SQL Code and Data: Open access to the code and datasets used
 Tools & Technologies I Work With
 SQL, Tableau, R, Google Sheets, GitHub, and more.
 How to Reach Me
-I’m open to collaborations, job inquiries, or just chatting about data! Feel free to connect with me via LinkedIn https://www.linkedin.com/in/meryack s or send an inquiry.
+I’m open to collaborations, job inquiries, or just chatting about data! Feel free to connect with me via LinkedIn https://www.linkedin.com/in/meryack  or send an inquiry.
