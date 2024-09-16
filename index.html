@@ -10,28 +10,33 @@ html {
 }
 
 html,
+html,
 body {
-	margin: 0;
-	padding: 0;
-}
-@media only screen {
-	body {
-		margin: 2em auto;
-		max-width: 900px;
-		color: rgb(55, 53, 47);
-	}
+    margin: 0;
+    padding: 0;
 }
 
 body {
-	line-height: 1.5;
-	white-space: pre-wrap;
+    line-height: 1.5;
+    white-space: pre-wrap;
+    max-width: 1200px; /* Updated max-width for wider layout */
+    margin: 0 auto; /* Centers the body element */
+}
+
+@media only screen {
+    body {
+        margin: 2em auto;
+        max-width: 1200px; /* Ensure consistency with updated max-width */
+        color: rgb(55, 53, 47);
+    }
 }
 
 a,
 a.visited {
-	color: inherit;
-	text-decoration: underline;
+    color: inherit;
+    text-decoration: underline;
 }
+
 
 .pdf-relative-link-path {
 	font-size: 80%;
