@@ -818,5 +818,19 @@ blockquote {
 </p>
 </p><p id="3639113a-2ecd-48d5-b348-14b3a47fafae" class=""><strong>Other:</strong></p><ul id="25c2f40f-cdf2-4cc9-9ed0-b30e3c6bfd76" class="bulleted-list"><li style="list-style-type:disc"><a href="https://calendly.com/meryemkciftci" target="_blank" rel="noopener noreferrer">Schedule a Meeting</a></li></ul><ul id="644cbd00-d05d-470b-86cf-f285b45133bf" class="bulleted-list"><li style="list-style-type:disc"><a href="https://docs.google.com/forms/d/e/1FAIpQLSeu9b5yhTAsPYNw7ri8wO1vmbrFLrJ120AA31ChqkBackIbiQ/viewform?pli=1" target="_blank" rel="noopener noreferrer">Send an Inquiry</a></li></ul><p id="54b2dd51-1a24-4198-853f-94c86caaacf6" class="">
 </p><p id="8981e3ec-ec05-45ed-9f41-8af6b9a81bd8" class=""><strong>© 2024 Meryem Çiftçi. All rights reserved.</strong></p><p id="91664936-c646-455f-a4ed-4e55f8441809" class="">Built with Notion and GitHub Pages.</p><p id="c0956fdd-76b7-4381-9a12-e1ca72553c19" class="">
+	<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const detailsElements = document.querySelectorAll("details");
+    
+    detailsElements.forEach((details, index) => {
+      const isOpen = localStorage.getItem(`details-${index}`) === 'true';
+      details.open = isOpen; // Set the open state based on localStorage
+      
+      details.addEventListener("toggle", function() {
+        localStorage.setItem(`details-${index}`, details.open);
+      });
+    });
+  });
+</script>
 </p></div>
 </div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
