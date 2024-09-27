@@ -41,6 +41,22 @@ details ul {
   line-height: 1.1; /* Keep text compact but readable */
   margin: 6pt 0; /* Apply the same margin across all paragraphs */
 }
+details p,
+details ul {
+  line-height: 1.1; /* Compact but readable spacing */
+  margin: 6pt 0; /* Even margin for consistency */
+  padding-left: 0; /* Remove any unwanted indent */
+  text-indent: 0; /* Ensure no paragraph indentation */
+}
+
+details ul li {
+  margin-bottom: 6pt; /* Consistent list item spacing */
+  padding-left: 0; /* Remove list item indentation */
+}
+
+details p:empty {
+  display: none; /* Hide empty paragraphs */
+}
 
 details ul li {
   margin-bottom: 6pt; /* Consistent spacing for list items */
