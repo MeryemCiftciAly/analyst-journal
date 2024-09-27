@@ -8,12 +8,58 @@ html {
 	box-sizing: border-box;
 	-webkit-print-color-adjust: exact;
 }
+	
+details p,
+details ul {
+  line-height: 1.1; /* Compact but readable spacing */
+  margin: 6pt 0; /* Even margin for consistency */
+  padding-left: 0; /* Remove any unwanted indent */
+  text-indent: 0; /* Ensure no paragraph indentation */
+}
 
+details ul li {
+  margin-bottom: 6pt; /* Consistent list item spacing */
+  padding-left: 0; /* Remove list item indentation */
+}
+
+details p:empty {
+  display: none; /* Hide empty paragraphs */
+}
 html,
 body {
 	margin: 0;
 	padding: 0;
 }
+	details summary {
+  font-weight: 600;
+  font-size: 1.5em;
+  margin: 0;
+}
+
+details p,
+details ul {
+  line-height: 1.1; /* Keep text compact but readable */
+  margin: 6pt 0; /* Apply the same margin across all paragraphs */
+}
+
+details ul li {
+  margin-bottom: 6pt; /* Consistent spacing for list items */
+}
+
+details .indented {
+  padding-left: 10px; /* Indent for nested elements if needed */
+}
+
+details p,
+details li {
+  padding: 0;
+}
+
+/* Ensure no extra space for empty paragraphs */
+details p:empty {
+  display: none;
+}
+
 @media only screen {
 	body {
 		margin: 2em auto;
