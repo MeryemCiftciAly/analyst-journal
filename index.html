@@ -1,0 +1,721 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>The Story Behind The Data</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-default_background {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 237, 214, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 237, 214, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-transparentGray { background-color: rgba(227, 226, 224, 0); }
+.select-value-color-translucentGray { background-color: rgba(0, 0, 0, 0.06); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(249, 228, 188, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="115c4f4e-6826-80f8-bd5a-e7259061b921" class="page sans"><header><h1 class="page-title"><strong>The Story Behind The Data</strong></h1><p class="page-description"></p></header><div class="page-body"><h3 id="115c4f4e-6826-807c-b4e8-d0a3baeae6ef" class=""></h3><table id="115c4f4e-6826-8058-9402-fd1ab5140869" class="simple-table"><tbody><tr id="115c4f4e-6826-800e-93cf-da2e3d324f2b"><td id="KXCr" class="" style="width:160px"><strong><a href="https://meryemciftcialy.github.io/analyst-journal/">Home</a></strong></td><td id="rt}\" class="" style="width:147px"><strong><a href="https://meryemciftcialy.github.io/analyst-journal/">About</a></strong></td><td id="n&lt;yN" class="" style="width:167px"><strong><a href="https://meryemciftcialy.github.io/analyst-journal/">Portfolio</a></strong></td><td id="yZ]@" class="" style="width:181px"><strong><a href="https://meryemciftcialy.github.io/analyst-journal/">Data Visualization</a></strong></td><td id="FuWk" class="" style="width:144px"><strong><a href="https://meryemciftcialy.github.io/analyst-journal/">Contact</a></strong></td><td id="=cOr" class="" style="width:226px"><strong><a href="https://meryemciftcialy.github.io/analyst-journal/">Scenarios / Problem-solving</a></strong></td></tr></tbody></table><div id="115c4f4e-6826-800c-9f69-e8381c2b3a64" class="column-list"><div id="115c4f4e-6826-801f-95cb-e5e11764f959" style="width:106.25%" class="column"><h1 id="115c4f4e-6826-8006-9844-c2084d44a229" class=""><strong>Welcome to my data analysis Portfolio!</strong></h1><p id="115c4f4e-6826-80a2-a369-fc1ebd787cff" class=""><strong>I’m Kamara (Meryem) Çiftçi. I’m an emerging data analyst passionate about uncovering insights and the stories they tell. Explore my projects, where I tackle real-world challenges and present data in ways that inspire action.</strong></p></div><div id="115c4f4e-6826-80df-a4e6-dee31a0475ec" style="width:93.74999999999999%" class="column"><p id="115c4f4e-6826-8057-bc78-f2df26d84475" class="">
+</p></div></div><p id="115c4f4e-6826-80a2-b667-dfcfb5b05a59" class="">
+</p><figure id="115c4f4e-6826-80e7-8dfd-cbdb233d51ba" class="image"><a href="https://meryemciftcialy.github.io/analyst-journal/Trends_(1).png"><img style="width:1440px" src="https://meryemciftcialy.github.io/analyst-journal/Trends_(1).png"/></a></figure><p id="115c4f4e-6826-80f1-88b9-cc73efb17deb" class="">
+</p><hr id="115c4f4e-6826-8016-9916-d9ad1343d4fa"/><p id="115c4f4e-6826-80bc-9d16-f3e82fde5510" class="">
+</p><h3 id="115c4f4e-6826-8068-a649-d468e42f13ca" class="">                  🚨  Attention! Mr. Osaka Needs Your Help! 🚨</h3><h3 id="115c4f4e-6826-80d5-a8c7-f0844ead9796" class="">        See what challenge he is facing. Would you like to help?  <em><strong>Click Here</strong></em></h3><hr id="115c4f4e-6826-8025-abba-c6e865d73ffe"/><p id="115c4f4e-6826-803d-85f3-f8a2db5d703d" class="">
+</p><p id="115c4f4e-6826-80d4-b72e-e43c73ad8397" class="">
+</p><div id="115c4f4e-6826-80d6-afc9-c5c34fdcc3da" class="column-list"><div id="115c4f4e-6826-80fa-a116-e30ea069f7f7" style="width:100%" class="column"><h1 id="115c4f4e-6826-80a7-b0d9-fe8b3dfeaaf4" class=""><strong>   Recent Works</strong></h1></div><div id="115c4f4e-6826-8043-9822-d5d4a1a957da" style="width:100%" class="column"><p id="115c4f4e-6826-80cb-adec-ed3b45da98f4" class="">
+</p></div><div id="115c4f4e-6826-80d2-aea7-e5a81192af53" style="width:100%" class="column"><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0"><strong>Environmental Analysis</strong></summary><div class="indented"><p id="115c4f4e-6826-80f2-b9c7-d1e9df7fc9e4" class="">The <strong>CO2 Emissions Analysis</strong> project aims to explore the trends and patterns in carbon dioxide emissions across various regions and periods. This analysis focuses on identifying key factors influencing emission levels, evaluating the effectiveness of environmental policies, and assessing the impact of renewable energy initiatives.</p><p id="115c4f4e-6826-80ad-a29d-e4f869bbaf67" class="">The project includes a detailed report, visualizations to illustrate key insights, and the underlying code used for analysis.</p><p id="115c4f4e-6826-8034-9af9-c81564ba4c50" class=""><strong>Explore for more details:</strong></p><ul id="115c4f4e-6826-8041-8f71-cb7deeb46c97" class="bulleted-list"><li style="list-style-type:disc"><a href="https://meryemciftcialy.github.io/analyst-journal/co2_emissions.html">Click here for detailed analysis</a></li></ul><ul id="115c4f4e-6826-8096-b95f-f43f8aa7ed97" class="bulleted-list"><li style="list-style-type:disc"><a href="https://meryemciftcialy.github.io/analyst-journal/">Click here to explore the visualizations</a></li></ul><ul id="115c4f4e-6826-8053-aae0-dbde6d824b2e" class="bulleted-list"><li style="list-style-type:disc"><a href="https://github.com/MeryemCiftciAly/SQL-CO2-Analysis-/">Click here to view the codes in GitHub</a></li></ul></div></details><p id="115c4f4e-6826-8093-bae6-c031fe9b3992" class="">
+</p><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0"><strong>Energy Usage Forecasting</strong></summary><div class="indented"><p id="115c4f4e-6826-80b3-bb5f-ffb7e6f1a7ab" class="">This project explores how energy companies can forecast future demand to optimize supply, reduce costs, and improve sustainability. By analyzing historical energy usage data, weather patterns, economic indicators, and population data, the project aims to generate data-driven insights. These insights will be used to present recommendations that help energy companies manage supply more effectively and sustainably while reducing operational costs.</p><p id="115c4f4e-6826-80d6-a7ba-df3cbf6d691c" class=""><strong>Expected Impact:</strong></p><p id="115c4f4e-6826-8064-a2cb-d921ee1ea2a1" class="">The recommendations from this analysis are expected to lead to more accurate demand forecasts, resulting in improved supply chain efficiency, cost savings, and a reduction in environmental impact. By optimizing energy supply and integrating sustainable practices, the company can enhance its operational effectiveness and contribute positively to energy conservation efforts.</p><p id="115c4f4e-6826-803b-b485-c64b91b35114" class=""><strong>Explore for more details:</strong></p><p id="115c4f4e-6826-8093-b919-ee807d36a8d7" class=""><a href="https://meryemciftcialy.github.io/analyst-journal/">Click here for detailed analysis</a></p><p id="115c4f4e-6826-80eb-bebd-e9433f89b1c0" class=""><a href="https://meryemciftcialy.github.io/analyst-journal/">Click here to explore the visualizations</a></p><p id="115c4f4e-6826-8071-b0c2-d0b36c24e1e0" class=""><a href="https://meryemciftcialy.github.io/analyst-journal/">Click here to view the codes in GitHub</a></p></div></details></div><div id="115c4f4e-6826-80d3-905b-d60bcbc1cd90" style="width:100%" class="column"><p id="115c4f4e-6826-80a5-bbc0-fa31482b2b59" class="">
+</p></div></div><div id="115c4f4e-6826-8004-9038-f03e565a8808" class="column-list"><div id="115c4f4e-6826-8074-83f2-c35cac75b48f" style="width:109.09090909090907%" class="column"><p id="115c4f4e-6826-8066-9696-c322ac09e691" class="">
+</p><p id="115c4f4e-6826-806a-a4ef-cd3f480b816d" class="">
+</p><p id="115c4f4e-6826-80c0-8004-d1f5cc21f32a" class="">
+</p><p id="115c4f4e-6826-80cc-a421-c436d64bb701" class="">
+</p><h1 id="115c4f4e-6826-8038-9ff8-fc3bf1dc17db" class=""><strong>Skills &amp; Tools I Work With</strong></h1><p id="115c4f4e-6826-804f-87dd-f23493e02920" class="">
+</p></div><div id="115c4f4e-6826-8015-bb7c-e1233aaf13ec" style="width:127.27272727272718%" class="column"><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0"><strong>(Undecided)</strong></summary><div class="indented"><p id="115c4f4e-6826-8047-9188-f548192708ca" class="">Undecided on what the next project analysis will be. Currently thinking and researching topics.<br/><br/><br/><strong>Explore for more details:</strong><br/>• <br/><a href="https://meryemciftcialy.github.io/analyst-journal/">Click here for detailed analysis</a><br/>• <br/><a href="https://meryemciftcialy.github.io/analyst-journal/">Click here to explore the visualizations</a><br/>• <br/><a href="https://meryemciftcialy.github.io/analyst-journal/">Click here to view the codes in GitHub</a></p><p id="115c4f4e-6826-80c2-8fd1-e9680dcc12ff" class="">
+</p></div></details><p id="115c4f4e-6826-80ca-8b2d-ff52481cfc26" class="">
+</p><p id="115c4f4e-6826-8004-9107-ff4a49ae8b0e" class="">
+</p><p id="115c4f4e-6826-80a1-9f60-f670cd99e63b" class="">
+</p><p id="115c4f4e-6826-8089-8536-dc5acc5b8a43" class="">
+</p></div></div><div id="115c4f4e-6826-8086-8a54-e82c4bfdc8dd" class="column-list"><div id="115c4f4e-6826-80da-ac4e-cf193d60ac56" style="width:100%" class="column"><figure id="115c4f4e-6826-8074-b1e4-f01e759a08ea" class="image"><a href="download_(4).gif"><img style="width:389.9375px" src="download_(4).gif"/></a></figure></div><div id="115c4f4e-6826-8088-b308-d6e4a9ef7a04" style="width:100%" class="column"><figure id="115c4f4e-6826-8011-8d78-fcff66dd87be" class="image"><a href="Untitled_design_(1).jpg"><img style="width:389.9375px" src="Untitled_design_(1).jpg"/></a></figure></div><div id="115c4f4e-6826-80e9-8661-fe08e1bd5801" style="width:100%" class="column"><figure id="115c4f4e-6826-8060-854b-eca4d10fc923" class="image"><a href="Untitled_design_(2).jpg"><img style="width:389.9375px" src="Untitled_design_(2).jpg"/></a></figure></div></div><p id="115c4f4e-6826-8097-a88c-eb8af4376d2e" class="">
+</p><div id="115c4f4e-6826-8056-b4bb-cd0836e5ba5e" class="column-list"><div id="115c4f4e-6826-80fe-9079-c4ddc77fb21c" style="width:100%" class="column"><figure id="115c4f4e-6826-80ed-a1d2-eb5e3f29c4fe" class="image"><a href="download_(3).gif"><img style="width:389.9375px" src="download_(3).gif"/></a></figure></div><div id="115c4f4e-6826-80d0-966d-c494ee074de8" style="width:100%" class="column"><p id="115c4f4e-6826-80bb-be7d-c75fe92ffc49" class="">
+</p></div><div id="115c4f4e-6826-8023-8aa0-f0664eadb9a2" style="width:100%" class="column"><p id="115c4f4e-6826-80fe-867a-dfe84580c409" class="">
+</p></div></div><div id="115c4f4e-6826-8046-9fc7-ed2bbc904357" class="column-list"><div id="115c4f4e-6826-80e3-8cd7-d3cf535e2329" style="width:9.375%" class="column"><p id="115c4f4e-6826-80be-9536-d0be464c36ef" class="">
+</p></div><div id="115c4f4e-6826-8099-a2b7-f1f5bda3ea71" style="width:90.625%" class="column"><hr id="115c4f4e-6826-805b-a37e-c89c44332112"/><h3 id="115c4f4e-6826-8023-a094-e1a5ee0ee7c9" class=""><strong>Contact Information:</strong></h3><p id="115c4f4e-6826-8030-b2ce-fbe252e122ff" class="">Email: meryemkciftci@gmail.com</p><p id="115c4f4e-6826-808c-b9b1-cbf74fe396f5" class=""><a href="https://www.linkedin.com/in/meryack">LinkedIn: Meryack</a></p><p id="115c4f4e-6826-807e-83d7-d87246ed43ae" class="">GitHub: github.com/<a href="https://github.com/MeryemCiftciAly">MeryemCiftciAly</a></p><p id="115c4f4e-6826-800f-95dd-f3146e60757a" class="">
+</p><p id="115c4f4e-6826-809d-ae2a-cca4e2bce97a" class="">
+</p><p id="115c4f4e-6826-8059-bcbf-fdc6d2669f2b" class="">
+</p><p id="115c4f4e-6826-801f-9b27-f1488fee2ef2" class=""><strong>Other:</strong></p><ul id="115c4f4e-6826-807d-829b-fe7436fba44a" class="bulleted-list"><li style="list-style-type:disc"><a href="https://calendly.com/meryemkciftci">Schedule a Meeting</a></li></ul><ul id="115c4f4e-6826-8009-ba29-ebb09f03d709" class="bulleted-list"><li style="list-style-type:disc"><a href="https://docs.google.com/forms/d/e/1FAIpQLSeu9b5yhTAsPYNw7ri8wO1vmbrFLrJ120AA31ChqkBackIbiQ/viewform?pli=1">Send an Inquiry</a></li></ul><p id="115c4f4e-6826-8032-b8c0-e4a57fe1e28d" class="">
+</p><p id="115c4f4e-6826-800d-98fc-dd2331909f1f" class=""><strong>© 2024 Meryem Çiftçi. All rights reserved.</strong></p><p id="115c4f4e-6826-809c-9fc2-d2848104786c" class="">Built with Notion and GitHub Pages.</p></div><div id="115c4f4e-6826-80b0-8269-ff7f7a826f77" style="width:75%" class="column"><hr id="115c4f4e-6826-80a3-a3c3-d47f94e2ec91"/><p id="115c4f4e-6826-804e-aca2-f2195d06a1a8" class="">
+</p><p id="115c4f4e-6826-8030-8c1d-fdbaed337b75" class=""><strong>Quick Links:</strong></p><ul id="115c4f4e-6826-80f2-a039-cf2326199255" class="bulleted-list"><li style="list-style-type:disc"><a href="https://meryemciftcialy.github.io/analyst-journal/">Home</a></li></ul><ul id="115c4f4e-6826-80f3-b84b-fdf37c1631ae" class="bulleted-list"><li style="list-style-type:disc"><a href="https://meryemciftcialy.github.io/analyst-journal/">About</a></li></ul><ul id="115c4f4e-6826-80e4-8252-f89d64ee6c1b" class="bulleted-list"><li style="list-style-type:disc"><a href="https://meryemciftcialy.github.io/analyst-journal/">Portfolio</a></li></ul><ul id="115c4f4e-6826-80d2-90c3-e108841c3d3b" class="bulleted-list"><li style="list-style-type:disc"><a href="https://meryemciftcialy.github.io/analyst-journal/">Data Visualization</a></li></ul><ul id="115c4f4e-6826-8095-84c0-d928a0b50f68" class="bulleted-list"><li style="list-style-type:disc"><a href="https://meryemciftcialy.github.io/analyst-journal/">Scenarios and Problem Solving</a></li></ul><p id="115c4f4e-6826-80ea-9b88-c82f1149d76d" class="">
+</p></div><div id="115c4f4e-6826-8006-9ba7-d517755388a5" style="width:75%" class="column"><hr id="115c4f4e-6826-8008-92f1-f0e516272a57"/><p id="115c4f4e-6826-80f2-aced-ed17ca044124" class="">
+</p><p id="115c4f4e-6826-80ee-af11-fcdb9bc7a530" class=""><strong>Tools and Technologies:</strong></p><ul id="115c4f4e-6826-8028-89ad-e2cb36995237" class="bulleted-list"><li style="list-style-type:disc"><strong><a href="https://meryemciftcialy.github.io/analyst-journal/">SQL</a></strong></li></ul><ul id="115c4f4e-6826-80b2-8997-ca5b2c59f94f" class="bulleted-list"><li style="list-style-type:disc"><strong><a href="https://meryemciftcialy.github.io/analyst-journal/">Tableau</a></strong></li></ul><ul id="115c4f4e-6826-801b-9776-dc450b80cc01" class="bulleted-list"><li style="list-style-type:disc"><strong><a href="https://meryemciftcialy.github.io/analyst-journal/">Google Sheets</a></strong></li></ul><ul id="115c4f4e-6826-8043-a817-e548fefdd077" class="bulleted-list"><li style="list-style-type:disc"><strong><a href="https://meryemciftcialy.github.io/analyst-journal/">R</a></strong></li></ul><ul id="115c4f4e-6826-80a2-86da-c91c5c6431e5" class="bulleted-list"><li style="list-style-type:disc"><strong><a href="https://meryemciftcialy.github.io/analyst-journal/">GitHub</a></strong></li></ul></div></div><div id="115c4f4e-6826-8072-bd61-c0bbcdc11e06" class="column-list"><div id="115c4f4e-6826-8008-85c5-df674554053b" style="width:100%" class="column"><p id="115c4f4e-6826-807a-84ea-e108c428a11c" class="">
+</p></div><div id="115c4f4e-6826-8011-8c5c-f9ce4b46f7fa" style="width:100%" class="column"><p id="115c4f4e-6826-8080-88b6-e22c55e461d3" class="">
+</p></div><div id="115c4f4e-6826-80b2-9bad-ea6803bbb656" style="width:100%" class="column"><p id="115c4f4e-6826-8006-be3f-ca400bea4a12" class="">
+</p></div><div id="115c4f4e-6826-806f-b090-e63fe3c99a9e" style="width:100%" class="column"><p id="115c4f4e-6826-8066-8d21-fae5f6bdfda0" class="">
+</p></div></div><p id="115c4f4e-6826-8050-ad19-e114d0784f84" class="">
+</p><p id="115c4f4e-6826-8061-8034-f479ed180a2a" class="">
+</p><p id="115c4f4e-6826-8051-95bb-c46ba0dac48c" class="">
+</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
