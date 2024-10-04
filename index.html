@@ -815,4 +815,18 @@ blockquote {
 </p></div></div><p id="115c4f4e-6826-8050-ad19-e114d0784f84" class="">
 </p><p id="115c4f4e-6826-8061-8034-f479ed180a2a" class="">
 </p><p id="115c4f4e-6826-8051-95bb-c46ba0dac48c" class="">
+		<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const detailsElements = document.querySelectorAll("details");
+    
+    detailsElements.forEach((details, index) => {
+      const isOpen = localStorage.getItem(`details-${index}`) === 'true';
+      details.open = isOpen; // Set the open state based on localStorage
+      
+      details.addEventListener("toggle", function() {
+        localStorage.setItem(`details-${index}`, details.open);
+      });
+    });
+  });
+</script>
 </p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
