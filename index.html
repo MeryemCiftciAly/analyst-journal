@@ -17,7 +17,7 @@ body {
 @media only screen {
 	body {
 		margin: 2em auto;
-		max-width: 1200px;
+		max-width: 1400px;
 		color: rgb(55, 53, 47);
 	}
 }
@@ -457,8 +457,31 @@ blockquote {
 	display: flex;
 	flex-direction: column;
 }
+        /* Style for the text */
+        .hover-text {
+            padding: 10px;
+            background-color: lightgray; /* Default background */
+            transition: background-color 0.3s ease; /* Smooth transition */
+        }
 
-.bookmark-info {
+        /* Change background color when mouse hovers */
+        .hover-text:hover {
+            background-color: lightblue; /* New background on hover */
+        }
+	 // Get the button and the list elements
+        const toggleButton = document.getElementById('toggleButton');
+        const myList = document.getElementById('myList');
+
+        // Add a click event listener to the button
+        toggleButton.addEventListener('click', () => {
+            // Toggle the display property of the list
+            if (myList.style.display === 'none') {
+                myList.style.display = 'block';
+            } else {
+                myList.style.display = 'none';
+            }
+        });
+   .bookmark-info {
 	flex: 4 1 180px;
 	padding: 12px 14px 14px;
 	display: flex;
@@ -688,12 +711,9 @@ blockquote {
 </p><figure id="115c4f4e-6826-80e7-8dfd-cbdb233d51ba" class="image"><a href="https://meryemciftcialy.github.io/analyst-journal/Trends_(1).png"><img style="width:1440px" src="https://meryemciftcialy.github.io/analyst-journal/Trends_(1).png"/></a></figure><p id="116c4f4e-6826-80a4-b969-ec761304a1c3" class="">
 </p><p id="115c4f4e-6826-80f1-88b9-cc73efb17deb" class="">
 </p><hr id="115c4f4e-6826-8016-9916-d9ad1343d4fa"/><p id="115c4f4e-6826-80bc-9d16-f3e82fde5510" class="">
-</p><h3 id="116c4f4e-6826-807f-baa0-c1ef7aee6494" class="" style="text-align: center;">
-            <strong>🚨 Attention! Mr. Osaka Needs Your Help! 🚨</strong>
-        </h3>
-        <h3 id="116c4f4e-6826-8018-832c-db63257333f8" class="" style="text-align: center;">
-            <strong>See what challenge he is facing. Would you like to help?</strong>
-            <em><strong><a href="">Click Here</a></strong></em><hr id="115c4f4e-6826-8025-abba-c6e865d73ffe"/><p id="115c4f4e-6826-803d-85f3-f8a2db5d703d" class="">
+</p><h3 id="116c4f4e-6826-807f-baa0-c1ef7aee6494" class="" style="text-align: center;"> <strong>🚨 Attention! Mr. Osaka Needs Your Help! 🚨 </br></strong> <strong>See what challenge he is facing. Would you like to help?   <em><strong><a href="">Click Here</a></strong></em></strong>
+        </h3>     
+          <hr id="115c4f4e-6826-8025-abba-c6e865d73ffe"/><p id="115c4f4e-6826-803d-85f3-f8a2db5d703d" class="">
 </p><p id="115c4f4e-6826-80d4-b72e-e43c73ad8397" class="">
 </p><div id="115c4f4e-6826-80d6-afc9-c5c34fdcc3da" class="column-list"><div id="115c4f4e-6826-80fa-a116-e30ea069f7f7" style="width:3.125%" class="column"><p id="116c4f4e-6826-80a4-beed-ec8a042d917e" class="">
 </p></div><div id="115c4f4e-6826-8043-9822-d5d4a1a957da" style="width:100%" class="column"><h1 id="115c4f4e-6826-80cb-adec-ed3b45da98f4" class="">Recent Work</h1><p id="116c4f4e-6826-8025-8cd8-fe3938e1b764" class="">
