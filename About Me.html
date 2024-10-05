@@ -1,0 +1,704 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>About Me </title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-default_background {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-transparentGray { background-color: rgba(227, 226, 224, 0); }
+.select-value-color-translucentGray { background-color: rgba(0, 0, 0, 0.06); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="116c4f4e-6826-80ac-ad7a-df999114fb6b" class="page serif"><header><img class="page-cover-image" src="Your_paragraph_text_(2).png" style="object-position:center 50%"/><div class="page-header-icon page-header-icon-with-cover"><span class="icon">🙂</span></div><h1 class="page-title">About Me </h1><p class="page-description"></p></header><div class="page-body"><div id="058627b6-bd3b-423e-8f7a-b2aa4c759912" class="column-list"><div id="c12c51d2-f527-4fc7-a315-34be3bcd5656" style="width:33.33333333333333%" class="column"><blockquote id="2c6b8533-45a5-42c8-9469-b5497a598e5f" class="">“In God we trust; all others bring data.” – W. Edwards Deming</blockquote><hr id="23878384-f898-4542-9428-83e186512df7"/><p id="ee403c1e-33fb-49ec-a61a-1929e4700bba" class=""><br/>I am a data enthusiast with a background in executive business support who made a deliberate switch to <br/><strong>data analytics</strong> because of my passion for transforming data into actionable insights that drive meaningful change. With a deep desire to contribute to solutions that positively impact society, I recognized that data holds the key to informed decision-making — whether in healthcare, sustainability, or emerging technologies.<br/><br/>****************<br/></p><p id="116c4f4e-6826-80b0-9785-e08868b3f8cc" class=""><strong>Transferable Skills</strong></p><p id="116c4f4e-6826-805b-95c8-ca499b91b9d4" class="">In my previous roles, I developed a range of <strong>transferable skills</strong> that I bring into my work as a data analyst, including:</p><ul id="116c4f4e-6826-800f-bd40-e0ad15935cd0" class="bulleted-list"><li style="list-style-type:disc"><strong>Critical thinking</strong> and <strong>problem-solving</strong>: Skills that allow me to assess complex scenarios and break them down into actionable strategies.</li></ul><ul id="116c4f4e-6826-80c1-966f-c1e1b189a58b" class="bulleted-list"><li style="list-style-type:disc"><strong>Attention to detail</strong>: A key strength when working with data and ensuring that every insight is reliable and precise.</li></ul><ul id="116c4f4e-6826-80b3-9a39-c690b18b1b51" class="bulleted-list"><li style="list-style-type:disc"><strong>Communication and collaboration</strong>: My ability to communicate insights clearly to both technical and non-technical stakeholders is a major asset in team-based environments.</li></ul><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="116c4f4e-6826-80f0-8dd0-cd93a59020be"><div style="font-size:1.5em"><span class="icon">📈</span></div><div style="width:100%"><p id="116c4f4e-6826-804d-97aa-f21c2738938c" class=""><strong>Ongoing Learning Journey</strong></p><p id="116c4f4e-6826-80b2-9e33-eddd83c88b77" class="">My learning journey is far from over. I am currently enrolled in the <strong>Merit America Data Analytics Program</strong>, an intensive 18-week course designed to build strong foundational skills. The <strong>Google Data Analytics Certificate</strong> is also part of my certification portfolio, further validating the skills I’ve acquired and my commitment to excellence in this field.</p><p id="116c4f4e-6826-80a9-b563-fbc4bc9e232a" class="">I’m constantly learning new techniques, honing my analytical skills, and seeking out opportunities to apply what I’ve learned in real-world settings. I’m excited to continue growing and evolving as a data professional so that I can contribute even more to the roles I take on in the future.</p></div></figure><p id="61723443-ec22-4d24-84f2-613173ca1bdf" class="">
+</p><p id="e3d76caa-3836-4fb6-a01e-8b62eb2b499a" class="">
+</p></div><div id="b5ee7b14-6b6a-4fe2-87ed-854e494977ff" style="width:33.33333333333333%" class="column"><figure id="5fdb85de-3095-4f2f-b361-ed7161fd6766" class="image"><a href="SQL_(1).png"><img style="width:459.640625px" src="SQL_(1).png"/></a></figure><figure id="0b4f0a25-688f-40f4-bef9-c70c640244a8" class="image"><a href="___This_journey_is_full_of_things_you___can_achieve_but_the_most_precious___of_all_are_the_people_who_touch_your___life_when_paths_are_crossed.______Your_Name.png"><img style="width:457px" src="___This_journey_is_full_of_things_you___can_achieve_but_the_most_precious___of_all_are_the_people_who_touch_your___life_when_paths_are_crossed.______Your_Name.png"/></a></figure><p id="2b7af484-acf4-4763-8787-d77f8bb2b58b" class="">                              <div class="indented"><p id="4168fbda-f41a-45f1-ae66-8227714a0c3f" class="">
+</p><p id="a872d9d7-de4c-446d-b4f5-70e3f12f6b27" class="">
+</p></div></p></div><div id="51210b4f-c8e4-433a-bb4c-9cb440339d91" style="width:33.33333333333333%" class="column"><blockquote id="692143a1-cb1d-4848-8daf-e7711ee52799" class="block-color-brown_background"> <strong>Why I choose Data Analytics</strong></blockquote><hr id="bc10a24a-de56-4be4-8f2b-8aa3701afa1b"/><p id="116c4f4e-6826-80d3-aa6e-ebc9ccf2de49" class="">The switch to data analytics was driven by my passion for learning and my desire to play a more active role in making data-driven decisions that matter. Data analysis gives me the tools to:</p><ul id="116c4f4e-6826-803d-b152-c46e6cb921c5" class="bulleted-list"><li style="list-style-type:disc"><strong>Uncover patterns</strong> and trends that might not be visible at first glance.</li></ul><ul id="116c4f4e-6826-808e-83f7-f472031ccadd" class="bulleted-list"><li style="list-style-type:disc">Contribute to <strong>data-driven solutions</strong> that can improve efficiency, optimize resources, and ultimately make a difference in the world.</li></ul><hr id="82c8d8f0-91dd-4ddb-9941-ca406d837ff9"/><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="116c4f4e-6826-80d6-8b16-d528850dce14"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><p id="c653777d-49cf-456f-b2de-e68d9bedeb5f" class=""><mark class="highlight-teal">  Chart Legend</mark></p></div></figure><p id="12c9503c-42c2-4451-a2f7-8f9cb380be98" class="">1 = Beginner</p><p id="62470a80-6d84-4656-afea-0ff8615e34dc" class=""> 2 = Intermediate</p><p id="89b8de9c-520e-4e15-85ae-c3b2d3fcd469" class=""> 3 = Proficient</p><p id="116c4f4e-6826-8056-a0cb-f54b46520661" class=""> 4 = Advanced</p><p id="116c4f4e-6826-80de-a183-f039d6c88895" class=""> 4 = Expert</p><p id="116c4f4e-6826-80b8-93ad-f56a1061b25a" class="">
+</p><hr id="116c4f4e-6826-80c5-a975-c49f89f6bf8b"/><p id="116c4f4e-6826-80ef-a3e7-da8f0a15c87a" class=""><mark class="highlight-teal"> </mark><mark class="highlight-orange">How  Are You Feeling Today?</mark></p><ul id="6e08ac8b-4bb0-48bb-a2a4-be1fe63220a7" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Not Sure</span><div class="indented"></div></li></ul><ul id="4d8a7496-ee93-4260-9215-1d2acb833c10" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Upset</span><div class="indented"></div></li></ul><ul id="3b76e81d-ee10-4c2c-919e-ec55d093c0d2" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Awesome</span><div class="indented"></div></li></ul><ul id="116c4f4e-6826-80f0-bbc8-c9a59ee0af05" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Happy </span><div class="indented"></div></li></ul><ul id="116c4f4e-6826-80a2-ae2c-dc8b2009862c" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Sad</span><div class="indented"></div></li></ul><p id="53286cd9-6e80-4b21-96d3-6666f7be68e0" class="">
+</p><div id="116c4f4e-6826-8079-8af2-ded85e958939" class="column-list"><div id="116c4f4e-6826-80d7-89c3-c27f376b22c0" style="width:100%" class="column"><p id="98c27b76-b11e-4173-9c92-fafab82f4bb2" class="">
+</p></div><div id="116c4f4e-6826-807a-aa1f-c9e08358e3cc" style="width:100%" class="column"><p id="116c4f4e-6826-8059-a435-c80dfa11c375" class="">
+</p></div><div id="116c4f4e-6826-806d-8917-e07721a275d1" style="width:100%" class="column"><figure id="116c4f4e-6826-80ad-9403-e5bab2b5481c" class="image"><a href="imageedit_1_9602169874.png"><img style="width:40px" src="imageedit_1_9602169874.png"/></a></figure></div><div id="116c4f4e-6826-80d4-885f-e61779ca7443" style="width:100%" class="column"><p id="116c4f4e-6826-800a-a5c2-e7f65c6d113b" class="">
+</p></div></div><p id="95bd9a2a-2b2b-4e75-9430-4662c2ff954c" class="">
+</p><p id="116c4f4e-6826-8052-8973-dbf6c5b5e8cd" class="">
+</p></div></div><div id="116c4f4e-6826-807a-aa3c-e50d0f2e38ad" class="column-list"><div id="1909ec7d-027b-444d-8b0a-20ced2a471fd" style="width:100%" class="column"><hr id="b1392b36-e0cd-49f1-9cf7-57d41ef4321d"/><h3 id="3bb0db47-a080-4428-ab4a-7dcafb91ea0b" class=""><strong>Contact Information:</strong></h3><p id="dcf03ecf-8c8d-45af-bbdd-a50fbed338c3" class="">Email: meryemkciftci@gmail.com</p><p id="6664cf3c-a1f5-42b2-9946-177e9a4ba7e3" class=""><a href="https://www.linkedin.com/in/meryack">LinkedIn: Meryack</a></p><p id="40eba58e-2f4e-4000-a66b-3bee37c17762" class="">GitHub: github.com/<a href="https://github.com/MeryemCiftciAly">MeryemCiftciAly</a></p><p id="b49da13a-a293-4f4d-ad87-4c19b38c5486" class="">
+</p><p id="8a3274f3-b050-44bb-b10b-cebf95b69d2b" class="">
+</p><p id="12ef5fc7-5724-4fc4-bb9c-a252582d48ce" class="">
+</p><p id="85326d47-4712-4082-a5c2-07845c06630d" class=""><strong>Other:</strong></p><ul id="92047618-5112-4151-a25e-796acf19dfac" class="bulleted-list"><li style="list-style-type:disc"><a href="https://calendly.com/meryemkciftci">Schedule a Meeting</a></li></ul><ul id="458397ce-e210-4484-91c3-c04d9435679f" class="bulleted-list"><li style="list-style-type:disc"><a href="https://docs.google.com/forms/d/e/1FAIpQLSeu9b5yhTAsPYNw7ri8wO1vmbrFLrJ120AA31ChqkBackIbiQ/viewform?pli=1">Send an Inquiry</a></li></ul><p id="116c4f4e-6826-8087-907c-f83266252f41" class="">
+</p><p id="1dd5ae69-7113-4e9f-8678-bf8804385c08" class="">
+</p><p id="ae83fa66-f222-475c-a976-09272446e9c1" class=""><strong>© 2024 Meryem Çiftçi. All rights reserved.</strong></p><p id="2da95e7d-f928-49f9-a488-03b11031e4d4" class="">Built with Notion and GitHub Pages.</p></div><div id="9cf9dc35-9e98-45e8-824e-6f5f795b40d4" style="width:77.41935483870968%" class="column"><hr id="a7b5fe30-da3d-4a80-aa97-1a7c0c8e35be"/><p id="b166972b-03b9-4eb7-8b50-977caa6e9527" class="">
+</p><p id="cefbc4be-5e6f-4a1a-9d46-773c7bc79c42" class=""><strong>Quick Links:</strong></p><ul id="6cb86668-dfbe-447f-b0f3-1f394ec2da20" class="bulleted-list"><li style="list-style-type:disc"><a href="https://meryemciftcialy.github.io/analyst-journal/">Home</a></li></ul><ul id="b06a7c65-5321-4887-a4cd-c88544f23c1f" class="bulleted-list"><li style="list-style-type:disc"><a href="https://meryemciftcialy.github.io/analyst-journal/">About</a></li></ul><ul id="9151001e-94ac-4e39-8faa-2e9a75cb7abf" class="bulleted-list"><li style="list-style-type:disc"><a href="https://meryemciftcialy.github.io/analyst-journal/">Portfolio</a></li></ul><ul id="cc44fd9a-7573-4830-8c06-fefde7e0d817" class="bulleted-list"><li style="list-style-type:disc"><a href="https://meryemciftcialy.github.io/analyst-journal/">Data Visualization</a></li></ul><ul id="7d38bebc-990e-4e3c-9afc-b4f813e51fa4" class="bulleted-list"><li style="list-style-type:disc"><a href="https://meryemciftcialy.github.io/analyst-journal/">Scenarios and Problem Solving</a></li></ul><p id="2f4b3270-8c34-420f-aa7b-7f9fd6c0513c" class="">
+</p></div><div id="7b733f7b-d887-4ec6-964b-28dff566ae97" style="width:77.41935483870968%" class="column"><hr id="3d5c2c81-41fe-40cb-8202-813888c35978"/><p id="35fe0b2a-30b0-40af-94cc-1cf68e39538e" class="">
+</p><p id="e55722a5-6639-4dc6-8cba-8df11cdbb05b" class=""><strong>Tools and Technologies:</strong></p><ul id="bc557f33-cf72-4f8a-8d22-783d96573922" class="bulleted-list"><li style="list-style-type:disc"><strong><a href="https://meryemciftcialy.github.io/analyst-journal/">SQL</a></strong></li></ul><ul id="f8563ac5-cf10-4383-949a-043ba4b6c34f" class="bulleted-list"><li style="list-style-type:disc"><strong><a href="https://meryemciftcialy.github.io/analyst-journal/">Tableau</a></strong></li></ul><ul id="8340e3e8-f218-4b0a-96ce-533f35f491f3" class="bulleted-list"><li style="list-style-type:disc"><strong><a href="https://meryemciftcialy.github.io/analyst-journal/">Google Sheets</a></strong></li></ul><ul id="3521fdb0-15b6-465c-9685-93f8577015e8" class="bulleted-list"><li style="list-style-type:disc"><strong><a href="https://meryemciftcialy.github.io/analyst-journal/">R</a></strong></li></ul><ul id="1fee132e-9bb1-4f5c-b304-f58c37bbf4c0" class="bulleted-list"><li style="list-style-type:disc"><strong><a href="https://meryemciftcialy.github.io/analyst-journal/">GitHub</a></strong></li></ul></div></div><p id="116c4f4e-6826-8092-a1bf-cd9edd32af1e" class="">
+</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
