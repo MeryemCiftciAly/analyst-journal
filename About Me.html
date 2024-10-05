@@ -146,7 +146,38 @@ img {
 .collection-content {
 	font-size: 0.875rem;
 }
+ .to-do-list {
+            list-style-type: none; /* Removes default list styling */
+            padding: 0; /* Removes default padding */
+        }
+        
+        .to-do-list li {
+            margin: 5px 0; /* Adds vertical spacing between list items */
+            cursor: pointer; /* Changes cursor to pointer for the whole item */
+        }
 
+        .to-do-children-unchecked {
+            padding: 10px; /* Adds padding for clickable area */
+            transition: background-color 0.3s; /* Smooth transition for background color */
+        }
+
+        .to-do-children-unchecked:hover {
+            background-color: #f0f0f0; /* Changes background on hover */
+        }
+        
+        .checkbox {
+            display: inline-block; /* Makes checkbox inline */
+            width: 20px; /* Width of checkbox */
+            height: 20px; /* Height of checkbox */
+            background-color: #ccc; /* Default background color */
+            border-radius: 4px; /* Rounded corners */
+            margin-right: 10px; /* Space between checkbox and text */
+            cursor: pointer; /* Change cursor on hover */
+        }
+
+        .checkbox.checked {
+            background-color: #4CAF50; /* Checked color */
+        }
 .column-list {
 	display: flex;
 	justify-content: space-between;
@@ -705,25 +736,28 @@ blockquote {
 </p><p id="a872d9d7-de4c-446d-b4f5-70e3f12f6b27" class="">
 </p></div></p></div><div id="51210b4f-c8e4-433a-bb4c-9cb440339d91" style="width:33.33333333333333%" class="column"><blockquote id="692143a1-cb1d-4848-8daf-e7711ee52799" class="block-color-brown_background"> <strong>Why I choose Data Analytics</strong></blockquote><hr id="bc10a24a-de56-4be4-8f2b-8aa3701afa1b"/><p id="116c4f4e-6826-80d3-aa6e-ebc9ccf2de49" class="">The switch to data analytics was driven by my passion for learning and my desire to play a more active role in making data-driven decisions that matter. Data analysis gives me the tools to:</p><ul id="116c4f4e-6826-803d-b152-c46e6cb921c5" class="bulleted-list"><li style="list-style-type:disc"><strong>Uncover patterns</strong> and trends that might not be visible at first glance.</li></ul><ul id="116c4f4e-6826-808e-83f7-f472031ccadd" class="bulleted-list"><li style="list-style-type:disc">Contribute to <strong>data-driven solutions</strong> that can improve efficiency, optimize resources, and ultimately make a difference in the world.</li></ul><hr id="82c8d8f0-91dd-4ddb-9941-ca406d837ff9"/><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="116c4f4e-6826-80d6-8b16-d528850dce14"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><p id="c653777d-49cf-456f-b2de-e68d9bedeb5f" class=""><mark class="highlight-teal">  Chart Legend</mark></p></div></figure><p id="12c9503c-42c2-4451-a2f7-8f9cb380be98" class="">1 = Beginner</p><p id="62470a80-6d84-4656-afea-0ff8615e34dc" class=""> 2 = Intermediate</p><p id="89b8de9c-520e-4e15-85ae-c3b2d3fcd469" class=""> 3 = Proficient</p><p id="116c4f4e-6826-8056-a0cb-f54b46520661" class=""> 4 = Advanced</p><p id="116c4f4e-6826-80de-a183-f039d6c88895" class=""> 4 = Expert</p><p id="116c4f4e-6826-80b8-93ad-f56a1061b25a" class="">
 </p><hr id="116c4f4e-6826-80c5-a975-c49f89f6bf8b"/><p id="116c4f4e-6826-80ef-a3e7-da8f0a15c87a" class=""><mark class="highlight-teal"> </mark><mark class="highlight-orange">How  Are You Feeling Today?</mark></p><ul id="6e08ac8b-4bb0-48bb-a2a4-be1fe63220a7" class="to-do-list">
-  <li>
-    <div class="checkbox checkbox-off"></div> 
-    <span class="to-do-children-unchecked" onclick="showMessage('Not Sure')">Not Sure</span>
-    <div class="indented"></div>
-  </li>
-</ul>
-
-<ul id="4d8a7496-ee93-4260-9215-1d2acb833c10" class="to-do-list">
-  <li>
-    <div class="checkbox checkbox-off"></div> 
-    <span class="to-do-children-unchecked" onclick="showMessage('Upset')">Upset</span>
-    <div class="indented"></div>
-  </li>
-</ul><ul id="3b76e81d-ee10-4c2c-919e-ec55d093c0d2" class="to-do-list">
-  <li>
-    <div class="checkbox checkbox-off"></div> 
-    <span class="to-do-children-unchecked" onclick="showMessage('Awesome')">Awesome</span>
-    <div class="indented"></div>
-  </li>
+ <ul class="to-do-list">
+        <li onclick="showMessage('Not Sure')">
+            <div class="checkbox" onclick="toggleCheckbox(event, 'Not Sure')"></div> 
+            <span class="to-do-children-unchecked">Not Sure</span>
+        </li>
+        <li onclick="showMessage('Upset')">
+            <div class="checkbox" onclick="toggleCheckbox(event, 'Upset')"></div> 
+            <span class="to-do-children-unchecked">Upset</span>
+        </li>
+        <li onclick="showMessage('Awesome')">
+            <div class="checkbox" onclick="toggleCheckbox(event, 'Awesome')"></div> 
+            <span class="to-do-children-unchecked">Awesome</span>
+        </li>
+        <li onclick="showMessage('Happy')">
+            <div class="checkbox" onclick="toggleCheckbox(event, 'Happy')"></div> 
+            <span class="to-do-children-unchecked">Happy</span>
+        </li>
+        <li onclick="showMessage('Sad')">
+            <div class="checkbox" onclick="toggleCheckbox(event, 'Sad')"></div> 
+            <span class="to-do-children-unchecked">Sad</span>
+        </li>
+    </ul>
 </ul><ul id="116c4f4e-6826-80a2-ae2c-dc8b2009862c" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Sad</span><div class="indented"></div></li></ul><p id="53286cd9-6e80-4b21-96d3-6666f7be68e0" class="">
 </p><div id="116c4f4e-6826-8079-8af2-ded85e958939" class="column-list"><div id="116c4f4e-6826-80d7-89c3-c27f376b22c0" style="width:100%" class="column"><p id="98c27b76-b11e-4173-9c92-fafab82f4bb2" class="">
 </p></div><div id="116c4f4e-6826-807a-aa1f-c9e08358e3cc" style="width:100%" class="column"><p id="116c4f4e-6826-8059-a435-c80dfa11c375" class="">
@@ -740,10 +774,24 @@ blockquote {
 </p></div><div id="7b733f7b-d887-4ec6-964b-28dff566ae97" style="width:77.41935483870968%" class="column"><hr id="3d5c2c81-41fe-40cb-8202-813888c35978"/><p id="35fe0b2a-30b0-40af-94cc-1cf68e39538e" class="">
 </p><p id="e55722a5-6639-4dc6-8cba-8df11cdbb05b" class=""><strong>Tools and Technologies:</strong></p><ul id="bc557f33-cf72-4f8a-8d22-783d96573922" class="bulleted-list"><li style="list-style-type:disc"><strong><a href="https://meryemciftcialy.github.io/analyst-journal/">SQL</a></strong></li></ul><ul id="f8563ac5-cf10-4383-949a-043ba4b6c34f" class="bulleted-list"><li style="list-style-type:disc"><strong><a href="https://meryemciftcialy.github.io/analyst-journal/">Tableau</a></strong></li></ul><ul id="8340e3e8-f218-4b0a-96ce-533f35f491f3" class="bulleted-list"><li style="list-style-type:disc"><strong><a href="https://meryemciftcialy.github.io/analyst-journal/">Google Sheets</a></strong></li></ul><ul id="3521fdb0-15b6-465c-9685-93f8577015e8" class="bulleted-list"><li style="list-style-type:disc"><strong><a href="https://meryemciftcialy.github.io/analyst-journal/">R</a></strong></li></ul><ul id="1fee132e-9bb1-4f5c-b304-f58c37bbf4c0" class="bulleted-list"><li style="list-style-type:disc"><strong><a href="https://meryemciftcialy.github.io/analyst-journal/">GitHub</a></strong></li></ul></div></div><p id="116c4f4e-6826-8092-a1bf-cd9edd32af1e" class="">
 </p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span><script>
-    function showMessage(feeling) {
-        // Check if the feeling is not "Happy" or "Awesome"
-        if (feeling !== 'Happy' && feeling !== 'Awesome') {
-            alert('Feel Better!'); // Show the pop-up message
+     function showMessage(feeling) {
+            // Show appropriate message based on feeling
+            let message;
+            if (feeling === 'Happy' || feeling === 'Awesome') {
+                message = "Hi! That's great. Have a nice day!";
+            } else if (feeling === 'Sad' || feeling === 'Upset' || feeling === 'Not Sure') {
+                message = "Hi, things will get better. Hang in there.";
+            }
+            alert(message); // Show the pop-up message
         }
-    }
+
+        function toggleCheckbox(event, feeling) {
+            // Prevent the event from bubbling up to the li
+            event.stopPropagation();
+            
+            // Toggle checkbox visual state
+            const checkbox = event.target;
+            checkbox.classList.toggle('checked');
+            showMessage(feeling); // Show message on checkbox click
+        }
 </script></body></html>
