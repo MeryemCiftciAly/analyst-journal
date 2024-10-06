@@ -32,10 +32,12 @@ body {
             padding: 0; /* Removes default padding */
         }
 	.to-do-list {
-    padding-left: 4em; /* Shifts the list 4 spaces (approx. the width of 4 characters) to the right */
+    padding-left: 6em; /* Shifts the list 4 spaces (approx. the width of 4 characters) to the right */
 }
-
-        
+ /* Additional spacing control between paragraph and list */
+p + .to-do-list {
+    margin-top: 0; /* Ensures there's no extra margin between the paragraph and the checklist */
+}
         .to-do-list li {
             margin: 5px 0; /* Adds vertical spacing between list items */
         }
@@ -61,9 +63,15 @@ a.visited {
 }
 	#116c4f4e-6826-80ef-a3e7-da8f0a15c87a {
     margin-top: 10px; /* Reduces the space above the paragraph */
-    margin-bottom: 10px; /* Reduces the space below the paragraph */
+    margin-bottom: 6px; /* Reduces the space below the paragraph */
 }
-
+* Adjusts the spacing for the paragraph */
+#116c4f4e-6826-80ef-a3e7-da8f0a15c87a {
+    margin-top: 0; /* Removes any extra space above the paragraph */
+    margin-bottom: 0; /* Removes extra space below the paragraph */
+    padding-top: 0; /* Ensures no padding is adding extra space */
+    padding-bottom: 0; /* Reduces any padding below */
+}
 h1,
 h2,
 h3 {
@@ -148,7 +156,7 @@ ul.to-do-list {
 ul.to-do-list li {
     display: flex; /* Use flexbox to align items */
     align-items: center; /* Center align the items vertically */
-    margin: 5px 0; /* Adjust vertical spacing between items */
+    margin: 2px 0; /* Adjust vertical spacing between items */
     cursor: pointer; /* Change cursor to pointer for clickable items */
 }
 
