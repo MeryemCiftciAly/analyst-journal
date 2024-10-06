@@ -113,6 +113,23 @@ hr {
 img {
 	max-width: 100%;
 }
+.to-do-list {
+    list-style-type: none; /* Removes default bullet points */
+    padding: 0; /* Removes padding */
+    margin: 0; /* Removes margin */
+}
+
+.to-do-list li {
+    margin: 2px 0; /* Adds vertical spacing between list items */
+    cursor: pointer; /* Changes cursor to pointer for the whole item */
+    font-size: 18px; /* Adjust the font size as desired */
+    display: flex; /* Use flexbox to align checkbox and label */
+    align-items: center; /* Center the items vertically */
+}
+
+.to-do-list input[type="checkbox"] {
+    margin-right: 8px; /* Adds spacing between checkbox and label */
+}
 
 @media only print {
 	img {
@@ -714,26 +731,27 @@ blockquote {
 
 <ul class="to-do-list">
     <li>
-        <input type="checkbox" id="not-sure">
+        <input type="checkbox" id="not-sure" onclick="toggleCheckbox(event, 'Not Sure')">
         <label for="not-sure">Not Sure</label>
     </li>
     <li>
-        <input type="checkbox" id="upset">
+        <input type="checkbox" id="upset" onclick="toggleCheckbox(event, 'I could be better')">
         <label for="upset">I could be better</label>
     </li>
     <li>
-        <input type="checkbox" id="awesome">
+        <input type="checkbox" id="awesome" onclick="toggleCheckbox(event, 'Awesome')">
         <label for="awesome">Awesome</label>
     </li>
     <li>
-        <input type="checkbox" id="happy">
+        <input type="checkbox" id="happy" onclick="toggleCheckbox(event, 'Happy')">
         <label for="happy">Happy</label>
     </li>
     <li>
-        <input type="checkbox" id="sad">
+        <input type="checkbox" id="sad" onclick="toggleCheckbox(event, 'Sad')">
         <label for="sad">Sad</label>
     </li>
 </ul>
+
 <p id="53286cd9-6e80-4b21-96d3-6666f7be68e0" class="">
 </p><div id="116c4f4e-6826-8079-8af2-ded85e958939" class="column-list"><div id="116c4f4e-6826-80d7-89c3-c27f376b22c0" style="width:100%" class="column"><p id="98c27b76-b11e-4173-9c92-fafab82f4bb2" class="">
 </p></div><div id="116c4f4e-6826-807a-aa1f-c9e08358e3cc" style="width:100%" class="column"><p id="116c4f4e-6826-8059-a435-c80dfa11c375" class="">
@@ -751,25 +769,28 @@ blockquote {
 </p><p id="e55722a5-6639-4dc6-8cba-8df11cdbb05b" class=""><strong>Tools and Technologies:</strong></p><ul id="bc557f33-cf72-4f8a-8d22-783d96573922" class="bulleted-list"><li style="list-style-type:disc"><strong><a href="https://meryemciftcialy.github.io/analyst-journal/">SQL</a></strong></li></ul><ul id="f8563ac5-cf10-4383-949a-043ba4b6c34f" class="bulleted-list"><li style="list-style-type:disc"><strong><a href="https://meryemciftcialy.github.io/analyst-journal/">Tableau</a></strong></li></ul><ul id="8340e3e8-f218-4b0a-96ce-533f35f491f3" class="bulleted-list"><li style="list-style-type:disc"><strong><a href="https://meryemciftcialy.github.io/analyst-journal/">Google Sheets</a></strong></li></ul><ul id="3521fdb0-15b6-465c-9685-93f8577015e8" class="bulleted-list"><li style="list-style-type:disc"><strong><a href="https://meryemciftcialy.github.io/analyst-journal/">R</a></strong></li></ul><ul id="1fee132e-9bb1-4f5c-b304-f58c37bbf4c0" class="bulleted-list"><li style="list-style-type:disc"><strong><a href="https://meryemciftcialy.github.io/analyst-journal/">GitHub</a></strong></li></ul></div></div><p id="116c4f4e-6826-8092-a1bf-cd9edd32af1e" class="">
 </p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body>
 </p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span><script>
-     function showMessage(feeling) {
-            // Show appropriate message based on feeling
-            let message;
-            if (feeling === 'Happy' || feeling === 'Awesome') {
-                message = "Hi! 😄 That's great. Have a nice day!";
-            } else if (feeling === 'I could be better' || feeling === 'Upset' || feeling === 'Not Sure') {
-                message = "Hi, things will get better. 👍 Hang in there.";
-            }
-            alert(message); // Show the pop-up message
-        }
+   function showMessage(feeling) {
+    // Show appropriate message based on feeling
+    let message;
+    if (feeling === 'Happy' || feeling === 'Awesome') {
+        message = "Hi! 😄 That's great. Have a nice day!";
+    } else if (feeling === 'Not Sure' || feeling === 'Upset') {
+        message = "Hi, things will get better. 👍 Hang in there.";
+    }
+    alert(message); // Show the pop-up message
+}
 
-        function toggleCheckbox(event, feeling) {
-            // Prevent the event from bubbling up to the li
-            event.stopPropagation();
-            
-            // Toggle checkbox visual state
-            const checkbox = event.target;
-            checkbox.classList.toggle('checked');
-            showMessage(feeling); // Show message on checkbox click
+function toggleCheckbox(event, feeling) {
+    // Prevent the event from bubbling up to the li
+    event.stopPropagation();
+    
+    // Toggle checkbox visual state
+    const checkbox = event.target;
+    checkbox.classList.toggle('checked'); // This line can be modified if needed
+
+    showMessage(feeling); // Show message on checkbox click
+}
+
 
 
 
