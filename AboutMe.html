@@ -137,6 +137,27 @@ img {
 .column {
 	padding: 0 1em;
 }
+	.to-do-list {
+    list-style-type: none; /* Removes default bullet points */
+    padding: 0; /* Removes padding */
+    margin: 0; /* Removes margin */
+}
+
+.to-do-list li {
+    margin: 2px 0; /* Adds vertical spacing between list items */
+    cursor: pointer; /* Changes cursor to pointer for the whole item */
+    font-size: 18px; /* Adjust the font size as desired */
+    transition: background-color 0.3s; /* Smooth background change */
+}
+
+.to-do-list li:hover {
+    background-color: #f0f0f0; /* Changes background on hover */
+}
+
+.to-do-list li:active {
+    background-color: #e0e0e0; /* Changes background when clicked */
+}
+
 
 .column:first-child {
 	padding-left: 0;
