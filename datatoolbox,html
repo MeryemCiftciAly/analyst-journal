@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Repository</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .tab {
+            display: flex;
+            background-color: #333;
+            justify-content: center;
+        }
+        .tab button {
+            background-color: inherit;
+            color: white;
+            padding: 14px 20px;
+            cursor: pointer;
+            border: none;
+            outline: none;
+        }
+        .tab button:hover {
+            background-color: #ddd;
+            color: black;
+        }
+        .tabcontent {
+            display: none;
+            padding: 20px;
+        }
+        .tabcontent.active {
+            display: block;
+        }
+        .toggle {
+            margin: 10px 0;
+            background-color: #f1f1f1;
+            padding: 10px;
+            cursor: pointer;
+            border: 1px solid #ddd;
+        }
+        .toggle-content {
+            display: none;
+            padding: 10px;
+            background-color: #fafafa;
+            border: 1px solid #ddd;
+        }
+        .comments-section {
+            margin-top: 20px;
+        }
+        .comments-section textarea {
+            width: 100%;
+            padding: 10px;
+        }
+        .comments-section button {
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Tabs for Excel, SQL, R -->
+    <div class="tab">
+        <button onclick="openTab(event, 'Excel')">Excel</button>
+        <button onclick="openTab(event, 'SQL')">SQL</button>
+        <button onclick="openTab(event, 'R')">R</button>
+    </div>
+
+    <!-- Excel Section -->
+    <div id="Excel" class="tabcontent">
+        <h2>Excel Code Snippets</h2>
+        <div class="toggle" onclick="toggleContent(this)">Data Cleaning</div>
+        <div class="toggle-content">
+            <!-- Add your code snippets for Data Cleaning here -->
+            <pre><code>/* Excel data cleaning code goes here */</code></pre>
+        </div>
+        <div class="toggle" onclick="toggleContent(this)">Joins</div>
+        <div class="toggle-content">
+            <!-- Add your code snippets for Joins here -->
+            <pre><code>/* Excel joins code goes here */</code></pre>
+        </div>
+    </div>
+
+    <!-- SQL Section -->
+    <div id="SQL" class="tabcontent">
+        <h2>SQL Code Snippets</h2>
+        <div class="toggle" onclick="toggleContent(this)">Data Cleaning</div>
+        <div class="toggle-content">
+            <!-- Add your SQL data cleaning code snippets here -->
+            <pre><code>/* SQL data cleaning code goes here */</code></pre>
+        </div>
+        <div class="toggle" onclick="toggleContent(this)">Joins</div>
+        <div class="toggle-content">
+            <!-- Add your SQL joins code snippets here -->
+            <pre><code>/* SQL joins code goes here */</code></pre>
+        </div>
+    </div>
+
+    <!-- R Section -->
+    <div id="R" class="tabcontent">
+        <h2>R Code Snippets</h2>
+        <div class="toggle" onclick="toggleContent(this)">Data Cleaning</div>
+        <div class="toggle-content">
+            <!-- Add your R data cleaning code snippets here -->
+            <pre><code>/* R data cleaning code goes here */</code></pre>
+        </div>
+        <div class="toggle" onclick="toggleContent(this)">Joins</div>
+        <div class="toggle-content">
+            <!-- Add your R joins code snippets here -->
+            <pre><code>/* R joins code goes here */</code></pre>
+        </div>
+    </div>
+
+    <!-- Comments Section -->
+    <div class="comments-section">
+        <h3>Comments</h3>
+        <textarea rows="4" placeholder="Leave your comment here..."></textarea>
+        <button>Submit</button>
+        <!-- Comments will be displayed here -->
+    </div>
+
+    <script>
+        // Tab functionality
+        function openTab(evt, tabName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByTagName("button");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(tabName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+
+        // Toggle functionality for expanding sections
+        function toggleContent(element) {
+            var content = element.nextElementSibling;
+            content.style.display = content.style.display === "block" ? "none" : "block";
+        }
+
+        // Set default tab to Excel
+        document.getElementsByClassName("tab")[0].getElementsByTagName("button")[0].click();
+    </script>
+
+</body>
+</html>
