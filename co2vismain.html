@@ -1,0 +1,741 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>OECD Regions (America and Europe) CO2 Emission Project</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 1360px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-default_background {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-transparentGray { background-color: rgba(227, 226, 224, 0); }
+.select-value-color-translucentGray { background-color: rgba(0, 0, 0, 0.06); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="11bc4f4e-6826-8079-a5bc-ddd7e098186d" class="page sans"><header><h1 class="page-title">OECD Regions (America and Europe) CO2 Emission Project</h1><p class="page-description"></p></header><div class="page-body"><p id="11bc4f4e-6826-804b-be61-fab54b560712" class="">
+</p><p id="11bc4f4e-6826-8031-b1f6-e4afd456a7bd" class=""><strong>Objective: </strong>To examine the relationship between CO2 emissions, renewable and non-renewable energy usage, and technological advancements in environmental tech in Europe and America from 2000 to 2019. </p><p id="11bc4f4e-6826-80c7-b9a9-cd96fb635998" class="">
+</p><p id="11bc4f4e-6826-80bb-bd04-df0188d83ea8" class=""><strong>Scope:</strong> While the dataset includes multiple variables, this analysis focuses on <strong>CO2 emissions</strong>, <strong>renewable energy</strong>, <strong>non-renewable energy</strong>, and <strong>technology</strong>. Other factors like <strong>mortality exposure, environmental taxes</strong>, and <strong>welfare costs</strong> are acknowledged but not included in this specific analysis.</p><p id="11cc4f4e-6826-8079-9f7e-df1bff599d65" class="">
+</p><p id="11cc4f4e-6826-805b-9b5a-faedae204b4f" class=""><strong>Relevance:</strong> The study of CO2 emissions is crucial because carbon dioxide is one of the most significant greenhouse gases contributing to climate change.</p><p id="11bc4f4e-6826-8086-b2c8-f967822594df" class="">
+</p><hr id="11bc4f4e-6826-80bc-82c1-ddadf87d5c18"/><p id="11bc4f4e-6826-802a-9eeb-d0db927f373f" class="">
+</p><p id="11bc4f4e-6826-809f-b910-d3a27d0627e1" class="">
+</p><figure id="11bc4f4e-6826-8008-aef4-ec417cce90fe" class="image"><a href="CO2_Europe_vs_America.png"><img style="width:816px" src="CO2_Europe_vs_America.png"/></a></figure><h2 id="11bc4f4e-6826-80e5-93c0-f908754b63b0" class=""><strong>CO2 Emissions Comparison: </strong><mark class="highlight-teal"><strong>Europe vs. America</strong></mark></h2><p id="11bc4f4e-6826-80a1-9f7f-e757ba97c476" class="">Here we see that while both Europe and America show <strong>high levels of CO2 emissions</strong>, the pattern reveals that <strong>America consistently has higher CO2 emissions</strong> over the period 2000 to 2019.</p><p id="11bc4f4e-6826-8005-88e6-e9bf1bafca6a" class="">Europe seems to make <strong>some gradual progress</strong> in reducing emissions, but the difference between the regions is still stark, especially in earlier years.</p><p id="11bc4f4e-6826-804f-b120-c26f1faf5ee6" class="">
+</p><div id="11bc4f4e-6826-8078-85fc-dc38b226c2e4" class="column-list"><div id="11bc4f4e-6826-80a7-86bb-e812be57d4af" style="width:93.75%" class="column"><figure id="11bc4f4e-6826-80e5-8cf5-e24db9d89557" class="image"><a href="America_Non-renewable__Energy__CO2_Emission.png"><img style="width:751.171875px" src="America_Non-renewable__Energy__CO2_Emission.png"/></a></figure><div id="11bc4f4e-6826-8085-b57d-df2cfbd36c93" class="column-list"><div id="11bc4f4e-6826-806b-9e09-c2f43f3bf31b" style="width:100%" class="column"><div id="11bc4f4e-6826-8070-a648-f70a056a29fc" class="column-list"><div id="11bc4f4e-6826-8098-9ba5-e39143e80bbb" style="width:4.166666666666666%" class="column"><p id="11bc4f4e-6826-80d6-9d87-eb678d890df9" class="">
+</p><p id="11bc4f4e-6826-8037-a704-f9b5c0d6c4b6" class="">
+</p><p id="11bc4f4e-6826-808c-8278-c763a718ed25" class="">
+</p></div><div id="11bc4f4e-6826-80cf-8025-da7d9f7abe7d" style="width:4.166666666666666%" class="column"><p id="11bc4f4e-6826-8071-b712-d74ef387d545" class="">
+</p></div><div id="11bc4f4e-6826-806e-9eb4-e62e1eedfca2" style="width:116.66666666666666%" class="column"><h2 id="11bc4f4e-6826-8083-b90f-f38565caea63" class=""><mark class="highlight-teal"><strong>Renewable Energy and CO2: </strong></mark><strong>America’s Dramatic Shift in Renewable Energy Uptake</strong></h2><p id="11bc4f4e-6826-807e-bc49-ddef29c1bd86" class="">
+</p><p id="11bc4f4e-6826-80c2-b207-d98cc1020eee" class="">Across the Atlantic, <strong>America’s energy and emission patterns</strong> tell a different story. From <strong>2000 to 2008</strong>, CO2 emissions soared above <strong>6000 MT</strong>, far exceeding Europe’s levels. The renewable energy trend, in contrast, remained <strong>below the CO2 emission line</strong>, highlighting a heavier reliance on non-renewable sources.</p><p id="11bc4f4e-6826-807b-9a34-e36199cf4e75" class="">
+</p><ul id="11bc4f4e-6826-8092-b418-f9cac7112ccf" class="bulleted-list"><li style="list-style-type:disc"><strong>Key Observations</strong>:<ul id="e506fc41-9b2e-40f6-b18a-5fcefaf2c48c" class="bulleted-list"><li style="list-style-type:circle">Similar to Europe, America experienced a <strong>decline in CO2 emissions</strong> from <strong>2008 to 2009</strong> as the recession took hold, although emissions never dropped as significantly as Europe’s.</li></ul><ul id="e1e68b55-4e36-47d2-ba94-b2230cde41e2" class="bulleted-list"><li style="list-style-type:circle">However, what stands out is the <strong>sharp increase in renewable energy</strong> post-2009, particularly between <strong>2010 and 2011</strong>, when it surged notably above the CO2 bar chart.</li></ul><ul id="1111da77-3c4c-4a9a-8776-fb886c7fa13b" class="bulleted-list"><li style="list-style-type:circle">By <strong>2011</strong>, the renewable energy trend in America moved well above the CO2 line and remained there, demonstrating a strong, clear shift towards renewables, though still hovering around the <strong>8-10%</strong> range.</li></ul><ul id="2adebc96-5675-4512-b304-f53bddd40ce6" class="bulleted-list"><li style="list-style-type:circle">This sharp uptick in renewable energy in the U.S. represents a <strong>more significant and sudden transition</strong>, though its overall percentage growth was lower compared to Europe.</li></ul><ul id="554cbb94-4498-41e2-898e-3025ef32c936" class="bulleted-list"><li style="list-style-type:circle">The American trajectory reveals a <strong>clear, sudden change</strong> in how renewable energy displaced traditional energy sources, while CO2 emissions also showed a modest decrease after the crisis, though it never reached the levels seen in Europe.</li></ul></li></ul><p id="11bc4f4e-6826-80bb-852c-d4765ed69b03" class="">
+</p></div></div><p id="11bc4f4e-6826-806a-a980-c13084faf06e" class="">
+</p></div><div id="11bc4f4e-6826-807c-b555-e0d862bdb83c" style="width:6.25%" class="column"><p id="11bc4f4e-6826-800b-8cb1-fc7725d0a738" class="">
+</p></div></div></div><div id="11bc4f4e-6826-80e4-a8f2-ede824b2291a" style="width:93.75%" class="column"><figure id="11bc4f4e-6826-80fb-b47a-f0db4fff8622" class="image"><a href="_Europe_Renewable_Energy_versus_Production-based_CO2_emissions.png"><img style="width:720px" src="_Europe_Renewable_Energy_versus_Production-based_CO2_emissions.png"/></a></figure><div id="11bc4f4e-6826-80f9-873b-f0c99c9ca8bb" class="column-list"><div id="11bc4f4e-6826-8007-a4bb-c2c1f5a01afc" style="width:100%" class="column"><div id="11bc4f4e-6826-8038-a324-e6eca68591e8" class="column-list"><div id="11bc4f4e-6826-8054-baa2-c80784658751" style="width:8.333333333333332%" class="column"><h2 id="11bc4f4e-6826-8096-9421-ddceca787860" class=""></h2></div><div id="11bc4f4e-6826-804b-9da3-fe17a81324fb" style="width:100%" class="column"><h2 id="11bc4f4e-6826-80de-bee6-e9721189be3a" class=""><mark class="highlight-teal"><strong>Renewable Energy and CO2</strong></mark><mark class="highlight-default"><strong>: </strong></mark><strong>Europe’s Steady Shift Towards Renewable Energy</strong></h2><p id="11bc4f4e-6826-8090-bfd7-f7fa7d630ee9" class="">
+</p><p id="11bc4f4e-6826-80b7-8d45-dd0f92010f5c" class="">From <strong>2000 to 2008</strong>, Europe saw a steady increase in CO2 emissions, reaching nearly <strong>4000 MT</strong>. However, with the onset of the <strong>2009 economic crisis</strong>, emissions began to dip, and this was when renewable energy started gaining more ground. You can see more about the 2009 economic crisis by clicking the link below.</p><ul id="11bc4f4e-6826-80f2-9cdd-ed95d6fd417d" class="bulleted-list"><li style="list-style-type:disc"><strong>Key Observations</strong>:<ul id="78eef00a-3eb6-42ce-8f51-080e286b2f23" class="bulleted-list"><li style="list-style-type:circle">Before 2009, emissions were on the rise, indicating a reliance on non-renewable energy.</li></ul><ul id="baec36a5-a1e3-497f-86b1-9df38f4fd51e" class="bulleted-list"><li style="list-style-type:circle">As the economic crisis hit, energy demand dropped, resulting in a slight decrease in CO2 emissions.</li></ul><ul id="acbf81b6-56a4-4aa0-adeb-d60e2a70a5e2" class="bulleted-list"><li style="list-style-type:circle">Between <strong>2009 and 2012</strong>, renewable energy use was still low compared to the drop in CO2 emissions. This shows that renewable energy wasn’t growing as quickly as emissions were decreasing.</li></ul><ul id="11bc4f4e-6826-80a5-bab2-fdefc5dcfaa1" class="bulleted-list"><li style="list-style-type:circle">By <strong>2016</strong>, however, renewable energy started showing a steady increase, clearly surpassing the CO2 emission line around <strong>2017</strong>, indicating that a significant shift towards renewables was taking place.</li></ul><ul id="52197877-d26c-44e0-a194-336d080c9d96" class="bulleted-list"><li style="list-style-type:circle">The percentage increase in renewable energy from <strong>2015 onwards</strong> was notably higher, reaching <strong>15%</strong> by 2019, yet this growth was more gradual and aligned closely with the decreasing CO2 emissions.</li></ul></li></ul></div><div id="11bc4f4e-6826-8054-bc1f-e08c62c76158" style="width:4.166666666666666%" class="column"><p id="11bc4f4e-6826-808d-b7a4-d3c00c33896d" class="">
+</p></div></div><p id="11bc4f4e-6826-801b-beb1-ccabd542ccb3" class="">
+</p></div><div id="11bc4f4e-6826-80f0-9d53-e96b08017f43" style="width:18.750000000000007%" class="column"><p id="11bc4f4e-6826-8028-b801-ea083e60d2e6" class="">
+</p></div></div><p id="11bc4f4e-6826-80ea-98da-ff52189b9ac7" class="">
+</p></div></div><figure class="block-color-purple_background callout" style="white-space:pre-wrap;display:flex" id="11bc4f4e-6826-8090-a36a-f0f878780cbc"><div style="font-size:1.5em"><span class="icon">🗒️</span></div><div style="width:100%"><p id="11bc4f4e-6826-80cc-b3ef-fdf5d34050b8" class=""><strong>Analysis:</strong> Europe’s renewable energy trajectory is more <strong>gradual and sustained</strong>, with the increase in renewable energy keeping pace with a slower but consistent decrease in CO2 emissions, suggesting a balanced transition. This could be due to a shift in policies and sentiments towards the use of non-renewable energy and the percentage reliance and potential disruption cause my market shifts or supply.</p></div></figure><p id="11bc4f4e-6826-80f1-aad0-d741320026b6" class="">
+</p><p id="11bc4f4e-6826-8047-b08e-d481f58e7c47" class="">
+</p><h2 id="11bc4f4e-6826-80bc-a197-ca77d1406f16" class=""><mark class="highlight-teal"><strong>                   Comparing Energy Mix and CO2 Emission</strong></mark></h2><p id="11bc4f4e-6826-8000-8083-e0589fc43589" class="">
+</p><div id="11bc4f4e-6826-80ee-a701-cbf5af9d1d91" class="column-list"><div id="cf217934-52d2-419a-b537-a3bd8f5773cd" style="width:93.75%" class="column"><figure id="d3f35151-b177-45bd-9059-06edcebb21e1" class="image"><a href="Combined_CO2_Renewable_and_Non-Renewable-_America.png"><img style="width:764.96875px" src="Combined_CO2_Renewable_and_Non-Renewable-_America.png"/></a></figure><div id="adb0a219-ac4a-4b83-a10c-a930a3b0a9c3" class="column-list"><div id="b4536958-1b84-40b7-a2e6-f3e074ea6271" style="width:100%" class="column"><div id="b94acebd-1871-412b-8705-20052719dad8" class="column-list"><div id="0b01da4f-79b4-4eeb-9c46-51c2160f78d3" style="width:4.166666666666666%" class="column"><p id="24ab3297-f5cc-4a52-af95-31fa9b70a84a" class="">
+</p><p id="e9691604-9c45-400b-9da3-ec43e4aee66b" class="">
+</p><p id="96211dd1-7c92-4bb7-b5e5-c3feff252965" class="">
+</p></div><div id="95d9bfc2-b364-466b-8604-fab47c46e6f8" style="width:4.166666666666666%" class="column"><p id="edd3dff8-bd4a-4758-9c7d-701cb39e58f4" class="">
+</p></div><div id="5b057bdb-c2eb-41bf-a617-1ed7e098c914" style="width:116.66666666666666%" class="column"><h2 id="ed0808bd-1e1c-47f9-ba9e-57942be7cd5e" class=""><mark class="highlight-teal"><strong>Comparing Energy Mix and CO2 Emissions: </strong></mark><mark class="highlight-default"><strong>America (2000-2019)</strong></mark></h2><p id="11bc4f4e-6826-8055-930f-efc1ea9affcb" class="">
+</p><p id="11bc4f4e-6826-80c3-aa87-d938d5f0bf4d" class="">The <strong>non-renewable energy</strong> continues to <strong>dominate</strong> and <strong>suppress</strong> CO2 emissions. While the <strong>CO2 emission line</strong> remains below the non-renewable energy bar, it doesn’t indicate a sharp decrease in emissions, but rather a <strong>slight suppression</strong>, where the <strong>CO2 emissions</strong> are slightly <strong>repressed</strong> by the increasing, albeit minimal, <strong>renewable energy</strong> contribution.</p><p id="11bc4f4e-6826-80b3-b615-e2ced1cf6975" class="">The <strong>steadiness of CO2 emissions</strong> until 2019 reflects the <strong>dominance of non-renewable sources</strong>, with only a <strong>gradual reduction in CO2 emissions</strong> as renewable energy slowly increases.</p><p id="11bc4f4e-6826-80ff-bc88-f7748a0fc5e4" class="">
+</p><ul id="caec4148-58d0-4bf8-ac0b-87967f24b2d4" class="bulleted-list"><li style="list-style-type:disc"><strong>Key Observations</strong>:<ul id="92fdd94b-d2cb-4373-af56-35f6bc9ac4dc" class="bulleted-list"><li style="list-style-type:circle"><strong>America&#x27;s sharp rise in renewable energy</strong> post-crisis offers a compelling visual shift that highlights the <strong>different paces</strong> and <strong>paths</strong> toward a greener future in both regions.</li></ul><ul id="5024a4e1-ce11-4736-8adb-fb54d7ac2c3f" class="bulleted-list"><li style="list-style-type:circle"><strong>Sudden Shift in Renewable Energy</strong>: In contrast to Europe’s steady transition, America showed a sharp increase in renewable energy adoption around 2010-2011, but the overall percentage of renewables remained lower than in Europe.</li></ul><ul id="11bc4f4e-6826-80cd-8b47-c7efa4cb245c" class="bulleted-list"><li style="list-style-type:circle"><strong>Heavier Reliance on Non-Renewable Energy</strong>: Despite the rise in renewables, America’s non-renewable energy sources continued to dominate, and CO2 emissions remained comparatively high.</li></ul><ul id="11bc4f4e-6826-8095-aca0-e35f4f4f8350" class="bulleted-list"><li style="list-style-type:circle"><strong>CO2 Emissions Decline Less Pronounced</strong>: While there was a decrease in CO2 emissions after the 2008 financial crisis, the drop was not as significant as in Europe, reflecting a slower transition away from non-renewable energy.</li></ul><ul id="11bc4f4e-6826-80cb-b990-f6d21f746e96" class="bulleted-list"><li style="list-style-type:circle"><strong>Market-Driven Changes</strong>: America’s renewable energy uptake appears to be more influenced by market forces, with sudden shifts suggesting a reactive rather than a gradual policy-driven approach.</li></ul></li></ul></div></div><p id="e13f0b03-f002-4110-8d8c-281d25ba24c7" class="">
+</p></div><div id="1bb7575d-1fdb-43e0-9f0d-03b36c2d7596" style="width:6.25%" class="column"><p id="e8437391-aa77-4c24-b1d8-aa19e4c466fe" class="">
+</p></div></div></div><div id="77c83fd8-5032-4677-a110-55e978866c5e" style="width:93.75%" class="column"><figure id="e173f370-df11-479a-b002-d5f7d1a00e68" class="image"><a href="Combined_CO2_Renewable_and_Non-Renewable-_Europe.png"><img style="width:764.984375px" src="Combined_CO2_Renewable_and_Non-Renewable-_Europe.png"/></a></figure><div id="60e558e6-c78d-42d6-96ca-d7a271f8d0bd" class="column-list"><div id="d3c1d1bd-0b3a-47da-aefa-a67ff5faf44a" style="width:106.25%" class="column"><div id="3e64ab5b-8baa-4825-b579-4b993da5e587" class="column-list"><div id="578356bb-ed2a-4519-83c8-dc4e98c7b079" style="width:8.333333333333332%" class="column"><h2 id="23ebb439-8bc0-4345-8c11-e233c459d810" class=""></h2></div><div id="2144519e-3a99-4809-8739-f28753f15821" style="width:100%" class="column"><h2 id="d03dc27d-4f6a-47eb-ba58-6f841666fc1f" class=""><mark class="highlight-teal"><strong>Comparing Energy Mix and CO2 Emissions: </strong></mark><mark class="highlight-default"><strong>Europe (2000-2019)</strong></mark><mark class="highlight-teal"><strong> </strong></mark></h2><p id="11bc4f4e-6826-80db-b6a3-eb3aeddbde02" class="">
+</p><p id="11bc4f4e-6826-806f-a594-ffdc9a74aa64" class="">The <strong>CO2 emissions line starts high</strong>, matching the dominance of <strong>non-renewable energy</strong>. However, after 2009, as <strong>renewable energy&#x27;s share increases</strong>, there is a <strong>sharp decline</strong> in emissions, which continues through 2019. This suggests that <strong>renewable energy</strong> in Europe has had a more <strong>direct and significant impact</strong> on reducing CO2 emissions over time, in contrast to America, where renewable energy is still much less prevalent and has a less direct effect on emissions.</p><p id="92096f0c-57e2-4d8e-ac87-1c92e75be1a9" class="">
+</p><ul id="0efbfbb9-3955-46cf-99cf-876a31f9f9d6" class="bulleted-list"><li style="list-style-type:disc"><strong>Key Observations</strong>:<ul id="bc6ac45c-18dd-4d20-b7d3-1fa21dd64093" class="bulleted-list"><li style="list-style-type:circle">Before 2009, emissions were on the rise, indicating a reliance on non-renewable energy.</li></ul><ul id="aecc33be-be48-4803-a7cd-2547578448c1" class="bulleted-list"><li style="list-style-type:circle">As the economic crisis hit, energy demand dropped, resulting in a slight decrease in CO2 emissions.</li></ul><ul id="03572ba2-1adb-4ade-a1a6-cb439fdfe41e" class="bulleted-list"><li style="list-style-type:circle">Between <strong>2009 and 2012</strong>, renewable energy use was still low compared to the drop in CO2 emissions. This shows that renewable energy wasn’t growing as quickly as emissions were decreasing.</li></ul><ul id="61612a38-73a4-4c3c-b6c0-12dc703a746c" class="bulleted-list"><li style="list-style-type:circle">By <strong>2016</strong>, however, renewable energy started showing a steady increase, clearly surpassing the CO2 emission line around <strong>2017</strong>, indicating that a significant shift towards renewables was taking place.</li></ul><ul id="8fb2accc-6ba1-40ce-a1ce-635def76ba76" class="bulleted-list"><li style="list-style-type:circle">The percentage increase in renewable energy from <strong>2015 onwards</strong> was notably higher, reaching <strong>15%</strong> by 2019, yet this growth was more gradual and aligned closely with the decreasing CO2 emissions.</li></ul></li></ul></div><div id="302e9d6c-2c04-4ac0-b945-3dab3aba95b7" style="width:4.166666666666666%" class="column"><p id="5e6fa74a-8a97-465a-8888-60dbfa3943f8" class="">
+</p></div></div><p id="622e0724-b60f-44cc-9b34-1d34346a8646" class="">
+</p></div><div id="2a18d7c2-a51a-4362-9007-d2646d4538f1" style="width:12.500000000000009%" class="column"><p id="ac9c830b-2a4a-419b-a31f-62f378d0665c" class="">
+</p></div></div><p id="d62b73bb-3d3d-4e75-bb99-bf58a1196920" class="">
+</p></div></div><h1 id="11bc4f4e-6826-8033-9f4c-e1f1c85144c3" class="">                  <mark class="highlight-teal">A Broader View on Averages</mark></h1><div id="11bc4f4e-6826-8033-b5fc-f2b5f6c6a02e" class="column-list"><div id="11bc4f4e-6826-8071-b533-fbb0c069d39c" style="width:100%" class="column"><figure id="11bc4f4e-6826-80ce-b7cd-db51c2b33fec" class="image"><a href="Average_Relative_Advantage_.png"><img style="width:672px" src="Average_Relative_Advantage_.png"/></a></figure><p id="11bc4f4e-6826-80d7-a1bf-e04d77a70a94" class="">
+</p><p id="11bc4f4e-6826-80e8-83db-fc370be3b189" class="">
+</p><figure id="11bc4f4e-6826-8033-a5e1-c25ae3ef45b7" class="image"><a href="Your_paragraph_text_(3).png"><img style="width:768px" src="Your_paragraph_text_(3).png"/></a></figure><p id="11cc4f4e-6826-80bc-b320-df23421b869b" class="">
+</p><h2 id="11cc4f4e-6826-8003-b39b-ea9998a24d1a" class="">Why was this project relevant?</h2><p id="11cc4f4e-6826-8044-a5f9-f19734ee34b5" class=""><strong>Understanding the Importance of CO2 Emissions</strong></p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="11cc4f4e-6826-8070-b2a2-e49a008d2518"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><p id="11cc4f4e-6826-80ba-9bef-fd4058c489a8" class="">The study of CO2 emissions is crucial because carbon dioxide is one of the most significant greenhouse gases contributing to climate change. Increased CO2 levels in the atmosphere trap heat, leading to global warming and its associated impacts on weather patterns, ecosystems, and human livelihoods. By analyzing CO2 emissions, we can:</p><ol type="1" id="11cc4f4e-6826-807e-9fa2-f49b2a959785" class="numbered-list" start="1"><li><strong>Gauge Environmental Impact</strong>: CO2 emissions are a key indicator of the environmental footprint of industries, transportation, and energy production. Understanding this helps in identifying the sectors that contribute the most to climate change.</li></ol><ol type="1" id="11cc4f4e-6826-80bb-9f96-eccf69ac9486" class="numbered-list" start="2"><li><strong>Influence Policy and Decision-Making</strong>: Tracking emissions data inform governments and organizations in setting targets, such as those in the Paris Agreement, to reduce carbon footprints and promote renewable energy adoption.</li></ol><ol type="1" id="11cc4f4e-6826-8042-ab68-f01eb7a421f5" class="numbered-list" start="3"><li><strong>Drive Innovation in Technology</strong>: Insights from emission data push for the development of cleaner technologies, promoting renewable energy sources like solar and wind, while improving energy efficiency across sectors.</li></ol><ol type="1" id="11cc4f4e-6826-80c8-8956-d9d4fd4f005c" class="numbered-list" start="4"><li><strong>Ensure Global Accountability</strong>: Emission data allow for international comparisons and encourage countries to take responsibility for mitigating their contributions to global warming.</li></ol><p id="11cc4f4e-6826-80c4-905a-d29a04484a35" class="">In essence, studying CO2 emissions provides the foundation for meaningful action toward sustainability, cleaner energy transitions, and mitigating the worst impacts of climate change.</p></div></figure></div><div id="11bc4f4e-6826-8090-98bf-d6d436dc6f75" style="width:4.166666666666666%" class="column"><p id="11bc4f4e-6826-8020-a82d-cabeae92671b" class="">
+</p></div><div id="11bc4f4e-6826-8042-b7b8-ce2d78e6c046" style="width:100%" class="column"><figure id="11bc4f4e-6826-80d8-9c77-eb8e2ca3d515" class="image"><a href="Avg_Dev_Tech.png"><img style="width:672px" src="Avg_Dev_Tech.png"/></a></figure><h3 id="11cc4f4e-6826-80bc-9314-cef0b822774d" class="">Key Insights:</h3><ol type="1" id="11cc4f4e-6826-8024-b099-e6ef6188cd82" class="numbered-list" start="1"><li><strong>Limited Development of Environmental Technology</strong>: The data shows that even though there are ongoing technological developments, the relative advantage gained through environment-related technologies still needs to be improved. This suggests that innovation in this space is not yet reaching a level that can significantly combat CO2 emissions.</li></ol><ol type="1" id="11cc4f4e-6826-8091-b9cb-f67db3f908ed" class="numbered-list" start="2"><li><strong>Minimal Impact of Technology on CO2 Reduction</strong>: Despite technological advancements, the aggregate data implies that these innovations are not leading to a meaningful reduction in CO2 emissions. This could indicate either slow adoption or that the technologies available aren&#x27;t addressing the root causes of CO2 emissions.</li></ol><ol type="1" id="11cc4f4e-6826-804a-8384-fb959c0fbe6f" class="numbered-list" start="3"><li><strong>Renewable Energy Supply is Insufficient</strong>: Renewable energy remains a small fraction of the total energy mix, which means that fossil fuels and non-renewables continue to dominate, contributing heavily to CO2 emissions. For any substantial progress to be made, the share of renewable energy must increase significantly.</li></ol><p id="11cc4f4e-6826-80c5-b371-f7a7697bc834" class="">
+</p><h3 id="11cc4f4e-6826-800c-a704-d9719fb48c4f" class="">Conclusion:</h3><p id="11cc4f4e-6826-80cc-b06a-dd1b79ad532c" class="">The data points to a <strong>slow pace in technological advancement and adoption</strong>, particularly in environment-related technologies, which is not enough to meaningfully affect CO2 emissions. <strong>Increasing the percentage of renewable energy</strong> in the total energy mix across industries is essential for reducing emissions. However, without strong enforcement of policies and governance that prioritize these changes, any advancements in environmental technology will have limited real-world impact.</p><h3 id="11cc4f4e-6826-8028-97cf-e5531af42a81" class="">Suggested Action:</h3><p id="11cc4f4e-6826-8045-b2ec-fb75033498a1" class="">Given this analysis, the <strong>next logical step</strong> is to advocate for policies that:</p><ul id="11cc4f4e-6826-80c3-9924-c824693eed8a" class="bulleted-list"><li style="list-style-type:disc"><strong>Prioritize renewable energy integration</strong> into all sectors, particularly those contributing the most to CO2 emissions (manufacturing, transport, etc.).</li></ul><ul id="11cc4f4e-6826-806c-8011-e749058b8f5b" class="bulleted-list"><li style="list-style-type:disc"><strong>Incentivize innovation and faster adoption</strong> of environment-related technologies by providing subsidies, grants, or tax breaks to industries that invest in renewable infrastructure.</li></ul><ul id="11cc4f4e-6826-80e2-8e88-c10d15673ce8" class="bulleted-list"><li style="list-style-type:disc"><strong>Strengthen enforcement and governance</strong> around existing environmental policies to ensure that industries and governments alike are actively reducing their carbon footprints.</li></ul><p id="11cc4f4e-6826-8025-9180-de3445b6de10" class="">To make <strong>real change</strong> happen, <strong>renewable energy</strong> needs to move from being a small component of the energy supply to a dominant one, and <strong>technological development</strong> needs to accelerate. The <strong>policies and regulations</strong> supporting these goals will be the driving force in turning innovation into actual CO2 reduction outcomes.</p><p id="11cc4f4e-6826-8075-96b5-d7933c9ceeb5" class="">
+</p><p id="11cc4f4e-6826-80c3-a601-e0a396770087" class="">
+</p><p id="11cc4f4e-6826-8040-9b42-d00f7526c3ce" class="">
+</p><p id="11cc4f4e-6826-803b-9d32-d6a327a2b011" class="">
+</p><figure id="11cc4f4e-6826-8042-a18f-fe7bd53f4040" class="image"><a href="homeicon.png"><img style="width:40px" src="homeicon.png"/></a></figure></div></div><p id="11bc4f4e-6826-8023-ada1-f17a1bc666b2" class="">
+</p></div><div id="115c4f4e-6826-8023-8aa0-f0664eadb9a2" style="width:100%" class="column"><p id="115c4f4e-6826-80fe-867a-dfe84580c409" class="">
+</p></div></div><div id="115c4f4e-6826-8046-9fc7-ed2bbc904357" class="column-list"><div id="115c4f4e-6826-80e3-8cd7-d3cf535e2329" style="width:3.125%" class="column"><p id="115c4f4e-6826-80be-9536-d0be464c36ef" class="">
+</p></div><div id="115c4f4e-6826-8099-a2b7-f1f5bda3ea71" style="width:96.875%" class="column"><hr id="115c4f4e-6826-805b-a37e-c89c44332112"/><h3 id="115c4f4e-6826-8023-a094-e1a5ee0ee7c9" class=""><strong>Contact Information:</strong></h3><p id="115c4f4e-6826-8030-b2ce-fbe252e122ff" class="">Email: meryemkciftci@gmail.com</p><p id="115c4f4e-6826-808c-b9b1-cbf74fe396f5" class=""><a href="https://www.linkedin.com/in/meryack">LinkedIn: Meryack</a></p><p id="115c4f4e-6826-807e-83d7-d87246ed43ae" class="">GitHub: github.com/<a href="https://github.com/MeryemCiftciAly">MeryemCiftciAly</a></p><p id="115c4f4e-6826-800f-95dd-f3146e60757a" class="">
+</p><p id="115c4f4e-6826-809d-ae2a-cca4e2bce97a" class="">
+</p><p id="115c4f4e-6826-8059-bcbf-fdc6d2669f2b" class="">
+</p><p id="115c4f4e-6826-801f-9b27-f1488fee2ef2" class=""><strong>Other:</strong></p><ul id="115c4f4e-6826-807d-829b-fe7436fba44a" class="bulleted-list"><li style="list-style-type:disc"><a href="https://calendly.com/meryemkciftci">Schedule a Meeting</a></li></ul><ul id="115c4f4e-6826-8009-ba29-ebb09f03d709" class="bulleted-list"><li style="list-style-type:disc"><a href="https://docs.google.com/forms/d/e/1FAIpQLSeu9b5yhTAsPYNw7ri8wO1vmbrFLrJ120AA31ChqkBackIbiQ/viewform?pli=1">Send an Inquiry</a></li></ul><p id="115c4f4e-6826-8032-b8c0-e4a57fe1e28d" class="">
+</p><p id="115c4f4e-6826-800d-98fc-dd2331909f1f" class=""><strong>© 2024 Meryem Çiftçi. All rights reserved.</strong></p><p id="115c4f4e-6826-809c-9fc2-d2848104786c" class="">Built with Notion and GitHub Pages.</p></div><div id="115c4f4e-6826-80b0-8269-ff7f7a826f77" style="width:75%" class="column"><hr id="115c4f4e-6826-80a3-a3c3-d47f94e2ec91"/><p id="115c4f4e-6826-804e-aca2-f2195d06a1a8" class="">
+</p><p id="115c4f4e-6826-8030-8c1d-fdbaed337b75" class=""><strong>Quick Links:</strong></p><ul id="115c4f4e-6826-80f2-a039-cf2326199255" class="bulleted-list"><li style="list-style-type:disc"><a href="https://meryemciftcialy.github.io/analyst-journal/">Home</a></li></ul><ul id="115c4f4e-6826-80f3-b84b-fdf37c1631ae" class="bulleted-list"><li style="list-style-type:disc"><a href="https://meryemciftcialy.github.io/analyst-journal/AboutMe.html">About</a></li></ul><ul id="115c4f4e-6826-80e4-8252-f89d64ee6c1b" class="bulleted-list"><li style="list-style-type:disc"><a href="https://meryemciftcialy.github.io/analyst-journal/">Portfolio</a></li></ul><ul id="115c4f4e-6826-80d2-90c3-e108841c3d3b" class="bulleted-list"><li style="list-style-type:disc"><a href="https://meryemciftcialy.github.io/analyst-journal/">Data Visualization</a></li></ul><ul id="115c4f4e-6826-8095-84c0-d928a0b50f68" class="bulleted-list"><li style="list-style-type:disc"><a href="https://meryemciftcialy.github.io/analyst-journal/">Scenarios and Problem Solving</a></li></ul><p id="115c4f4e-6826-80ea-9b88-c82f1149d76d" class="">
+</p></div><div id="115c4f4e-6826-8006-9ba7-d517755388a5" style="width:75%" class="column"><hr id="115c4f4e-6826-8008-92f1-f0e516272a57"/><p id="115c4f4e-6826-80f2-aced-ed17ca044124" class="">
+</p><p id="115c4f4e-6826-80ee-af11-fcdb9bc7a530" class=""><strong>Tools and Technologies:</strong></p><ul id="115c4f4e-6826-8028-89ad-e2cb36995237" class="bulleted-list"><li style="list-style-type:disc"><strong><a href="https://meryemciftcialy.github.io/analyst-journal/">SQL</a></strong></li></ul><ul id="115c4f4e-6826-80b2-8997-ca5b2c59f94f" class="bulleted-list"><li style="list-style-type:disc"><strong><a href="https://meryemciftcialy.github.io/analyst-journal/">Tableau</a></strong></li></ul><ul id="115c4f4e-6826-801b-9776-dc450b80cc01" class="bulleted-list"><li style="list-style-type:disc"><strong><a href="https://meryemciftcialy.github.io/analyst-journal/">Google Sheets</a></strong></li></ul><ul id="115c4f4e-6826-8043-a817-e548fefdd077" class="bulleted-list"><li style="list-style-type:disc"><strong><a href="https://meryemciftcialy.github.io/analyst-journal/">R</a></strong></li></ul><ul id="115c4f4e-6826-80a2-86da-c91c5c6431e5" class="bulleted-list"><li style="list-style-type:disc"><strong><a href="https://meryemciftcialy.github.io/analyst-journal/">GitHub</a></strong></li></ul></div></div></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span>
