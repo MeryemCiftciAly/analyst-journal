@@ -266,12 +266,17 @@ ol > li {
 
 /* Indent toggle children */
 .toggle > li > details {
-    padding-left: 0; /* Remove left padding to avoid extra indentation */
+    padding-left: 10; /* Remove left padding to avoid extra indentation */
 }
 
 .toggle > li > details > summary {
-    margin-left: 0; /* Center the summary */
+    text-align: center; /* Center the text within the toggle */
+    font-weight: bold; /* Make the text bold */
+    font-size: 1.1em; /* Adjust the font size */
+    padding: 0.5em; /* Add some padding */
+    cursor: pointer; /* Change the cursor to indicate it’s clickable */
 }
+
 
 .selected-value {
 	display: inline-block;
