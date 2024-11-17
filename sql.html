@@ -1,0 +1,716 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>SQL</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-default_background {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-transparentGray { background-color: rgba(227, 226, 224, 0); }
+.select-value-color-translucentGray { background-color: rgba(0, 0, 0, 0.06); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="141c4f4e-6826-8027-a679-dec8044d9e47" class="page sans"><header><h1 class="page-title">SQL</h1><p class="page-description"></p></header><div class="page-body"><div id="141c4f4e-6826-8191-b338-eaa38bdff4d1" class="column-list"><div id="141c4f4e-6826-8122-8c1e-c9a28cd5ea34" style="width:18.75%" class="column"><h2 id="141c4f4e-6826-8145-b339-cda290ac8790" class="">External Links</h2><hr id="141c4f4e-6826-81cc-b622-dbca1725fb12"/><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="141c4f4e-6826-8093-aebd-f68048520c5c"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><p id="141c4f4e-6826-811e-bbad-ffb5d93d6b5e" class=""><mark class="highlight-default"><a href="https://www.notion.so&lt;a href=&quot;#&quot; target=&quot;_blank&quot;&gt;Visit External Site&lt;/a&gt;">Code on Data.com</a></mark></p></div></figure><figure class="block-color-orange_background callout" style="white-space:pre-wrap;display:flex" id="141c4f4e-6826-8006-96c2-c9eedea6e2a9"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><p id="4e1be576-2d2c-4c74-b982-4b717463d5ee" class=""><mark class="highlight-default"><a href="https://www.notion.so/Average-Development-of-Environment-Related-Tech-as-a-of-Total-Tech-Development-form-2000-to-2019--0498c2118be841bd9e44ea0e36733058?pvs=21">Code on Forge</a></mark></p></div></figure><p id="141c4f4e-6826-808f-936d-f072605d93aa" class="">
+</p><hr id="141c4f4e-6826-8164-95b7-de16c33f7f32"/><figure class="block-color-purple_background callout" style="white-space:pre-wrap;display:flex" id="141c4f4e-6826-8183-9d21-e944bb1fd9f4"><div style="font-size:1.5em"><span class="icon">📋</span></div><div style="width:100%">My skillset<hr id="141c4f4e-6826-8142-a2c2-f9b3b4bdc5e1"/><ul id="141c4f4e-6826-8193-8d99-fd332dd207d5" class="bulleted-list"><li style="list-style-type:disc">Data Cleaning and Preparation</li></ul><ul id="141c4f4e-6826-80b5-b8fb-e15b2ef30b3e" class="bulleted-list"><li style="list-style-type:disc">Data Wrangling</li></ul><ul id="141c4f4e-6826-800d-8bd9-db009936ff1f" class="bulleted-list"><li style="list-style-type:disc">Data Analysis</li></ul><ul id="141c4f4e-6826-808a-aa28-df8c18107e62" class="bulleted-list"><li style="list-style-type:disc">Pattern Recognition</li></ul><ul id="141c4f4e-6826-803b-9790-d5c55487be26" class="bulleted-list"><li style="list-style-type:disc">Query Optimization</li></ul><ul id="141c4f4e-6826-8056-bb59-f8f7a567a471" class="bulleted-list"><li style="list-style-type:disc">Joins and Data Relationships</li></ul><ul id="141c4f4e-6826-8015-ad2d-c04cb0eace63" class="bulleted-list"><li style="list-style-type:disc">Aggregation and Grouping</li></ul><ul id="141c4f4e-6826-80c6-852e-f6352cede658" class="bulleted-list"><li style="list-style-type:disc">Subqueries and Common Table Expressions (CTEs)</li></ul><ul id="141c4f4e-6826-8038-b7b8-d30b3801dae5" class="bulleted-list"><li style="list-style-type:disc">Window Functions</li></ul><ul id="141c4f4e-6826-8060-a070-d14590bd4a04" class="bulleted-list"><li style="list-style-type:disc">Data Visualization Preparation</li></ul><ul id="141c4f4e-6826-80ea-ba18-f19c0b246251" class="bulleted-list"><li style="list-style-type:disc">Data Validation and Quality Assurance</li></ul><ul id="141c4f4e-6826-80d1-9432-da01b2c5eb53" class="bulleted-list"><li style="list-style-type:disc">Stored Procedures and Functions</li></ul><ul id="141c4f4e-6826-80fa-9c32-c84c9ccca1d5" class="bulleted-list"><li style="list-style-type:disc">Database Design Understanding</li></ul><ul id="141c4f4e-6826-806b-afa1-f98b28a6ad8e" class="bulleted-list"><li style="list-style-type:disc">Extract, Transform and Load Practices</li></ul><p id="141c4f4e-6826-800d-a8ee-cbc349a9a834" class="">
+</p><p id="141c4f4e-6826-8137-83e2-fba080031253" class="">
+</p><p id="141c4f4e-6826-81e2-839a-f808e24a60a0" class="">
+</p><p id="141c4f4e-6826-816e-96b6-c44dd9629383" class="">
+</p><p id="141c4f4e-6826-81b5-be9f-cf0b9e690b79" class="">
+</p><p id="141c4f4e-6826-81e9-9a2a-d3764cd30287" class="">
+</p><p id="141c4f4e-6826-8137-b1bf-ce8c71b846c4" class="">
+</p><p id="141c4f4e-6826-8136-8322-e78f8300f9e3" class="">
+</p><p id="141c4f4e-6826-81a2-ab4f-c2857d6f6aad" class="">
+</p></div></figure><p id="141c4f4e-6826-81be-bfa6-eb9a7460534f" class="">
+</p><figure id="141c4f4e-6826-81b0-9001-f03d50051715" class="image"><a href="swapna.png"><img style="width:192px" src="swapna.png"/></a></figure><p id="141c4f4e-6826-8111-927c-d730e1be1e9f" class="">
+</p><h2 id="141c4f4e-6826-8112-9bf8-e594f0622e74" class="">Datasets</h2><hr id="141c4f4e-6826-81a7-ba65-e84383d06374"/><ul id="141c4f4e-6826-8113-be0d-d48bd2a3acc1" class="bulleted-list"><li style="list-style-type:disc">Project Datasets</li></ul><ul id="141c4f4e-6826-805a-b837-f59796f2d980" class="bulleted-list"><li style="list-style-type:disc">Practice Datasets</li></ul><p id="141c4f4e-6826-8160-a2b4-c3ffd4efddad" class="">
+</p><p id="141c4f4e-6826-8150-9ada-fea558509756" class="">
+</p><p id="141c4f4e-6826-81b3-8817-dd4b50c51b60" class="">
+</p></div><div id="141c4f4e-6826-81e6-ae4f-e00c0b3b46c7" style="width:81.25%" class="column"><h2 id="141c4f4e-6826-813b-822a-df31d2c5442c" class="">SQL Work</h2><hr id="141c4f4e-6826-81f8-ab0e-c8b9913b7b03"/><p id="141c4f4e-6826-807b-a264-ef7935a49081" class=""><mark class="highlight-default">This page serves as a comprehensive overview of my SQL journey, showcasing my learning, progress, and the work I have completed across various platforms, projects, and practice exercises. It is organized to provide a transparent view of how I have developed my SQL skills, from foundational concepts to real-world applications.</mark></p><hr id="141c4f4e-6826-81d0-b2c2-d46b1cb0635a"/><h2 id="141c4f4e-6826-814c-a21f-e6d837b0a7e3" class="">Categories</h2><hr id="141c4f4e-6826-812b-852a-caacff3bef27"/><div id="141c4f4e-6826-80fd-ae87-e950076c0f3b" class="column-list"><div id="141c4f4e-6826-8035-ab37-ffb699885126" style="width:87.5%" class="column"><p id="141c4f4e-6826-80bd-ad87-e929801e0531" class=""><strong>Practice Work</strong></p><ul id="141c4f4e-6826-8030-afb8-d2b9ef562a34" class="bulleted-list"><li style="list-style-type:disc">SQL Basics</li></ul><ul id="141c4f4e-6826-803c-ae96-c047bfdbda56" class="bulleted-list"><li style="list-style-type:disc">Data Cleaning</li></ul></div><div id="141c4f4e-6826-800a-b584-e7c341bd9fff" style="width:112.5%" class="column"><p id="141c4f4e-6826-80af-9fb3-d16032bf1c9f" class=""><strong>Projects</strong></p><ul id="141c4f4e-6826-80d9-a5ab-f68cde361925" class="bulleted-list"><li style="list-style-type:disc">Environmental Analytics Project: [Case Study + SQL Code]</li></ul><ul id="141c4f4e-6826-8003-9fe3-c5afb6519574" class="bulleted-list"><li style="list-style-type:disc">Marketing Dashboard Analysis: [Details + SQL Code]</li></ul></div></div><p id="141c4f4e-6826-80c6-9b22-eb9a9204c62f" class="">
+</p><p id="141c4f4e-6826-8075-911d-ffdb2b0ef314" class="">
+</p><div id="141c4f4e-6826-80e6-94ce-dc61106acba6" class="column-list"><div id="141c4f4e-6826-808e-9f15-f0be717911f0" style="width:93.75%" class="column"><p id="141c4f4e-6826-80cd-9475-fca79c0ce39d" class=""><strong>Intermediate and Advance Practice </strong></p><ul id="141c4f4e-6826-80fc-8176-d37e4421d330" class="bulleted-list"><li style="list-style-type:disc">SQL Advance Practices</li></ul><ul id="141c4f4e-6826-8085-bd98-c472a039d041" class="bulleted-list"><li style="list-style-type:disc">Advance Exercises</li></ul><ul id="141c4f4e-6826-8012-b5b9-f2145842c027" class="bulleted-list"><li style="list-style-type:disc">Intermediate Exercises</li></ul><p id="141c4f4e-6826-80e4-b271-d43e4ea43a8d" class=""><strong>Projects</strong></p><ul id="141c4f4e-6826-80b3-b892-d9e741d0a58c" class="bulleted-list"><li style="list-style-type:disc">TBA</li></ul><ul id="141c4f4e-6826-809b-8fbb-cc28b1042ec0" class="bulleted-list"><li style="list-style-type:disc">TBA</li></ul></div><div id="141c4f4e-6826-808a-830b-ee4b49fca4cd" style="width:106.25%" class="column"><p id="141c4f4e-6826-8014-9190-da6cc28f53be" class=""><strong>SQL Concepts</strong></p><ul id="141c4f4e-6826-808e-ad0f-cdb4d179bf0f" class="bulleted-list"><li style="list-style-type:disc"><strong>Joins and Relationships</strong>: Inner, outer, left, and cross joins.</li></ul><ul id="141c4f4e-6826-80de-9735-c75cb5099cb6" class="bulleted-list"><li style="list-style-type:disc"><strong>Aggregation and Grouping</strong>: GROUP BY, HAVING, COUNT, SUM, AVG, etc.</li></ul><ul id="141c4f4e-6826-809c-98b5-d2844be46d55" class="bulleted-list"><li style="list-style-type:disc"><strong>Subqueries and CTEs</strong>: Common Table Expressions and nested queries.</li></ul><ul id="141c4f4e-6826-8020-86f8-f8614d39cc8c" class="bulleted-list"><li style="list-style-type:disc"><strong>Window Functions</strong>: RANK(), DENSE_RANK(), ROW_NUMBER(), etc.</li></ul><ul id="141c4f4e-6826-804c-a598-e968a7317b04" class="bulleted-list"><li style="list-style-type:disc"><strong>Data Manipulation</strong>: INSERT, UPDATE, DELETE operations.</li></ul></div></div><p id="141c4f4e-6826-80f3-a0c1-f6c7353118de" class="">
+</p><p id="09608b9d-ee87-46ac-9064-b26fb3f9f1f7" class="">
+</p><h2 id="141c4f4e-6826-8018-84e9-f96779a92aea" class="">Code Snippets</h2><div id="141c4f4e-6826-8053-b803-c47de28f6c5a" class="column-list"><div id="141c4f4e-6826-80b7-b1a1-cdea129786da" style="width:116.66666666666666%" class="column"><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="141c4f4e-6826-8097-8dc4-dc4b1aa21cbd"><div style="width:100%"><p id="141c4f4e-6826-80c5-bbdb-c11f4542dad0" class=""><mark class="highlight-red">SELECT </mark><br/>    customer_id, <br/>    COUNT(order_id) AS Total_orders<br/><br/><mark class="highlight-red">FROM </mark><br/>    dataset.table_sales<br/><br/><mark class="highlight-red">WHERE </mark><br/>    EXTRACT(YEAR FROM purchase_date) = 2022<br/><br/><mark class="highlight-red">GROUP BY </mark><br/>    customer_id<br/><br/><mark class="highlight-red">HAVING </mark><br/>    COUNT(order_id) &gt; 3;<br/><br/></p></div></figure></div><div id="141c4f4e-6826-80a6-a10b-ef8f9878cc3c" style="width:4.166666666666666%" class="column"><p id="141c4f4e-6826-807c-970a-e6332a991f51" class="">
+</p></div><div id="141c4f4e-6826-800e-887c-c52835967226" style="width:104.16666666666666%" class="column"><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="141c4f4e-6826-8061-8b27-e848b487e5ac"><div style="width:100%"><p id="141c4f4e-6826-8031-8705-db2d17eb57a0" class=""><mark class="highlight-blue">SELECT</mark><mark class="highlight-default"> s.student_id </mark><mark class="highlight-blue">AS </mark><mark class="highlight-default">id, s.first_name, s.last_name, c.course_name, c.credits</mark><mark class="highlight-blue"><br/>FROM<br/></mark> students <mark class="highlight-blue">AS</mark> s<br/><br/><mark class="highlight-blue">inner JOIN</mark>  courses <mark class="highlight-blue">AS</mark> c<br/><br/><mark class="highlight-blue">ON </mark>s.course_code = c.course_code;</p></div></figure><p id="141c4f4e-6826-8049-b0a7-f14ded2ac57d" class="">A query to join two tables containing student information to get data.  <mark class="highlight-red"><strong><a href="https://www.notion.so&lt;a href=&quot;#&quot; target=&quot;_blank&quot;&gt;Visit External Site&lt;/a&gt;">View the scenario</a></strong></mark></p><p id="141c4f4e-6826-8036-bf90-e0156d2911f5" class="">
+</p></div></div><p id="141c4f4e-6826-8049-a894-faefb62e9552" class="">Here is a query used in a scenario to extract customer purchases from a sales table</p><p id="141c4f4e-6826-808e-9c62-dcc55ff4f7eb" class=""><mark class="highlight-red"><strong><a href="https://www.notion.so/Average-Development-of-Environment-Related-Tech-as-a-of-Total-Tech-Development-form-2000-to-2019--0498c2118be841bd9e44ea0e36733058?pvs=21">View the scenario</a></strong></mark></p><p id="141c4f4e-6826-8063-aa75-f2b93153fec4" class="">
+</p><div id="141c4f4e-6826-8065-ab06-cb8538715b8c" class="column-list"><div id="141c4f4e-6826-80aa-b63b-e78e41756cfd" style="width:100%" class="column"><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="141c4f4e-6826-8003-bd17-cccb8215fa65"><div style="width:100%"><p id="141c4f4e-6826-80bc-9bb6-ffceb0a261b3" class=""><mark class="highlight-orange">SELECT</mark><br/>year,<br/>SUM(midwest) AS midwest_houses_total,<br/>SUM(west + midwest + northeast + north) AS united_states_total,<br/>(SUM(midwest) / NULLIF(SUM(west + midwest + northeast + north), 0) * 100) AS midwest_housing_percentage<br/><br/><mark class="highlight-orange">FROM </mark>dataset.table_name<br/><br/><mark class="highlight-orange">WHERE </mark>year &gt;= 2010<br/><br/><mark class="highlight-orange">GROUP BY</mark> year;</p></div></figure></div><div id="141c4f4e-6826-8097-96b8-c612239d7cfa" style="width:100%" class="column"><p id="141c4f4e-6826-80a5-8648-e38d5f34948a" class="">
+</p></div></div><p id="141c4f4e-6826-80ca-b36f-de6ed05e5655" class="">Query to find the percentage of housing units in particular regions.</p><p id="141c4f4e-6826-80c4-9a4e-ecc819e6d0c4" class=""><mark class="highlight-red"><a href="https://www.notion.so/Average-Development-of-Environment-Related-Tech-as-a-of-Total-Tech-Development-form-2000-to-2019--0498c2118be841bd9e44ea0e36733058?pvs=21">View the scenario</a></mark></p><p id="141c4f4e-6826-805c-a139-ded22366b4c0" class="">
+</p><p id="141c4f4e-6826-8060-bd3d-d61b8b5d149a" class="">
+</p><figure id="141c4f4e-6826-8086-a388-c2cb10d91776" class="image"><a href="my_journey.png"><img style="width:1029.4375px" src="my_journey.png"/></a></figure></div></div><p id="141c4f4e-6826-813f-a06c-e8024df317bf" class="">
+</p><p id="141c4f4e-6826-81ae-aa67-f6120a077f09" class="">
+</p><p id="141c4f4e-6826-8148-89b6-fda6e314ce1d" class="">
+</p><p id="141c4f4e-6826-8142-a69f-cdefd2a8446a" class="">
+</p><p id="141c4f4e-6826-81d4-81af-c984da8748ab" class="">
+</p><p id="141c4f4e-6826-815f-895d-ca4fa8617a34" class="">
+</p><p id="141c4f4e-6826-816f-b7b4-d1774a21862b" class="">
+</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
