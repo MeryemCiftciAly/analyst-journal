@@ -1,0 +1,715 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Capstone Project</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 1400px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-default_background {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-transparentGray { background-color: rgba(227, 226, 224, 0); }
+.select-value-color-translucentGray { background-color: rgba(0, 0, 0, 0.06); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+</style></head><body><article id="115c4f4e-6826-80f8-bd5a-e7259061b921" class="page sans"><header><h1 class="page-title"><strong>The Story Behind The Data</strong></h1><p class="page-description"></p></header><div class="page-body"><p id="116c4f4e-6826-800b-a1cf-ec43360aede7" class="">
+</p><p id="115c4f4e-6826-807c-b4e8-d0a3baeae6ef" class="">
+</p><table id="115c4f4e-6826-8058-9402-fd1ab5140869" class="simple-table">
+    <tbody>
+        <tr id="115c4f4e-6826-800e-93cf-da2e3d324f2b">
+            <td id="KXCr" style="width:160px"><strong><a href="https://meryemciftcialy.github.io/analyst-journal/">Home</a></strong></td>
+            <td id="rt" style="width:147px"><strong><a href="https://meryemciftcialy.github.io/analyst-journal/AboutMe.html">About</a></strong></td>
+            <td id="n" style="width:167px"><strong><a href="https://meryemciftcialy.github.io/analyst-journal/">Portfolio</a></strong></td>
+            <td id="yZ" style="width:181px"><strong><a href="https://meryemciftcialy.github.io/analyst-journal/DataVisGall.html">Data Visualization</a></strong></td>
+            <td id="FuWk" style="width:144px"><strong><a href="https://meryemciftcialy.github.io/analyst-journal/">Contact</a></strong></td>
+            <td id="cOr" style="width:226px"><strong><a href="https://meryemciftcialy.github.io/analyst-journal/scenariomain.html">Scenarios / Problem-solving</a></strong></td>
+	   <td id="cOr" style="width:226px"><strong><a href="https://meryemciftcialy.github.io/analyst-journal/certificates.html">Certificates</a></strong></td>
+        </tr>
+    </tbody>
+</table><div id="115c4f4e-6826-800c-9f69-e8381c2b3a64" class="column-list"><div id="11ec4f4e-6826-809d-a28d-e0e6f17b896f" class="column-list"><div id="11ec4f4e-6826-8010-be83-c95763d14c3d" style="width:68.75%" class="column"><h1 id="11ec4f4e-6826-80a9-90da-efe069a2e05e" class=""><strong>Welcome to my data analysis Portfolio!</strong></h1><p id="11ec4f4e-6826-807c-a41c-e8fca6f05189" class=""><strong>I’m Kamara (Meryem) Çiftçi. I’m an emerging data analyst passionate about uncovering insights and the stories they tell. Explore my projects, where I tackle real-world challenges and present data in ways that inspire action.</strong></p></div><div id="11ec4f4e-6826-8041-8afa-e792766391a9" style="width:43.75%" class="column"><p id="11ec4f4e-6826-805e-a4cf-cb33be6d69db" class="">
+	<div class="notranslate" spellcheck="true" placeholder="Write something, or press 'space' for AI, '&thinsp;/&thinsp;' for commands…" data-content-editable-leaf="true" contenteditable="true" style="max-width: 100%; width: 100%; white-space: pre-wrap; word-break: break-word; caret-color: rgb(55, 53, 47); padding: 3px 2px;"><b>Thank you for your interest!</b> If some links are not active please note they will be soon. It takes some times to get course work done while at the same time building a portfolio to display samples of projects and learning progress. I appreciate your understanding as I balance both tasks.</div>
+
+
+	
+</style></head><body><article id="155c4f4e-6826-803a-90ec-ccd2a54c9e55" class="page sans"><header><h1 class="page-title">Capstone Project</h1><p class="page-description"></p></header><div class="page-body"><h2 id="157c4f4e-6826-8013-89ad-fa9dc2ea98bf" class="">Merit America / Coursera (Google Data Analytics Program 2025)</h2><p id="155c4f4e-6826-8098-8d87-e8abf4181d77" class="">
+</p><h3 id="155c4f4e-6826-80c9-a5d4-ea358f999fbf" class=""><strong>Capstone Project Description: Healthcare Insights and Predictive Analytics</strong></h3><p id="155c4f4e-6826-8092-a3b9-e4ade7dc82b2" class=""><em><strong>Anticipated Completion: January 2025</strong></em><em> |  Dataset from </em><em><a href="http://Data.gov">Data.gov</a></em><em>  [ TBA ]</em></p><hr id="155c4f4e-6826-806e-90d4-f285d8ee8b55"/><h3 id="155c4f4e-6826-807a-9178-e0fe596b6f6b" class=""><strong>Objective of the Capstone Project</strong></h3><p id="157c4f4e-6826-8079-8ca7-df6c0bc2c722" class="">The primary objective of this project is to analyze behavioral health data to uncover insights into the factors contributing to readmission rates among Medicaid recipients receiving mental health and substance use disorder services. Specifically, the project aims to:</p><ol type="1" id="157c4f4e-6826-806a-bba5-f5a1292d097b" class="numbered-list" start="1"><li><strong>Investigate Key Metrics</strong>: Explore the relationships between follow-up care, medication adherence, and continuity of care with mental health and substance use disorder readmissions.</li></ol><ol type="1" id="157c4f4e-6826-8097-8858-f5b26d3523cd" class="numbered-list" start="2"><li><strong>Identify Risk Factors</strong>: Use predictive analytics to identify populations at greater risk of critical care readmissions, enabling targeted interventions.</li></ol><ol type="1" id="157c4f4e-6826-80b5-a02b-cacb82d13166" class="numbered-list" start="3"><li><strong>Drive Data-Informed Solutions</strong>: Provide actionable insights to improve patient outcomes and reduce readmission rates through enhanced post-discharge strategies.</li></ol><hr id="155c4f4e-6826-80d5-b4d1-d6c60bb76f3f"/><h3 id="155c4f4e-6826-80d5-b72c-d8642f48b49c" class=""><strong>Why This Project?</strong></h3><p id="155c4f4e-6826-80dd-b2bf-ee7330fbf2a8" class="">Healthcare data offers a meaningful context for developing analytical skills while addressing a topic that impacts lives. Additionally, it represents my journey into Python, expanding my skillset and preparing for more advanced analytics.</p><hr id="155c4f4e-6826-8037-8533-dd9ab1910080"/><h3 id="155c4f4e-6826-8027-9a9f-d82279176da1" class=""><strong>Tools &amp; Methodology</strong></h3><p id="155c4f4e-6826-8068-bae4-ccfedcc2fea0" class="">Each section below outlines the tools used, the rationale for their use, and links to the respective GitHub repository sections for more detail:</p><hr id="155c4f4e-6826-8074-a0f7-f18726e89d24"/><h3 id="155c4f4e-6826-8052-b2d4-ec63ef5bfafb" class=""><strong>1. Excel</strong></h3><ul id="155c4f4e-6826-803b-9d67-c963e321e349" class="bulleted-list"><li style="list-style-type:disc"><strong>Reason for Use</strong>: Initial data exploration, summary calculations, and basic preprocessing to prepare the dataset for further analysis.</li></ul><ul id="155c4f4e-6826-806c-a8db-c7d7aa0beee9" class="bulleted-list"><li style="list-style-type:disc"><strong>Key Activities</strong>:<ul id="155c4f4e-6826-8057-a45f-e083290c515e" class="bulleted-list"><li style="list-style-type:circle">Data cleaning and inspection.</li></ul><ul id="155c4f4e-6826-8028-8532-cea272dfc2d1" class="bulleted-list"><li style="list-style-type:circle">Identifying missing values and preliminary statistics.</li></ul></li></ul><ul id="155c4f4e-6826-80cd-98c2-d8d504232513" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-blue"><strong><a href="https://www.notion.so/Capstone-Project-155c4f4e6826803a90ecccd2a54c9e55?pvs=21">View GitHub Repository - Excel Section</a></strong></mark></li></ul><hr id="155c4f4e-6826-80e9-af0e-f96ede2df3e7"/><h3 id="155c4f4e-6826-8054-aac8-f86e35a15111" class=""><strong>2. SQL (BigQuery)</strong></h3><ul id="155c4f4e-6826-803c-8124-ea88de149abf" class="bulleted-list"><li style="list-style-type:disc"><strong>Reason for Use</strong>: Efficient extraction and querying of large-scale healthcare data.</li></ul><ul id="155c4f4e-6826-80d7-ab8a-c9f7e6dacccb" class="bulleted-list"><li style="list-style-type:disc"><strong>Key Activities</strong>:<ul id="155c4f4e-6826-807a-8df5-e07d248f396f" class="bulleted-list"><li style="list-style-type:circle">Data filtering and aggregation.</li></ul><ul id="155c4f4e-6826-809f-ac7f-dc8e708d85f2" class="bulleted-list"><li style="list-style-type:circle">Building foundational queries for deeper analysis.</li></ul></li></ul><ul id="155c4f4e-6826-8006-9730-ccd1a35d29bc" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-blue"><strong><a href="https://www.notion.so/Capstone-Project-155c4f4e6826803a90ecccd2a54c9e55?pvs=21">View GitHub Repository - SQL Section</a></strong></mark></li></ul><hr id="155c4f4e-6826-8075-ab17-d8211cd58861"/><h3 id="155c4f4e-6826-80c9-9d23-f79e73946984" class=""><strong>3. R</strong></h3><ul id="155c4f4e-6826-80f3-9501-da00cd16e100" class="bulleted-list"><li style="list-style-type:disc"><strong>Reason for Use</strong>: Statistical analysis and visualizations to derive actionable insights.</li></ul><ul id="155c4f4e-6826-80c4-91a2-cafbd6fd6ae4" class="bulleted-list"><li style="list-style-type:disc"><strong>Key Activities</strong>:<ul id="155c4f4e-6826-80f6-a3c4-e8c780932e95" class="bulleted-list"><li style="list-style-type:circle">Hypothesis testing and correlation analysis.</li></ul><ul id="155c4f4e-6826-80a8-88f0-de5c9e79dd73" class="bulleted-list"><li style="list-style-type:circle">Creating visual representations of key trends.</li></ul></li></ul><ul id="155c4f4e-6826-8080-b33a-e262c82a2253" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-blue"><strong><a href="https://www.notion.so/Capstone-Project-155c4f4e6826803a90ecccd2a54c9e55?pvs=21">View GitHub Repository - R Section</a></strong></mark></li></ul><hr id="155c4f4e-6826-8088-8565-ff2b161d3744"/><h3 id="155c4f4e-6826-80ed-bd51-e17a953cc84b" class=""><strong>4. Tableau</strong></h3><ul id="155c4f4e-6826-80d7-ae42-e5fe82651828" class="bulleted-list"><li style="list-style-type:disc"><strong>Reason for Use</strong>: Interactive dashboard to visualize findings for stakeholders.</li></ul><ul id="155c4f4e-6826-807c-a0a3-d4e823be1fc2" class="bulleted-list"><li style="list-style-type:disc"><strong>Key Activities</strong>:<ul id="155c4f4e-6826-8003-81c7-f9fb8f6664d5" class="bulleted-list"><li style="list-style-type:circle">Creating charts and dashboards to display trends.</li></ul><ul id="155c4f4e-6826-8093-9cd8-df5db7005b4d" class="bulleted-list"><li style="list-style-type:circle">Enabling user exploration of the dataset.</li></ul></li></ul><ul id="155c4f4e-6826-803a-86dc-d0413e5868c6" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-blue"><strong><a href="https://www.notion.so/Capstone-Project-155c4f4e6826803a90ecccd2a54c9e55?pvs=21">View GitHub Repository - Tableau Section</a></strong></mark></li></ul><hr id="155c4f4e-6826-80a7-a6fc-e1de1e6b6b0a"/><h3 id="155c4f4e-6826-80a4-92ec-f22cf116b3e1" class=""><strong>5. Python</strong></h3><ul id="155c4f4e-6826-80d3-a21a-e2523c534939" class="bulleted-list"><li style="list-style-type:disc"><strong>Reason for Use</strong>: Build and test a basic predictive model as my introduction to machine learning.</li></ul><ul id="155c4f4e-6826-8070-9fda-f0f481a09281" class="bulleted-list"><li style="list-style-type:disc"><strong>Key Activities</strong>:<ul id="155c4f4e-6826-8065-a8a5-ca33d2717609" class="bulleted-list"><li style="list-style-type:circle">Data preprocessing for model readiness.</li></ul><ul id="155c4f4e-6826-80ca-a559-d1a4255187d8" class="bulleted-list"><li style="list-style-type:circle">Creating and evaluating simple predictive algorithms.</li></ul></li></ul><ul id="155c4f4e-6826-8045-a806-fae12bbbddec" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-blue"><strong><a href="https://www.notion.so/Capstone-Project-155c4f4e6826803a90ecccd2a54c9e55?pvs=21">View GitHub Repository - Python Section</a></strong></mark></li></ul></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span>
+
+</p></div></div><div id="115c4f4e-6826-8046-9fc7-ed2bbc904357" class="column-list"><div id="115c4f4e-6826-80e3-8cd7-d3cf535e2329" style="width:3.125%" class="column"><p id="115c4f4e-6826-80be-9536-d0be464c36ef" class="">
+</p></div><div id="115c4f4e-6826-8099-a2b7-f1f5bda3ea71" style="width:96.875%" class="column"><hr id="115c4f4e-6826-805b-a37e-c89c44332112"/><h3 id="115c4f4e-6826-8023-a094-e1a5ee0ee7c9" class=""><strong>Contact Information:</strong></h3><p id="115c4f4e-6826-8030-b2ce-fbe252e122ff" class="">Email: meryemkciftci@gmail.com</p><p id="115c4f4e-6826-808c-b9b1-cbf74fe396f5" class=""><a href="https://www.linkedin.com/in/meryack"target="_blank">LinkedIn: Meryack</a></p><p id="115c4f4e-6826-807e-83d7-d87246ed43ae" class="">
+</p><p id="115c4f4e-6826-809d-ae2a-cca4e2bce97a" class="">
+</p><p id="115c4f4e-6826-8059-bcbf-fdc6d2669f2b" class="">
+</p><p id="115c4f4e-6826-801f-9b27-f1488fee2ef2" class=""><strong>Other:</strong></p><ul id="115c4f4e-6826-807d-829b-fe7436fba44a" class="bulleted-list"><li style="list-style-type:disc"><a href="https://calendly.com/meryemkciftci"target="_blank">Schedule a Meeting</a></li></ul><ul id="115c4f4e-6826-8009-ba29-ebb09f03d709" class="bulleted-list"><li style="list-style-type:disc"><a href="https://docs.google.com/forms/d/e/1FAIpQLSeu9b5yhTAsPYNw7ri8wO1vmbrFLrJ120AA31ChqkBackIbiQ/viewform?pli=1"target="_blank">Send an Inquiry</a></li></ul><p id="115c4f4e-6826-8032-b8c0-e4a57fe1e28d" class="">
+</p><p id="115c4f4e-6826-800d-98fc-dd2331909f1f" class=""><strong>© 2024 Meryem Çiftçi. All rights reserved.</strong></p><p id="115c4f4e-6826-809c-9fc2-d2848104786c" class="">Built with Notion and GitHub Pages.</p></div><div id="115c4f4e-6826-80b0-8269-ff7f7a826f77" style="width:75%" class="column"><hr id="115c4f4e-6826-80a3-a3c3-d47f94e2ec91"/><p id="115c4f4e-6826-804e-aca2-f2195d06a1a8" class="">
+</p><p id="115c4f4e-6826-8030-8c1d-fdbaed337b75" class=""><strong>Quick Links:</strong></p><ul id="115c4f4e-6826-80f2-a039-cf2326199255" class="bulleted-list"><li style="list-style-type:disc"><a href="https://meryemciftcialy.github.io/analyst-journal/">Home</a></li></ul><ul id="115c4f4e-6826-80f3-b84b-fdf37c1631ae" class="bulleted-list"><li style="list-style-type:disc"><a href="https://meryemciftcialy.github.io/analyst-journal/AboutMe.html">About</a></li></ul><ul id="115c4f4e-6826-80e4-8252-f89d64ee6c1b" class="bulleted-list"><li style="list-style-type:disc"><a href="https://meryemciftcialy.github.io/analyst-journal/">Portfolio</a></li></ul><ul id="115c4f4e-6826-80d2-90c3-e108841c3d3b" class="bulleted-list"><li style="list-style-type:disc"><a href=" https://meryemciftcialy.github.io/analyst-journal/DataVisGall.html">Data Visualization</a></li></ul><ul id="115c4f4e-6826-8095-84c0-d928a0b50f68" class="bulleted-list"><li style="list-style-type:disc"><a href="https://meryemciftcialy.github.io/analyst-journal/">Scenarios and Problem Solving</a></li></ul><p id="115c4f4e-6826-80ea-9b88-c82f1149d76d" class="">
+<li style="list-style-type:disc"><a href="https://meryemciftcialy.github.io/analyst-journal/certificates.html">Certification</a></li></ul><p id="115c4f4e-6826-80ea-9b88-c82f1149d76d" class="">	
+</p></div><div id="115c4f4e-6826-8006-9ba7-d517755388a5" style="width:75%" class="column"><hr id="115c4f4e-6826-8008-92f1-f0e516272a57"/><p id="115c4f4e-6826-80f2-aced-ed17ca044124" class="">
+</p><p id="115c4f4e-6826-80ee-af11-fcdb9bc7a530" class=""><strong>Tools and Technologies:</strong></p><ul id="115c4f4e-6826-8028-89ad-e2cb36995237" class="bulleted-list"><li style="list-style-type:disc"><strong><a href="https://meryemciftcialy.github.io/analyst-journal/">SQL</a></strong></li></ul><ul id="115c4f4e-6826-80b2-8997-ca5b2c59f94f" class="bulleted-list"><li style="list-style-type:disc"><strong><a href="https://meryemciftcialy.github.io/analyst-journal/">Tableau</a></strong></li></ul><ul id="115c4f4e-6826-801b-9776-dc450b80cc01" class="bulleted-list"><li style="list-style-type:disc"><strong><a href="https://meryemciftcialy.github.io/analyst-journal/">Google Sheets</a></strong></li></ul><ul id="115c4f4e-6826-8043-a817-e548fefdd077" class="bulleted-list"><li style="list-style-type:disc"><strong><a href="https://meryemciftcialy.github.io/analyst-journal/">R</a></strong></li></ul><ul id="115c4f4e-6826-80a2-86da-c91c5c6431e5" class="bulleted-list"><li style="list-style-type:disc"><strong><a href="https://github.com/MeryemCiftciAly/Portfolio-Hub"target="_blank">GitHub Codes</a></strong></li></ul></div></div></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
