@@ -28,30 +28,7 @@ body {
       margin: 20px;
     }
 
-    .iframe-container {
-      margin-top: 20px;
-    }
-
-    iframe {
-      width: 90%; /* Adjust width for responsive layout */
-      max-width: 1300px; /* Limit for desktop layout */
-      height: 900px; /* Adjust as needed */
-      border: none;
-    }
-
-    .version-link {
-      display: inline-block;
-      margin: 10px;
-      padding: 10px 20px;
-      background-color: #007BFF;
-      color: #ffffff;
-      text-decoration: none;
-      border-radius: 5px;
-      transition: background-color 0.3s;
-    }
-
-    .version-link:hover {
-      background-color: #0056b3;
+   
     }
 	
 	/* Default styles for navigation links */
@@ -860,10 +837,13 @@ blockquote {
   <a href="#mobile" id="mobileLink" class="version-link">Mobile Version</a>
   <a href="#desktop" id="desktopLink" class="version-link">Desktop Version</a>
 
-  <div class="iframe-container">
     <iframe id="dashboardIframe" src="https://desktop-dashboard-url.com" title="Dashboard"></iframe>
-  </div>
 
+<iframe 
+    src="https://desktop-dashboard-url.com" 
+    title="Dashboard"
+    style="width: 90%; max-width: 1300px; height: 900px; border: none; margin: 20px auto; display: block;">
+</iframe>
   <script>
     const iframe = document.getElementById("dashboardIframe");
     const mobileLink = document.getElementById("mobileLink");
