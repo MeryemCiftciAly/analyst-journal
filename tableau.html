@@ -1,0 +1,706 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Tableau Portfolio</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 1300px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-default_background {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-transparentGray { background-color: rgba(227, 226, 224, 0); }
+.select-value-color-translucentGray { background-color: rgba(0, 0, 0, 0.06); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="15b08e45-560e-80a8-adc4-e67259cc35d7" class="page sans"><header><h1 class="page-title"><strong>The Story Behind The Data</strong></h1><p class="page-description"></p></header><div class="page-body"><h3 id="15b08e45-560e-80b6-9a2d-c1c4748518b2" class=""></h3><table id="15b08e45-560e-80e7-9880-c2f965690607" class="simple-table"><tbody><tr id="15b08e45-560e-8086-85ce-ebb1f57199ce"><td id="RDTd" class="" style="width:116px"><strong><a href="https://meryemciftcialy.github.io/analyst-journal/">Home</a></strong></td><td id="Bu^L" class="" style="width:106px"><strong><a href="https://meryemciftcialy.github.io/analyst-journal/AboutMe.html">About</a></strong></td><td id="^Dg&lt;" class=""><strong><a href="https://meryemciftcialy.github.io/analyst-journal/">Portfolio</a></strong></td><td id="xd_@" class="" style="width:153px"><strong><a href="https://meryemciftcialy.github.io/analyst-journal/DataVisGall.html">Data Visualization</a></strong></td><td id="\o^g" class="" style="width:231px"><strong><a href="https://meryemciftcialy.github.io/analyst-journal/scenariomain.html">Scenarios / Problem-solving</a></strong></td><td id="BnVw" class="" style="width:166px"><strong><a href="https://meryemciftcialy.github.io/analyst-journal/certificates.html">Certificates</a></strong></td></tr></tbody></table>
+
+
+<article id="17ec4f4e-6826-8005-b1e0-cab17f8eb906" class="page sans"><header><h1 class="page-title">Tableau Portfolio</h1><p class="page-description"></p></header><div class="page-body"><p id="17ec4f4e-6826-800e-ba75-d994794fe1a0" class="">
+</p><p id="17ec4f4e-6826-80e2-8467-f16723cb588b" class=""><strong>Welcome to my Tableau portfolio! </strong>Here, I showcase my journey in turning raw data into actionable insights through dynamic visualizations and dashboards. My work highlights my ability to analyze trends, uncover patterns, and present findings in a visually compelling and easy-to-understand format. E<strong>xplore my projects below to see how I leverage Tableau to make data come alive.</strong></p><p id="17ec4f4e-6826-8054-9a03-e4f6afc5a376" class="">
+</p><div id="17ec4f4e-6826-8083-991d-ca64253b954a" class="column-list"><div id="17ec4f4e-6826-80b0-b828-e95af60f9a8d" style="width:33.33333333333333%" class="column"><h2 id="17ec4f4e-6826-80ee-8a43-fd9eb8f942a9" class="">Dashboards</h2><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Aircraft Services and Traveler Reviews Dashboard</summary><div class="indented"><p id="17ec4f4e-6826-8035-b6fe-e8717ff86bdb" class="">
+</p><figure id="17ec4f4e-6826-80e8-84ad-f45546a170be" class="image"><a href="Tableau_Dashboard.png"><img style="width:1198px" src="Tableau_Dashboard.png"/></a></figure><ul id="17ec4f4e-6826-802e-99cc-caf659cafe31" class="bulleted-list"><li style="list-style-type:disc"><strong>Category</strong>: Travel and Aviation Analytics / Customer Experience Analysis</li></ul><ul id="17ec4f4e-6826-80cb-bb7d-fa46aea6ef8f" class="bulleted-list"><li style="list-style-type:disc"><strong>Objective</strong>: Analyze traveler reviews and service performance to uncover customer satisfaction and operational efficiency insights.</li></ul><ul id="17ec4f4e-6826-80f9-8e9b-c97df4e52ce5" class="bulleted-list"><li style="list-style-type:disc"><strong>Key Insights</strong>:<ul id="17ec4f4e-6826-803c-bd16-f9e65c7d1930" class="bulleted-list"><li style="list-style-type:circle">Top-rated services among passengers.</li></ul><ul id="17ec4f4e-6826-80e3-a54d-d16207fb3154" class="bulleted-list"><li style="list-style-type:circle">Common areas of improvement based on feedback.</li></ul><ul id="17ec4f4e-6826-80f0-9a27-d5655c580eb9" class="bulleted-list"><li style="list-style-type:circle">Patterns in reviews across different flight routes or airlines.</li></ul></li></ul><ul id="17ec4f4e-6826-8047-a842-d4ef4c50fa63" class="bulleted-list"><li style="list-style-type:disc"><strong>Interactive Link</strong>: [<mark class="highlight-blue"><strong><a href="https://public.tableau.com/app/profile/meryem.ciftci/viz/AircraftClassPassengerSatisfactionReview/Dashboard1">View Dashboard</a></strong></mark><mark class="highlight-default"><strong>]</strong></mark></li></ul><p id="17ec4f4e-6826-80c9-8745-c5be4cbbf126" class="">
+</p><hr id="17ec4f4e-6826-80eb-aab2-cf7c70a982be"/></div></details><p id="17ec4f4e-6826-8092-ac2c-f81d3b62d02f" class="">
+</p><figure id="17ec4f4e-6826-802d-95cb-ffc99e7f8a45" class="image"><a href="Tableau_Dashboard_-_Single_Viz.png"><img style="width:480px" src="Tableau_Dashboard_-_Single_Viz.png"/></a></figure><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="17ec4f4e-6826-8007-bf8e-e1ea15f6b0ef"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><p id="17ec4f4e-6826-806f-a3d5-e01f5705d983" class="">This visualization was not included in the dashboard. I replaced it with a visualization that told a more complete story of the relationship between the aircraft and the traveler’s reviews of the services they received.  The visual gives a breakdown of the “Yes” and “No” from passengers by region. The tooltip when you hover over the dots would have shown the rating and service received.</p></div></figure><h3 id="17ec4f4e-6826-809c-b398-d220d146d1ca" class=""><strong>Skills Demonstrated and Learned:</strong></h3><p id="17ec4f4e-6826-8075-86cb-fef66181b433" class="">
+</p><ol type="1" id="17ec4f4e-6826-80e7-b3de-d90c5e83b6e1" class="numbered-list" start="1"><li><strong>Data Preparation and Cleaning</strong>:<ul id="17ec4f4e-6826-80c2-bdf8-fccfbb5ff303" class="bulleted-list"><li style="list-style-type:disc">Identified issues with inconsistent data (e.g., calculated fields not working as expected) and refined formulas to ensure accuracy.</li></ul><ul id="17ec4f4e-6826-8049-9005-e32707e32d22" class="bulleted-list"><li style="list-style-type:disc">Resolved discrepancies in calculated fields for passenger recommendations and ensured the data correctly represented &quot;yes&quot; and &quot;no&quot; responses.</li></ul></li></ol><ol type="1" id="17ec4f4e-6826-805c-810d-c86cb670fa22" class="numbered-list" start="2"><li><strong>Problem Solving and Troubleshooting</strong>:<ul id="17ec4f4e-6826-805a-832f-d0b6cda05ea1" class="bulleted-list"><li style="list-style-type:disc">Diagnosed and resolved display issues (e.g., resizing KPI cards, addressing unexpected legends and filters, and tooltip inconsistencies).</li></ul><ul id="17ec4f4e-6826-8045-9bbd-ec7f76e23b04" class="bulleted-list"><li style="list-style-type:disc">Applied logic to create calculated fields, verify results, and iterate until achieving the desired visualization.</li></ul></li></ol><ol type="1" id="17ec4f4e-6826-80d2-89c3-d32a128dfdcf" class="numbered-list" start="3"><li><strong>Visualization Design</strong>:<ul id="17ec4f4e-6826-807b-b161-ec4094280cb6" class="bulleted-list"><li style="list-style-type:disc">Choose appropriate chart types to highlight trends (e.g., bar charts for recommendations, heat maps for class, and rating relationships).</li></ul><ul id="17ec4f4e-6826-809e-b778-d023809b6e7c" class="bulleted-list"><li style="list-style-type:disc">Emphasized aesthetics by selecting suitable color palettes and removing unnecessary clutter like legends to maintain a clean, professional design.</li></ul></li></ol><ol type="1" id="17ec4f4e-6826-80fc-939c-dc4c05d35951" class="numbered-list" start="4"><li><strong>Interactive Insights</strong>:<ul id="17ec4f4e-6826-8076-b975-f022ab99b366" class="bulleted-list"><li style="list-style-type:disc">Developed tooltips to provide layered information, such as averages and percentages, enhancing the depth of the dashboard.</li></ul><ul id="17ec4f4e-6826-80f2-8af8-c7f05b1cbf74" class="bulleted-list"><li style="list-style-type:disc">Created filters to enable dynamic exploration of data by users.</li></ul></li></ol><ol type="1" id="17ec4f4e-6826-801a-8770-f7bdfd4a3316" class="numbered-list" start="5"><li><strong>Storytelling with Data</strong>:<ul id="17ec4f4e-6826-8009-86ed-d8149da83760" class="bulleted-list"><li style="list-style-type:disc">Framed key insights about passenger satisfaction by region, aircraft class, and seat type, ensuring the data told a clear and engaging story.</li></ul><ul id="17ec4f4e-6826-80c8-817d-e182b4cba2b7" class="bulleted-list"><li style="list-style-type:disc">Highlighted actionable findings, such as how seat type or region correlated with passenger satisfaction.</li></ul></li></ol><ol type="1" id="17ec4f4e-6826-80b2-8c07-d128060757b5" class="numbered-list" start="6"><li><strong>Dashboard Development</strong>:<ul id="17ec4f4e-6826-80ac-bb97-c6cd8b76e758" class="bulleted-list"><li style="list-style-type:disc">Organized multiple visualizations into a cohesive dashboard.</li></ul><ul id="17ec4f4e-6826-80e6-bc97-fb8886eab57a" class="bulleted-list"><li style="list-style-type:disc">Balanced functional and aesthetic aspects to create a user-friendly interface.</li></ul></li></ol><ol type="1" id="17ec4f4e-6826-80d7-badf-e4ab425f363d" class="numbered-list" start="7"><li><strong>Technical Proficiency</strong>:<ul id="17ec4f4e-6826-8057-b1d8-e64101466bd0" class="bulleted-list"><li style="list-style-type:disc">Mastered core Tableau functionalities such as calculated fields, color customization, and integrating external elements (e.g., images).</li></ul><ul id="17ec4f4e-6826-807b-89ce-d6229ab3c393" class="bulleted-list"><li style="list-style-type:disc">Gained familiarity with using external resources (e.g., tutorial datasets) and adapting them for practical projects.<p id="17ec4f4e-6826-80b7-a3f2-fdec4f986728" class="">
+</p></li></ul><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">Insights and Takeaways</summary><div class="indented"><p id="17ec4f4e-6826-8075-90b0-cc7095a9c5b5" class="">In analyzing passenger satisfaction ratings for various aircraft types and travel classes, I uncovered meaningful trends in service quality:</p><ul id="17ec4f4e-6826-80c3-aa7a-ff16fd67957d" class="bulleted-list"><li style="list-style-type:disc"><strong>Key Observation</strong>: While premium seating options received higher ratings for comfort, food and beverage, and in-flight entertainment consistently scored lower. This suggests a stronger focus on passenger comfort over auxiliary services for certain aircraft types.</li></ul><ul id="17ec4f4e-6826-804e-a4bf-f6ceccdef2d5" class="bulleted-list"><li style="list-style-type:disc"><strong>Notable Trend</strong>: Economy class passengers rated food and beverage services more favorably, even though seating comfort scored lower. Ratings for specific services remained below average across all categories for some aircraft types, pointing to potential areas for improvement.</li></ul><ul id="17ec4f4e-6826-8054-9ae4-f400c201a47e" class="bulleted-list"><li style="list-style-type:disc"><strong>Proposed Hypothesis</strong>: Flight duration and route may influence these patterns. For shorter flights, airlines might prioritize passenger comfort over food and entertainment due to time constraints or cost considerations. Additionally, specific aircraft designs may not prioritize long-term comfort for shorter travel routes.</li></ul><p id="17ec4f4e-6826-8095-9df0-dd7277f20e31" class="">
+</p><h3 id="17ec4f4e-6826-801b-83aa-e59c46c4cfc4" class=""><strong>Possible Next Steps for Deeper Insights</strong>:</h3><p id="17ec4f4e-6826-8088-9d7f-e924602d573a" class="">Additional data on flight routes and durations could be analyzed to further explore this hypothesis. Comparing short-haul versus long-haul flights and their associated services could provide a more comprehensive understanding of the factors driving passenger satisfaction.</p><p id="17ec4f4e-6826-80c7-828b-d04128aa195d" class="">While I didn’t incorporate flight duration in this analysis, I’ve learned that analyzing these external factors could provide additional context and deepen the insights gained from this dataset.</p><p id="17ec4f4e-6826-8066-9312-ed191b69d41a" class="">This project has helped me hone my skills in identifying trends, drawing hypotheses from data, and recognizing areas for further exploration. I’m excited to continue developing my ability to extract meaningful insights and approach analysis from multiple angles.</p></div></details></li></ol></div><div id="17ec4f4e-6826-80d1-8dc2-fbce7025479b" style="width:33.33333333333333%" class="column"><h2 id="17ec4f4e-6826-8018-8e4a-f1b073259be3" class=""> Data Stories</h2><p id="17ec4f4e-6826-8090-83f7-d5cfe760f798" class="">
+</p></div><div id="17ec4f4e-6826-80b2-8a9d-fb335d84ca54" style="width:33.33333333333333%" class="column"><h2 id="17ec4f4e-6826-80ac-8451-ed6c3f012ee5" class="">Individual Visualizations</h2><p id="17ec4f4e-6826-806c-81eb-dc527d92ca9f" class="">
+</p></div></div><div id="116c4f4e-6826-807a-aa3c-e50d0f2e38ad" class="column-list"><div id="1909ec7d-027b-444d-8b0a-20ced2a471fd" style="width:100%" class="column"><hr id="b1392b36-e0cd-49f1-9cf7-57d41ef4321d"/><h3 id="3bb0db47-a080-4428-ab4a-7dcafb91ea0b" class=""><strong>Contact Information:</strong></h3><p id="dcf03ecf-8c8d-45af-bbdd-a50fbed338c3" class="">Email: meryemkciftci@gmail.com</p><p id="6664cf3c-a1f5-42b2-9946-177e9a4ba7e3" class=""><a href="https://www.linkedin.com/in/meryack">LinkedIn: Meryack</a></p><p id="40eba58e-2f4e-4000-a66b-3bee37c17762" class="">
+</p><p id="8a3274f3-b050-44bb-b10b-cebf95b69d2b" class="">
+
+</p><p id="85326d47-4712-4082-a5c2-07845c06630d" class=""><strong>Other:</strong></p><ul id="92047618-5112-4151-a25e-796acf19dfac" class="bulleted-list"><li style="list-style-type:disc"><a href="https://calendly.com/meryemkciftci">Schedule a Meeting</a></li></ul><ul id="458397ce-e210-4484-91c3-c04d9435679f" class="bulleted-list"><li style="list-style-type:disc"><a href="https://docs.google.com/forms/d/e/1FAIpQLSeu9b5yhTAsPYNw7ri8wO1vmbrFLrJ120AA31ChqkBackIbiQ/viewform?pli=1">Send an Inquiry</a></li></ul><p id="116c4f4e-6826-8087-907c-f83266252f41" class="">
+</p><p id="1dd5ae69-7113-4e9f-8678-bf8804385c08" class="">
+</p><p id="ae83fa66-f222-475c-a976-09272446e9c1" class=""><strong>© 2024 Meryem Çiftçi. All rights reserved.</strong></p><p id="2da95e7d-f928-49f9-a488-03b11031e4d4" class="">Built with Notion and GitHub Pages.</p></div><div id="9cf9dc35-9e98-45e8-824e-6f5f795b40d4" style="width:77.41935483870968%" class="column"><hr id="a7b5fe30-da3d-4a80-aa97-1a7c0c8e35be"/><p id="b166972b-03b9-4eb7-8b50-977caa6e9527" class="">
+</p><p id="cefbc4be-5e6f-4a1a-9d46-773c7bc79c42" class=""><strong>Quick Links:</strong></p><ul id="6cb86668-dfbe-447f-b0f3-1f394ec2da20" class="bulleted-list"><li style="list-style-type:disc"><a href="https://meryemciftcialy.github.io/analyst-journal/">Home</a></li></ul><ul id="b06a7c65-5321-4887-a4cd-c88544f23c1f" class="bulleted-list"><li style="list-style-type:disc"><a href="https://meryemciftcialy.github.io/analyst-journal/AboutMe.html">About</a></li></ul><ul id="9151001e-94ac-4e39-8faa-2e9a75cb7abf" class="bulleted-list"><li style="list-style-type:disc"><a href="https://meryemciftcialy.github.io/analyst-journal/">Portfolio</a></li></ul><ul id="cc44fd9a-7573-4830-8c06-fefde7e0d817" class="bulleted-list"><li style="list-style-type:disc"><a href="https://meryemciftcialy.github.io/analyst-journal/">Data Visualization</a></li></ul><ul id="7d38bebc-990e-4e3c-9afc-b4f813e51fa4" class="bulleted-list"><li style="list-style-type:disc"><a href="https://meryemciftcialy.github.io/analyst-journal/">Scenarios and Problem Solving</a></li></ul><p id="2f4b3270-8c34-420f-aa7b-7f9fd6c0513c" class="">
+</p></div><div id="7b733f7b-d887-4ec6-964b-28dff566ae97" style="width:77.41935483870968%" class="column"><hr id="3d5c2c81-41fe-40cb-8202-813888c35978"/><p id="35fe0b2a-30b0-40af-94cc-1cf68e39538e" class="">
+</p><p id="e55722a5-6639-4dc6-8cba-8df11cdbb05b" class=""><strong>Tools and Technologies:</strong></p><ul id="bc557f33-cf72-4f8a-8d22-783d96573922" class="bulleted-list"><li style="list-style-type:disc"><strong><a href="https://meryemciftcialy.github.io/analyst-journal/">SQL</a></strong></li></ul><ul id="f8563ac5-cf10-4383-949a-043ba4b6c34f" class="bulleted-list"><li style="list-style-type:disc"><strong><a href="https://meryemciftcialy.github.io/analyst-journal/">Tableau</a></strong></li></ul><ul id="8340e3e8-f218-4b0a-96ce-533f35f491f3" class="bulleted-list"><li style="list-style-type:disc"><strong><a href="https://meryemciftcialy.github.io/analyst-journal/">Google Sheets</a></strong></li></ul><ul id="3521fdb0-15b6-465c-9685-93f8577015e8" class="bulleted-list"><li style="list-style-type:disc"><strong><a href="https://meryemciftcialy.github.io/analyst-journal/rproject_fr.html">R</a></strong></li></ul><ul id="1fee132e-9bb1-4f5c-b304-f58c37bbf4c0" class="bulleted-list"><li style="list-style-type:disc"><strong><a href="https://github.com/MeryemCiftciAly/Portfolio-Hub">GitHub</a></strong></li></ul></div></div><p id="116c4f4e-6826-8092-a1bf-cd9edd32af1e" class="">
+</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
