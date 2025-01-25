@@ -1,0 +1,83 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financial Analysis Projects</title>
+    <link rel="stylesheet" href="styles.css"> <!-- External stylesheet -->
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header class="financial-analysis-header">
+        <h1>Explore My Financial Analysis Projects</h1>
+        <p>Here you can explore various financial analysis projects, each with unique insights and results.</p>
+    </header>
+
+    <!-- Main Content Section -->
+    <div class="main-content">
+        <div class="container">
+            <!-- Left Column: Project List -->
+            <div class="project-list">
+                <h2>Projects</h2>
+                <ul>
+                    <li><a href="#" class="project-link" onclick="showProjectDetails('project1')">Project 1: Profit Trends and Insights: Fictional Produce Suppliers</a></li>
+                    <li><a href="#" class="project-link" onclick="showProjectDetails('project2')">Project 2: Budget Allocation</a></li>
+                    <li><a href="#" class="project-link" onclick="showProjectDetails('project3')">Project 3: Cash Flow Analysis</a></li>
+                    <li><a href="#" class="project-link" onclick="showProjectDetails('project4')">Project 4: Profitability Analysis</a></li>
+                    <li><a href="#" class="project-link" onclick="showProjectDetails('project5')">Project 5: Investment Analysis</a></li>
+                </ul>
+            </div>
+
+            <!-- Right Column: Project Details -->
+            <div class="project-details" id="project-details">
+                <h2>Project Title</h2>
+                <p>Here, the project details will be displayed based on the selection from the left column.</p>
+                <div id="project-summary">
+                    <h3>Summary</h3>
+                    <p>Description of the project, goals, and key findings.</p>
+                </div>
+                <div id="project-visuals">
+                    <h3>Visuals</h3>
+                    <img src="example-chart.png" alt="Financial Chart">
+                    <p>Chart/Graph representing financial trends or analysis.</p>
+                </div>
+                <div id="project-outcome">
+                    <h3>Outcome</h3>
+                    <p>Summary of outcomes, recommendations, or conclusions drawn from the analysis.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+      <!-- Optional: JavaScript to update project details dynamically -->
+    <script>
+        function showProjectDetails(projectId) {
+            // Update the project details dynamically based on the clicked project
+            const projectDetails = {
+                project1: {
+                    title: "Financial Forecasting",
+                    summary: "A forecast of future financial performance based on historical data.",
+                    visuals: "forecasting-chart.png",
+                    outcome: "Prediction model created with a high accuracy rate."
+                },
+                project2: {
+                    title: "Budget Allocation",
+                    summary: "A detailed budget allocation for a mid-sized company.",
+                    visuals: "budget-allocation-chart.png",
+                    outcome: "Efficient allocation strategy leading to cost savings."
+                },
+                // Add more projects here...
+            };
+            
+            const project = projectDetails[projectId];
+            document.getElementById('project-details').innerHTML = `
+                <h2>${project.title}</h2>
+                <div id="project-summary"><h3>Summary</h3><p>${project.summary}</p></div>
+                <div id="project-visuals"><h3>Visuals</h3><img src="${project.visuals}" alt="${project.title}"></div>
+                <div id="project-outcome"><h3>Outcome</h3><p>${project.outcome}</p></div>
+            `;
+        }
+    </script>
+    
+</body>
+</html>
