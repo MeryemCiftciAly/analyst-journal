@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Hub</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .section {
+            margin-bottom: 40px;
+            padding: 20px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .section h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        .section ul {
+            list-style: none;
+            padding: 0;
+        }
+        .section ul li {
+            margin-bottom: 8px;
+        }
+        .github-link {
+            margin-top: 20px;
+        }
+        a {
+            color: #808080;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+           /* Navigation Bar Styling */
+    .nav-table {
+        width: 100%;
+        margin-bottom: 20px;
+        border-collapse: collapse;
+        text-align: center;
+    }
+    .nav-table td {
+        padding: 10px;
+        background-color: #808080;
+        color: #fff;
+        font-weight: bold;
+        border: 1px solid #ddd;
+    }
+    .nav-table a {
+        color: #fff;
+        text-decoration: none;
+        display: block;
+        width: 100%;
+    }
+    .nav-table a:hover {
+        background-color: #0056b3;
+    }
+    .nav-table td:hover {
+        background-color: #0056b3;
+    }
+    
+    .column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+	
+	img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+}
+
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 1360px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            
+            <header><h1 class="page-title"><strong>The Story Behind The Data</strong> </h1><p class="page-description"></p></header>
+            <div class="page-body"><p id="18708e45-560e-8152-bd62-c63acc97871e" class="">
+</p><div id="18708e45-560e-8126-8516-f6a5e2ead776" class="column-list"><div id="18708e45-560e-818a-ad5e-e8919f98d875" style="width:100%" class="column">
+    <header>
+   
+   
+    <table id="18708e45-560e-8130-ae65-e91d3cc09167" class="nav-table">
+        <tbody>
+            <tr id="18708e45-560e-818b-96ad-c04ad1942486">
+                <td id="RDTd"><a href="https://meryemciftcialy.github.io/analyst-journal/">Home</a></td>
+                <td id="Bu^L"><a href="https://meryemciftcialy.github.io/analyst-journal/AboutMe.html">About</a></td>
+                <td id="^Dg&lt;"><a href="https://meryemciftcialy.github.io/analyst-journal/">Presentation / Reports </a></td>
+                <td id="xd_@"><a href="https://meryemciftcialy.github.io/analyst-journal/DataVisGall.html">Data Visualization</a></td>
+                <td id="X|hB"><a href="#contact">Get In Touch</a></td>
+                <td id="\o^g"><a href="https://meryemciftcialy.github.io/analyst-journal/scenariomain.html">Scenarios / Problem-solving</a></td>
+                <td id="BnVw"><a href="https://meryemciftcialy.github.io/analyst-journal/certificates.html">Certificates</a></td>
+            </tr>
+        </tbody>
+    </table>
+</header>
+
+    
+    
+
+    
+    
+    <div id="18708e45-560e-8099-9575-d47a5ce08624" class="column-list"><div id="18708e45-560e-8019-958b-d87248770149" style="width:100%" class="column"><div id="18708e45-560e-80d2-a876-cf7053bf024d" class="column-list"><div id="18708e45-560e-8024-b1dc-d0c87a3921f1" style="width:31.25%" class="column"><h1 id="18708e45-560e-8113-9a25-f359763d4438" class="">SQL</h1><figure id="18708e45-560e-8022-b7bc-ee732845bf0f" class="image"><a href="Inspector.png"><img style="width:512px" src="Inspector.png"/></a></figure></div><div id="18708e45-560e-80cd-8045-c4530032f3aa" style="width:100%" class="column"><h2 id="18708e45-560e-8061-8369-debe2d6a332c" class=""></h2><p id="18708e45-560e-80b9-a3cb-e8466a4988ef" class="">
+</p></div></div></div><div id="18708e45-560e-80f1-ba2a-ff1962c11dd6" style="width:100%" class="column"><p id="18708e45-560e-80b3-a3f8-ff88189efbb6" class="">
+</p></div></div><p id="18708e45-560e-8181-9d68-e8422c6b3ef8" class="">
+</p></div><div id="18708e45-560e-8156-a455-eca0e36268f0" style="width:6.25000000000001%" class="column"><p id="18708e45-560e-8129-af6e-f2cbee8eec95" class="">
+</p></div></div>
+
+    <div class="container">
+        <header>
+            <h1>Portfolio Hub</h1>
+            <p>Welcome to my portfolio hub, where I showcase my data analytics projects and skills using SQL, R, Tableau, and Power BI. Explore the sections below to see the tools, techniques, and resources I've used in my journey.</p>
+        </header>
+
+        <!-- Projects Section -->
+        <div class="section">
+            <h2>Projects</h2>
+            <p>A collection of completed projects demonstrating my skills in data analysis, visualization, and reporting.</p>
+        </div>
+
+        <!-- Practice Skills Section -->
+        <div class="section">
+            <h2>Practice Skills</h2>
+            <p>Ongoing practice and challenges undertaken to sharpen my expertise in various tools and techniques.</p>
+        </div>
+
+        <!-- Visualization and Reporting Section -->
+        <div class="section">
+            <h2>Visualization and Reporting</h2>
+            <p>Examples of dashboards, reports, and visual storytelling created to convey insights effectively.</p>
+        </div>
+
+        <!-- Tools and Skills Summary Section -->
+        <div class="section">
+            <h2>Tools and Skills Summary</h2>
+            <ul>
+                <li>SQL: Intermediate querying, joins, window functions</li>
+                <li>R: Data wrangling, visualization, statistical analysis</li>
+                <li>Tableau: Interactive dashboards, data storytelling</li>
+                <li>Power BI: Data modeling, DAX functions</li>
+            </ul>
+        </div>
+
+        <!-- External Learning Platforms Section -->
+        <div class="section">
+            <h2>External Learning and Skills Platforms</h2>
+            <p>Platforms I use to learn, practice, and enhance my skills:</p>
+            <ul>
+                <li><a href="#" target="_blank">DataCamp</a></li>
+                <li><a href="#" target="_blank">Kaggle</a></li>
+                <li><a href="#" target="_blank">HackerRank</a></li>
+                <li><a href="#" target="_blank">Forge</a></li>
+            </ul>
+        </div>
+
+        <!-- GitHub Repository Section -->
+        <div class="section">
+            <h2><b></b>GitHub Repository</h2>
+            <p><a href="https://github.com/MeryemCiftciAly/Portfolio-Hub" target="_blank"><b>Portfolio Hub</b></a>: Central repository showcasing my projects, visualizations, and codebase.</p>
+        </div>
+</p><p id="18708e45-560e-81ec-85c9-cc53bd335271" class="">
+</p><p id="18708e45-560e-81a3-aeeb-d3fd9c3377e2" class="">
+        <!-- Footer -->
+        <footer>
+   
+    </p><figure id="18708e45-560e-808d-8f5d-ff25f00949aa" class="image"><a href="image.png"><img style="width:1152px" src="image.png"/></a></figure><div id="18708e45-560e-8129-bb92-ca92fe69fd49" class="column-list"><div id="18708e45-560e-81a6-9dfc-f0237090ce4a" style="width:100%" class="column"></div><div id="18708e45-560e-81d6-ac06-f40708ff0a34" style="width:100%" class="column"></div></div><p id="18708e45-560e-81a3-acb8-d07a10dc989f" class="">
+</p><p id="18708e45-560e-81ec-85c9-cc53bd335271" class="">
+</p><p id="18708e45-560e-81a3-aeeb-d3fd9c3377e2" class="">
+    </p><p id="18708e45-560e-81ec-85c9-cc53bd335271" class="">
+</p><p id="18708e45-560e-81a3-aeeb-d3fd9c3377e2" class="">
+</p><hr id="18708e45-560e-8139-b7f2-c48bf3a5ebe3"/><p id="18708e45-560e-8134-9b31-e7f267e5d2e9" class="">
+</p><div id="18708e45-560e-8192-a949-d1cdeeaec1f8" class="column-list"><div id="18708e45-560e-815c-8fd4-dbe56b7cb569" style="width:125%" class="column"><h3 id="18708e45-560e-814a-ab63-cb2cfa8fdc3f" class=""><strong>Contact Information:</strong></h3><p id="18708e45-560e-8187-9d22-f484ba8e2d40" class="">Email: meryemkciftci@gmail.com</p><p id="18708e45-560e-8176-b9ca-c462c533843f" class=""><a href="https://www.linkedin.com/in/meryack">LinkedIn: Meryack</a> </p><p id="18708e45-560e-810f-ae3f-e8cc0ab96075" class="">
+</p><p id="18708e45-560e-8104-a0e7-c716076e94aa" class=""><strong>Other: </strong></p><ul id="18708e45-560e-8186-9522-f7b311e12a61" class="bulleted-list"><li style="list-style-type:disc">Calendly  <strong><a href="https://calendly.com/meryemkciftci">Link</a></strong></li></ul><ul id="18708e45-560e-81f1-ae44-fa4a28c81276" class="bulleted-list"><li style="list-style-type:disc"><a href="https://docs.google.com/forms/d/e/1FAIpQLSeu9b5yhTAsPYNw7ri8wO1vmbrFLrJ120AA31ChqkBackIbiQ/viewform?pli=1">Send an Inquiry</a></li></ul><p id="18708e45-560e-8143-929b-d839ade7b546" class="">
+</p><p id="18708e45-560e-81cc-bcbb-f7892fbadaed" class=""><strong>© 2025 Meryem Çiftçi. All rights reserved</strong></p><p id="18708e45-560e-81f4-b99c-cfe72031ad30" class="">
+</p><p id="18708e45-560e-8183-a890-cf03d95170be" class="">Built with Notion and GitHub Pages.</p></div><div id="18708e45-560e-8146-94a1-d2e708ab3135" style="width:83.33333333333333%" class="column"><p id="18708e45-560e-810d-985c-d95461561827" class=""><strong>Quick Links</strong></p><ul id="18708e45-560e-8174-932a-e52cd542fe33" class="bulleted-list"><li style="list-style-type:disc"><a href="https://meryemciftcialy.github.io/analyst-journal/">Home</a></li></ul><ul id="18708e45-560e-819e-bd02-d8eabc6cbdd0" class="bulleted-list"><li style="list-style-type:disc"><a href="https://meryemciftcialy.github.io/analyst-journal/AboutMe.html">About</a></li></ul><ul id="18708e45-560e-8193-a9a3-c32a62eeb463" class="bulleted-list"><li style="list-style-type:disc"><a href="https://meryemciftcialy.github.io/analyst-journal/"></a>Presentations and Reports</li></ul><ul id="18708e45-560e-812c-adf8-d74a89a0c225" class="bulleted-list"><li style="list-style-type:disc"><a href="https://meryemciftcialy.github.io/analyst-journal/DataVisGall.html">Data Visualization</a></li></ul><ul id="18708e45-560e-81bc-a296-d215bb0e4dea" class="bulleted-list"><li style="list-style-type:disc"><a href="https://meryemciftcialy.github.io/analyst-journal/">Scenarios and Problem Solving</a></li></ul><ul id="18708e45-560e-8129-8c0c-eb6c421fbe4a" class="bulleted-list"><li style="list-style-type:disc"><a href="https://meryemciftcialy.github.io/analyst-journal/certificates.html">Certification</a></li></ul><ul id="18708e45-560e-8138-8e5c-c0f76068dd9c" class="bulleted-list"><li style="list-style-type:disc"><a href="https://www.notion.so/The-Story-Behind-The-Data-1-18708e45560e80fd8f53ecc6420c271a?pvs=21">Capstone Project</a></li></ul></div><div id="18708e45-560e-8132-a0f3-cd3cf06d1a81" style="width:79.16666666666669%" class="column"><p id="18708e45-560e-81d2-8d08-c28945179575" class="">Tools and Technologies</p><ul id="18708e45-560e-8133-949c-e5066dad01f3" class="bulleted-list"><li style="list-style-type:disc"><strong><a href="https://meryemciftcialy.github.io/analyst-journal/">SQL</a></strong></li></ul><ul id="18708e45-560e-8159-8334-dd48f9a6a66c" class="bulleted-list"><li style="list-style-type:disc"><strong><a href="https://meryemciftcialy.github.io/analyst-journal/">Tableau</a></strong></li></ul><ul id="18708e45-560e-8116-acde-ff3384756b1a" class="bulleted-list"><li style="list-style-type:disc"><strong><a href="https://meryemciftcialy.github.io/analyst-journal/">Excel /Google Sheets</a></strong></li></ul><ul id="18708e45-560e-81ec-a53f-d7f50bdf8e04" class="bulleted-list"><li style="list-style-type:disc"><strong><a href="https://meryemciftcialy.github.io/analyst-journal/">R</a></strong></li></ul><ul id="18708e45-560e-8191-86e0-c4e1dbbc4166" class="bulleted-list"><li style="list-style-type:disc"><a href="https://meryemciftcialy.github.io/analyst-journal/powerbimain.html">Power BI</a></li></ul><ul id="18708e45-560e-8178-8dae-cb95de778c41" class="bulleted-list"><li style="list-style-type:disc">Python</li></ul><ul id="18708e45-560e-81ef-aa2a-c41f7c4f8ec3" class="bulleted-list"><li style="list-style-type:disc">All Dashboards</li></ul><ul id="18708e45-560e-81cd-bb67-fd0237376d44" class="bulleted-list"><li style="list-style-type:disc"><strong><a href="https://github.com/MeryemCiftciAly/Portfolio-Hub">GitHub </a></strong></li></ul><p id="18708e45-560e-81be-b04e-e22a405fa397" class="">
+</p></div></div><p id="18708e45-560e-807f-bde7-eb30e22026d4" class=""></p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span>
+        </footer>
+    </div>
+</body>
+</html>
