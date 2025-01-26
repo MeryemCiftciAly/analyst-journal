@@ -1,6 +1,10 @@
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Insurance Company Scenario</title><style>
-/* cspell:disable-file */
-/* webkit printing magic: print all background colors */
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Industry Scenarios Showcase</title>
+    <style>
 html {
 	-webkit-print-color-adjust: exact;
 }
@@ -17,7 +21,7 @@ body {
 @media only screen {
 	body {
 		margin: 2em auto;
-		max-width: 1400px;
+		max-width: 1360px;
 		color: rgb(55, 53, 47);
 	}
 }
@@ -99,7 +103,11 @@ mark {
 .indented {
 	padding-left: 1.5em;
 }
-
+.scenario-text,
+.visualization {
+    white-space: normal;
+    word-wrap: break-word;
+}
 hr {
 	background: transparent;
 	display: block;
@@ -681,7 +689,22 @@ blockquote {
 	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
 }
 	
-</style></head><body><article id="115c4f4e-6826-80f8-bd5a-e7259061b921" class="page sans"><header><h1 class="page-title"><strong>The Story Behind The Data</strong></h1><p class="page-description"></p></header><div class="page-body"><p id="116c4f4e-6826-800b-a1cf-ec43360aede7" class="">
+</style>
+
+  <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const headers = document.querySelectorAll('.card-header');
+
+            headers.forEach(header => {
+                header.addEventListener('click', () => {
+                    const content = header.nextElementSibling;
+                    content.classList.toggle('active');
+                });
+            });
+        });
+    </script>
+
+</head><body><article id="115c4f4e-6826-80f8-bd5a-e7259061b921" class="page sans"><header><h1 class="page-title"><strong>The Story Behind The Data</strong></h1><p class="page-description"></p></header><div class="page-body"><p id="116c4f4e-6826-800b-a1cf-ec43360aede7" class="">
 </p><p id="115c4f4e-6826-807c-b4e8-d0a3baeae6ef" class="">
 </p><table id="115c4f4e-6826-8058-9402-fd1ab5140869" class="simple-table">
     <tbody>
@@ -695,7 +718,37 @@ blockquote {
 	   <td id="cOr" style="width:226px"><strong><a href="https://meryemciftcialy.github.io/analyst-journal/certificates.html">Certificates</a></strong></td>
         </tr>
     </tbody>
-</table><article id="148c4f4e-6826-8022-b118-fb50b139aa50" class="page sans"><header><p id="14ac4f4e-6826-80ca-8cff-fc36f72056f9" class=""><h1 class="page-title">Insurance Company Scenario</h1><p class="page-description"></p></header><div class="page-body"><p id="149c4f4e-6826-80bf-bff7-ef0e7ba5fda7" class="">
+</table>
+	
+<article id="148c4f4e-6826-8022-b118-fb50b139aa50" class="page sans"><header><p id="14ac4f4e-6826-80ca-8cff-fc36f72056f9" class=""><h1>Insurance Company Scenario</h1><p class="page-description"></p></header><div class="page-body"><p id="149c4f4e-6826-80bf-bff7-ef0e7ba5fda7" class=""><p>Explore various scenarios in different industries using Excel and SQL.</p>
+
+div class="container">
+        <!-- Claims Volume Analysis -->
+        <div class="card">
+            <div class="card-header">Claims Volume Analysis</div>
+            <div class="card-content">
+                <div class="scenario-text">
+                    <p>Question: How would you identify trends in claim volumes over time to assist in resource allocation? 
+Below is the SQL Query</p>
+                </div>
+                <div class="scenario-image">
+                    <img src="https://meryemciftcialy.github.io/analyst-journal/Insurance_campany_SQL.png" alt="Chart for Claims Volume Analysis" style="width: 100%; border-radius: 4px;">
+                </div>
+                <div class="visualization">
+                    <p>Visualization: Detailed bar chart showing claims over months.</p>
+                </div>
+                 <div class="scenario-text">
+                    <p style="white-space: normal; word-wrap: break-word;"> This is an example paragraph where the text will wrap properly if it overflows the container. Add long text here to see the effect. </p>
+
+	
+
+
+
+
+
+
+		
+		
 </p><h3 id="149c4f4e-6826-803c-9c2f-e544fcda5d4a" class="">This page highlights my analytical approach to solving real-world problems in the insurance industry, specifically within claims management. Using SQL and Excel, I demonstrate how data can drive decision-making and improve operational efficiency.</h3><p id="149c4f4e-6826-80b1-b4e0-e4aeba7740c5" class="">
 </p><p id="14ac4f4e-6826-80ca-8cff-fc36f72056f9" class="">
 <h1 class="page-title"></h1><p class="page-description"></p></header><div class="page-body"><p id="155c4f4e-6826-80a4-988f-f464349a02f9" class="">
