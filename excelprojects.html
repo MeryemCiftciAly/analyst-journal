@@ -1,0 +1,696 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Excel / Sheet Projects</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-default_background {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.highlight-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.block-color-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: undefined; }
+.select-value-color-pink { background-color: rgba(225, 136, 179, 0.27); }
+.select-value-color-purple { background-color: rgba(168, 129, 197, 0.27); }
+.select-value-color-green { background-color: rgba(123, 183, 129, 0.27); }
+.select-value-color-gray { background-color: rgba(84, 72, 49, 0.15); }
+.select-value-color-transparentGray { background-color: undefined; }
+.select-value-color-translucentGray { background-color: undefined; }
+.select-value-color-orange { background-color: rgba(224, 124, 57, 0.27); }
+.select-value-color-brown { background-color: rgba(210, 162, 141, 0.35); }
+.select-value-color-red { background-color: rgba(244, 171, 159, 0.4); }
+.select-value-color-yellow { background-color: rgba(236, 191, 66, 0.39); }
+.select-value-color-blue { background-color: rgba(93, 165, 206, 0.27); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="19708e45-560e-803e-b137-c56341962359" class="page sans"><header><h1 class="page-title">Excel / Sheet Projects</h1><p class="page-description"></p></header><div class="page-body"><p id="19708e45-560e-80f9-8819-f12bc5970230" class="">
+</p><div id="19708e45-560e-80ec-8b56-d68b051e6a52" class="column-list"><div id="19708e45-560e-80e2-8757-e0cc142483d0" style="width:62.500000000000014%" class="column"><h3 id="19708e45-560e-8094-88a8-f462e1870b5a" class="">Welcome to my Excel project portfolio section. Each project includes a brief overview, key skills applied, and a link to view the full workbook.</h3></div><div id="19708e45-560e-803b-a68d-ed7bf25b7039" style="width:4.166666666666666%" class="column"><p id="19708e45-560e-806a-a437-ef829ab4b632" class="">
+</p></div><div id="19708e45-560e-8044-b32d-ced0e7998292" style="width:33.333333333333336%" class="column"><p id="19708e45-560e-80dc-a143-f7f89223c8d8" class="">
+</p></div></div><p id="19708e45-560e-801b-ac81-c2833045f853" class="">
+</p><div id="19708e45-560e-80e5-bf74-f17863525d3b" class="column-list"><div id="19708e45-560e-807a-92d6-e3a4694736b0" style="width:37.5%" class="column"><figure id="19708e45-560e-806e-ab00-ef36e172f883" class="image"><a href="Untitled_design_(9).png"><img style="width:331.984375px" src="Untitled_design_(9).png"/></a></figure></div><div id="19708e45-560e-80b6-9871-de99c8e7bc7e" style="width:62.5%" class="column"><h2 id="19708e45-560e-803a-b693-d2d1748fbdc7" class=""><strong>Project List</strong></h2><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0"><strong>Claims Analysis: Detecting Anomalies in Insurance Claims</strong> </summary><div class="indented"><p id="19708e45-560e-806a-ac3a-d9812090cad6" class=""><strong>Summary:</strong> Used historical claims data (2022–2023) to identify <strong>unusually high or low</strong> claim amounts in 2024, flagging potential fraud cases.</p><p id="19708e45-560e-8045-a6a4-e467814f5b42" class=""><strong>Skills Used:</strong></p><p id="19708e45-560e-80f2-bb35-c544f1d8c13a" class="">✅ Data Validation – Ensured clean and reliable data.</p><p id="19708e45-560e-80e7-8688-c7a41afd7ca9" class="">✅ Conditional Formatting – Highlighted claims exceeding the average for quick identification.</p><p id="19708e45-560e-80d7-9814-e7bc1eee5ba4" class="">✅ VLOOKUP – Retrieved historical claim details for comparison.</p><p id="19708e45-560e-806b-bdf9-e952231da4db" class="">✅ Nested IF, AND, OR Formulas – Categorized flagged claims into actionable insights.</p><p id="19708e45-560e-8027-b844-fb0491214d75" class="">✅ Structured Data Organization – Used tables for clarity and efficiency.</p><p id="19708e45-560e-808f-a223-c8f148d56fa8" class=""><strong>Impact:</strong></p><p id="19708e45-560e-806c-96ac-cba6da4178a6" class="">📌 <strong>Fraud Prevention</strong> – Early anomaly detection prevents financial losses.</p><p id="19708e45-560e-8064-8586-c9bfbf427b48" class="">📌 <strong>Resource Allocation</strong> – Helps focus investigation efforts on high-risk claims.</p><p id="19708e45-560e-80f2-953d-ecb497fc086f" class="">📌 <strong>Pattern Identification</strong> – Informs policy adjustments and risk mitigation.</p><p id="19708e45-560e-8072-bb6e-d874b1c8bbdc" class="">📌 <strong>Improved Decision-Making</strong> – Provides actionable insights based on historical trends.</p><p id="19708e45-560e-80be-9237-c4e8682b4ed0" class="">🔗 <mark class="highlight-blue"><strong><a href="https://docs.google.com/spreadsheets/d/197Y7iZTc9lDYQhKmtV1awJWoyVcxlv6pyUmJz62rgxo/edit?usp=sharing">View Full Excel File</a></strong></mark><mark class="highlight-blue"><strong> </strong></mark></p><p id="19708e45-560e-806c-b91f-e2439a1b5a01" class="">
+</p></div></details><p id="19708e45-560e-80fb-8d2f-f4e3c8ce7791" class="">
+</p><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Produce Supplier Profit Analysis: 2018–2024</summary><div class="indented"><p id="19708e45-560e-8069-9054-e91ef13f074e" class=""><strong>Summary:</strong> Analyzed supplier financial operations over <strong>six years</strong> using key performance metrics such as <strong>Year-to-Date (YTD) profits, Year-over-Year (YoY) growth, and Market Share</strong>. The dataset was generated using the <strong>RANDBETWEEN() function</strong> for simulated insights.</p><p id="19708e45-560e-80c3-a33d-e149c764c5ff" class=""><strong>Skills Used:</strong></p><p id="19708e45-560e-8006-a498-c184e60d3dcb" class="">✅ <strong>Financial Metrics Calculation</strong> – Measured YTD and YoY performance.</p><p id="19708e45-560e-804c-a3ed-de2d9369fe43" class="">✅ <strong>Market Share Analysis</strong> – Assessed supplier contribution to total revenue.</p><p id="19708e45-560e-809c-b6d4-c63cd479be8b" class="">✅ <strong>Data Organization</strong> – Structured tables for efficiency.</p><p id="19708e45-560e-807d-a7df-f69e39cbffb3" class="">✅ <strong>Excel Formulas &amp; Functions</strong> – Applied RANDBETWEEN(), SUMIFS(), AVERAGEIF(), and others for calculations.</p><p id="19708e45-560e-801d-be2d-cf21aa60c8d3" class="">✅ <strong>Trend Analysis</strong> – Identified supplier growth trends over time.</p><p id="19708e45-560e-801c-85eb-c0163c259e1c" class=""><strong>Impact:</strong></p><p id="19708e45-560e-802a-894a-f2018b0beefd" class="">📌 <strong>Profitability Insights</strong> – Helped determine which suppliers showed the highest and lowest growth.</p><p id="19708e45-560e-809a-bf28-d81d5bdfb49f" class="">📌 <strong>Strategic Decision-Making</strong> – Showed which suppliers gained/lost market share over time.</p><p id="19708e45-560e-802c-b7e3-e7775f20f2ae" class="">📌 <strong>Performance Benchmarking</strong> – Compared supplier revenue trends across different years.</p><p id="19708e45-560e-80d0-a3e9-d2952cdca8a7" class="">🔗 <mark class="highlight-blue"><strong><a href="https://docs.google.com/spreadsheets/d/1FYsajCqWG_9Jm9sIvECZV4BDCJQQ9Y2r/edit?usp=sharing&amp;ouid=106926120966609396631&amp;rtpof=true&amp;sd=true">View Full Excel File</a></strong></mark><mark class="highlight-blue"> </mark></p></div></details><p id="19708e45-560e-80e5-84f1-cec34aec5678" class="">
+</p><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Produce Supplier Profit Analysis: 2018–2024</summary><div class="indented"><p id="19708e45-560e-8012-a536-d296a469877a" class="">This project analyzes <strong>lettuce growth stages</strong> using <strong>pivot tables, data normalization, and visualizations</strong> to determine the optimal environmental conditions for each phase—<strong>seedling, germination, and mature stages</strong>. The dataset included multiple variables such as <strong>TDS (ppm), humidity (%), temperature, and pH levels</strong>.</p><h3 id="19708e45-560e-8038-886e-e3408fec9238" class=""><strong>Skills Used</strong></h3><p id="19708e45-560e-804d-aac7-e023f2aa1934" class="">✅ <strong>Pivot Tables &amp; Grouping</strong> – Analyzed growth phases efficiently.</p><p id="19708e45-560e-804c-ae33-e5bde9f53596" class="">✅ <strong>Data Normalization</strong> – Standardized varying measurement units (ppm vs. %).</p><p id="19708e45-560e-8085-ba93-e7c2ddc778c4" class="">✅ <strong>Comparative Analysis</strong> – Assessed how each environmental factor impacted growth.</p><p id="19708e45-560e-8096-be5b-c4f37b6df577" class="">✅ <strong>Data Visualization</strong> – Created charts to reveal optimal growth conditions.</p><h3 id="19708e45-560e-80bb-8bc2-c101a566e228" class=""><strong>Impact</strong></h3><p id="19708e45-560e-80d9-9ade-d179017e4404" class="">📌 <strong>Optimal Growth Conditions Identified</strong> – Determined which environmental factors contributed most to healthy growth.</p><p id="19708e45-560e-80d5-a250-e382f2f73859" class="">📌 <strong>Stage-Wise Analysis</strong> – Compared environmental influences across different phases.</p><p id="19708e45-560e-8005-9c81-cb37f9536a5d" class="">📌 <strong>Improved Data Representation</strong> – Ensured accurate visualization through normalization.</p><p id="19708e45-560e-80c7-93f6-d47b3a4de92d" class="">🔗 <mark class="highlight-blue"><strong><a href="https://docs.google.com/spreadsheets/d/1jku697TXZnn3lgGSBcLbYXeaYQsfNmq2/edit?usp=sharing&amp;ouid=106926120966609396631&amp;rtpof=true&amp;sd=true">View Full Excel File</a></strong></mark><mark class="highlight-blue"> </mark></p><p id="19708e45-560e-807b-ba52-c5d3dbe278dc" class="">
+</p><p id="19708e45-560e-80e0-8bbd-c38b065f8a5d" class=""> </p><p id="19708e45-560e-80e4-b386-d738ba10f204" class="">
+</p><p id="19708e45-560e-80cc-98d6-d06fec76388a" class="">
+</p></div></details><p id="19708e45-560e-8025-b29a-e3b5aaef5037" class="">
+</p></div></div><p id="19708e45-560e-80a3-956a-c8cbd29888fe" class="">
+</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
