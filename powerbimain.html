@@ -1,4 +1,4 @@
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title> Power BI Visualizations</title><style>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Power BI</title><style>
 /* cspell:disable-file */
 /* webkit printing magic: print all background colors */
 html {
@@ -17,11 +17,43 @@ body {
 @media only screen {
 	body {
 		margin: 2em auto;
-		max-width: 1300px;
+		max-width: 1380px;
 		color: rgb(55, 53, 47);
 	}
 }
-
+/* Navigation Bar Styling */
+    .nav-table {
+        width: 100%;
+        margin-bottom: 10px;
+        border-collapse: collapse;
+        text-align: center;
+    }
+    .nav-table td {
+        padding: 10px;
+        background-color: #a6b9c5;
+        color: #fff;
+        font-weight: bold;
+        border: 1px solid #ddd;
+    }
+    .nav-table a {
+        color: #fff;
+        text-decoration: none;
+        display: block;
+        width: 100%;
+    }
+    .nav-table a:hover {
+        background-color: #223e5e;
+    }
+    .nav-table td:hover {
+        background-color: #223e5e;
+    }
+	.text-block-2 {
+  max-width: 1100px; /* Adjust as needed */
+  margin: 0 auto; /* Centers the block */
+  text-align: center; /* Ensures the text is left-aligned */
+  padding: 20px;
+  line-height: 1.6;
+}
 body {
 	line-height: 1.5;
 	white-space: pre-wrap;
@@ -551,7 +583,7 @@ blockquote {
 	color: rgba(55, 53, 47, 1);
 }
 .highlight-gray_background {
-	background: rgba(241, 241, 239, 1);
+	background: rgba(248, 248, 247, 1);
 }
 .highlight-brown_background {
 	background: rgba(244, 238, 238, 1);
@@ -569,10 +601,10 @@ blockquote {
 	background: rgba(231, 243, 248, 1);
 }
 .highlight-purple_background {
-	background: rgba(244, 240, 247, 0.8);
+	background: rgba(248, 243, 252, 1);
 }
 .highlight-pink_background {
-	background: rgba(249, 238, 243, 0.8);
+	background: rgba(252, 241, 246, 1);
 }
 .highlight-red_background {
 	background: rgba(253, 235, 236, 1);
@@ -622,7 +654,7 @@ blockquote {
 	fill: inherit;
 }
 .block-color-gray_background {
-	background: rgba(241, 241, 239, 1);
+	background: rgba(248, 248, 247, 1);
 }
 .block-color-brown_background {
 	background: rgba(244, 238, 238, 1);
@@ -640,26 +672,26 @@ blockquote {
 	background: rgba(231, 243, 248, 1);
 }
 .block-color-purple_background {
-	background: rgba(244, 240, 247, 0.8);
+	background: rgba(248, 243, 252, 1);
 }
 .block-color-pink_background {
-	background: rgba(249, 238, 243, 0.8);
+	background: rgba(252, 241, 246, 1);
 }
 .block-color-red_background {
 	background: rgba(253, 235, 236, 1);
 }
-.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
-.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
-.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
-.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
-.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
-.select-value-color-transparentGray { background-color: rgba(227, 226, 224, 0); }
-.select-value-color-translucentGray { background-color: rgba(0, 0, 0, 0.06); }
-.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
-.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
-.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
-.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
-.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-uiBlue { background-color: undefined; }
+.select-value-color-pink { background-color: rgba(225, 136, 179, 0.27); }
+.select-value-color-purple { background-color: rgba(168, 129, 197, 0.27); }
+.select-value-color-green { background-color: rgba(123, 183, 129, 0.27); }
+.select-value-color-gray { background-color: rgba(84, 72, 49, 0.15); }
+.select-value-color-transparentGray { background-color: undefined; }
+.select-value-color-translucentGray { background-color: undefined; }
+.select-value-color-orange { background-color: rgba(224, 124, 57, 0.27); }
+.select-value-color-brown { background-color: rgba(210, 162, 141, 0.35); }
+.select-value-color-red { background-color: rgba(244, 171, 159, 0.4); }
+.select-value-color-yellow { background-color: rgba(236, 191, 66, 0.39); }
+.select-value-color-blue { background-color: rgba(93, 165, 206, 0.27); }
 .select-value-color-pageGlass { background-color: undefined; }
 .select-value-color-washGlass { background-color: undefined; }
 
@@ -681,46 +713,42 @@ blockquote {
 	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
 }
 	
-</style></head><body><article id="15e08e45-560e-808d-9f72-ce5df69363b6" class="page sans"><header><h1 class="page-title"><strong>The Story Behind The Data</strong></h1><p class="page-description"></p></header><header><div class="page-body"><h3 id="15b08e45-560e-80b6-9a2d-c1c4748518b2" class=""></h3><table id="15b08e45-560e-80e7-9880-c2f965690607" class="simple-table"><tbody><tr id="15b08e45-560e-8086-85ce-ebb1f57199ce"><td id="RDTd" class="" style="width:116px"><strong><a href="https://meryemciftcialy.github.io/analyst-journal/">Home</a></strong></td><td id="Bu^L" class="" style="width:106px"><strong><a href="https://meryemciftcialy.github.io/analyst-journal/AboutMe.html">About</a></strong></td><td id="^Dg&lt;" class=""><strong><a href="https://meryemciftcialy.github.io/analyst-journal/">Presentations / Reports </a></strong></td><td id="xd_@" class="" style="width:153px"><strong><a href="https://meryemciftcialy.github.io/analyst-journal/DataVisGall.html">Data Visualization</a></strong></td><td id="\o^g" class="" style="width:231px"><strong><a href="https://meryemciftcialy.github.io/analyst-journal/scenariomain.html">Scenarios / Problem-solving</a></strong></td><td id="BnVw" class="" style="width:166px"><strong><a href="https://meryemciftcialy.github.io/analyst-journal/certificates.html">Certificates</a></strong></td></tr></tbody></table></div>
-	</p><p id="15e08e45-560e-8057-8694-fde24baa8abe" class="">
-	</p><p id="15e08e45-560e-8057-8694-fde24baa8abe" class="">
-	
-	<h1 class="page-title"> Power BI Visualizations</h1><p class="page-description"></p></header><div class="page-body"><p id="15e08e45-560e-80a7-8c05-e0f0af552c12" class="">
-</p><figure id="15e08e45-560e-8066-8574-fdbcf103758a" class="image"><a href="Power_BI-removebg-preview.png"><img style="width:248px" src="Power_BI-removebg-preview.png"/></a></figure><p id="15e08e45-560e-8017-b4f3-d7196d7f7d0f" class="">
-</p><h3 id="15e08e45-560e-8085-887b-f7d0682c67d0" class=""><mark class="highlight-gray">Explore a collection of data visualizations and dashboards created using Power BI. Each project showcases my ability to analyze and present data insights in clear, actionable formats. Click on any dashboard to learn more about the analysis, methodology, and insights behind the visuals.</mark></h3><p id="15e08e45-560e-807d-a8dd-c0ee108324a2" class="">
-</p><div id="15e08e45-560e-805c-90dd-d89dfd834474" class="column-list"><div id="feb79bc2-0789-4e4c-8543-5268f69c701f" style="width:93.75%" class="column"><figure id="d81aba8a-1d3d-427f-b3d2-0aa2187ef617" class="image"><a href="#"><img style="width:624px" src="Untitled_design_(2).png"/></a></figure><h1 id="15e08e45-560e-8047-aee1-e1b9300e4f4e" class="">Lettuce Growth Analysis Dashboard</h1><p id="15e08e45-560e-803b-b9ca-cf73bddb4d8f" class="">This project looks at the best conditions for growing lettuce by examining important factors such as temperature, TDS, moisture, and pH. I was particularly interested in how TDS affects lettuce growth compared to other factors. Check out the dashboard for a visual breakdown of these findings!</p><p id="15e08e45-560e-8088-8df1-f23c2c0ee3b7" class=""><mark class="highlight-blue"><strong><a href="https://meryemciftcialy.github.io/analyst-journal/lettucedashboard.html">Read more &gt;</a></strong></mark></p><p id="15e08e45-560e-807d-a880-c05a02055226" class="">
-</p><p id="15e08e45-560e-8057-8694-fde24baa8abe" class="">
-</p><p id="15e08e45-560e-80ad-abe2-e3a3b64db29c" class="">
-</p><p id="15e08e45-560e-801b-972b-c1757a9b3c22" class="">
-</p><p id="15e08e45-560e-80cb-a1e0-c7653cd4046a" class="">
-</p><p id="15e08e45-560e-8080-b1f6-d45c2fecc756" class="">
-</p></div><div id="7fe18f18-a0cc-4165-9fff-590c7d87f933" style="width:106.25%" class="column"><figure id="dd10c002-093c-4d50-9729-b9fb6a4d334c" class="image"><a href="#"><img style="width:768px" src="exercisepbi.jpg"/></a></figure><h1 id="15e08e45-560e-8029-a20c-fdf0fe2ba81b" class="">Exercise Goal Tracker: Heart Rate and Energy Analysis</h1><p id="18608e45-560e-80d1-8ec2-ef26977b4d3f" class=""><br/>This visual highlights the relationship between <br/><strong>energy levels</strong>, <strong>heart rate</strong>, and <strong>workout habits</strong>, providing a snapshot of fitness performance over time. <mark class="highlight-blue"><strong><a href="#">Read more &gt; </a></strong></mark><br/><br/><br/></p><p id="18608e45-560e-8019-a99d-c6e1b31ea5a4" class="">
-</p></div></div><div id="15e08e45-560e-80d3-90b0-cfa8f69e7147" class="column-list"><div id="78111554-14f6-4419-8b99-b77009bbdcd6" style="width:100%" class="column"><figure id="320c5ff0-914c-4210-868d-2af412b6b78d" class="image"><a href="Untitled_design.png"><img style="width:696.984375px" src="Untitled_design.png"/></a></figure><h1 id="15e08e45-560e-80bf-ac77-e92ddca1ac79" class="">Coming Soon</h1><figure id="15e08e45-560e-80ac-8b7e-f8a9de60a255" class="image"><a href="Power_BI-removebg-preview%201.png"><img style="width:248px" src="Power_BI-removebg-preview%201.png"/></a></figure><p id="15e08e45-560e-80ca-a113-ea458341e88c" class="">
-</p><p id="15e08e45-560e-80bc-b233-f89881e5c2d6" class="">
-</p><p id="15e08e45-560e-80ea-bda6-c26de5dc4929" class="">
-</p><p id="15e08e45-560e-8068-8301-cea0e3bac80a" class="">
-</p></div><div id="412f4184-9117-49c3-89e9-d4ab0ee84b4e" style="width:100%" class="column"><figure id="66928bf3-893f-46f6-8cb3-cf7f83b2dd7f" class="image"><a href="Untitled_design%201.png"><img style="width:696.984375px" src="Untitled_design%201.png"/></a></figure><h1 id="15e08e45-560e-8080-8aa6-e9e99a9693dc" class="">Coming Soon</h1><figure id="15e08e45-560e-8086-95c8-f4ceb4f3abc2" class="image"><a href="Power_BI-removebg-preview%202.png"><img style="width:248px" src="Power_BI-removebg-preview%202.png"/></a></figure></div></div><div id="15e08e45-560e-8040-aebe-d4f35ed08ead" class="column-list"><div id="15e08e45-560e-80af-a4f8-f7f95c9f074c" style="width:100%" class="column"><figure id="15e08e45-560e-80f3-81f8-ef6024cae2f6" class="image"><a href="Untitled_design%202.png"><img style="width:696.984375px" src="Untitled_design%202.png"/></a></figure><h1 id="15e08e45-560e-80d2-894c-c56dc2870680" class="">Coming Soon</h1><figure id="15e08e45-560e-80d0-b04b-cf5499eb07e3" class="image"><a href="Power_BI-removebg-preview%203.png"><img style="width:248px" src="Power_BI-removebg-preview%203.png"/></a></figure><p id="15e08e45-560e-8006-bd7d-f76b8f2dccd2" class="">
-</p><p id="15e08e45-560e-806f-b82d-f6064ff41b29" class="">
-</p><p id="15e08e45-560e-8089-a4f5-eaf977f54500" class="">
-</p><p id="15e08e45-560e-8027-910d-cc2033ef0301" class="">
-</p><p id="15e08e45-560e-8006-b75a-de656b72700f" class="">
-</p><p id="15e08e45-560e-8093-9dab-dae7901831ca" class="">
-</p><p id="15e08e45-560e-8000-b753-e6013fb26da2" class="">
-</p><p id="15e08e45-560e-8087-9676-c005ef50eeb7" class="">
-</p></div><div id="15e08e45-560e-806d-8b3f-ce029770036a" style="width:100%" class="column"><figure id="15e08e45-560e-80bc-9bb4-e6be5a0b5e13" class="image"><a href="Untitled_design%203.png"><img style="width:696.984375px" src="Untitled_design%203.png"/></a></figure><h1 id="15e08e45-560e-80c3-a5e5-c4bb1477da27" class="">Coming Soon</h1><figure id="15e08e45-560e-80ee-9dca-e0287e00eefc" class="image"><a href="Power_BI-removebg-preview%204.png"><img style="width:248px" src="Power_BI-removebg-preview%204.png"/></a></figure><p id="15e08e45-560e-8092-ba3b-f7ffabd80c83" class="">
-</p><p id="15e08e45-560e-80f3-840b-ca5b9d42af41" class="">
-</p><p id="15e08e45-560e-805a-8cf2-f026a774e0bd" class="">
-</p><p id="15e08e45-560e-805a-81a1-f54a74e5ae87" class="">
-</p><p id="15e08e45-560e-8053-a320-ca0944a47c75" class="">
-</p></div></div><p id="15e08e45-560e-8020-8f61-db5488a9d41e" class="">
-</p></div></article><span class="sans" style="font-size:14px;padding-top:2em">
-	</p></div></div><div id="116c4f4e-6826-807a-aa3c-e50d0f2e38ad" class="column-list"><div id="1909ec7d-027b-444d-8b0a-20ced2a471fd" style="width:100%" class="column"><hr id="b1392b36-e0cd-49f1-9cf7-57d41ef4321d"/><h3 id="3bb0db47-a080-4428-ab4a-7dcafb91ea0b" class=""><strong>Contact Information:</strong></h3><p id="dcf03ecf-8c8d-45af-bbdd-a50fbed338c3" class="">Email: meryemkciftci@gmail.com</p><p id="6664cf3c-a1f5-42b2-9946-177e9a4ba7e3" class=""><a href="https://www.linkedin.com/in/meryack">LinkedIn: Meryack</a></p><p id="40eba58e-2f4e-4000-a66b-3bee37c17762" class="">
+</style></head><body><article id="19808e45-560e-80f7-b878-dac7de7a8b4d" class="page sans"><header>
+	  <h1 class="page-title"><strong>The Story Behind The Data</strong></h1><p class="page-description"></p></header><div class="page-body"><h3 id="15b08e45-560e-80b6-9a2d-c1c4748518b2" class=""></h3> <table id="18708e45-560e-8130-ae65-e91d3cc09167" class="nav-table">
+        <tbody>
+            <tr id="18708e45-560e-818b-96ad-c04ad1942486">
+                <td id="RDTd"><a href="https://meryemciftcialy.github.io/analyst-journal/">Home</a></td>
+                <td id="Bu^L"><a href="https://meryemciftcialy.github.io/analyst-journal/AboutMe.html">About</a></td>
+                <td id="^Dg&lt;"><a href="https://meryemciftcialy.github.io/analyst-journal/">Presentation / Reports </a></td>
+                <td id="xd_@"><a href="https://meryemciftcialy.github.io/analyst-journal/DataVisGall.html">Data Visualization</a></td>
+                <td id="X|hB"><a href="#contact">Get In Touch</a></td>
+                <td id="BnVw"><a href="https://meryemciftcialy.github.io/analyst-journal/certificates.html">Certificates</a></td>
+            </tr>
+        </tbody>
+    </table>
+<p id="15e08e45-560e-8015-b4af-c98c55e3fa6d" class="">
+<h1 class="page-title">Power BI</h1><p class="page-description"></p></header><div class="page-body"><p id="19808e45-560e-8007-9a31-eff1f3d33341" class="">
+</p><p id="19808e45-560e-8002-a3ff-cd373bd6a7b8" class="">
+</p><p id="19808e45-560e-80f5-8bf4-d5b87a074c2c" class=""><strong>Welcome to My Power BI Portfolio Page!</strong></p><p id="19808e45-560e-8035-b571-c24a25bb4450" class="">Here, you&#x27;ll find a showcase of my data analysis work, featuring interactive dashboards and insightful static reports. Explore the thumbnails below to dive into each project and discover the stories behind the data. Enjoy your journey through my analytical world!</p><p id="19808e45-560e-803c-bd12-dba0c4f61cf0" class="">
+</p><p id="19808e45-560e-8090-9400-e759a5828753" class="">
+</p><div id="19808e45-560e-8055-a882-f991e4ffb4b1" class="column-list"><div id="19808e45-560e-8004-8055-e634da0cf58c" style="width:25%" class="column"><p id="19808e45-560e-80db-934d-d55b1297a1cd" class="">
+</p></div><div id="19808e45-560e-8080-96ce-f7c58814e234" style="width:12.5%" class="column"><p id="19808e45-560e-800f-a11b-f1fd9727a834" class="">
+</p></div><div id="19808e45-560e-8020-a374-f7777056d069" style="width:37.5%" class="column"><figure id="19808e45-560e-8083-b511-f148eee7e3d6" class="image"><a href="powerbi_1.png"><img style="width:240px" src="powerbi_1.png"/></a></figure></div><div id="19808e45-560e-80fb-a877-f700a401ea49" style="width:25%" class="column"><p id="19808e45-560e-800e-8389-e2b27c1102b4" class="">
+</p></div></div><p id="19808e45-560e-8062-8f2b-c5c86da6b1a5" class="">
+</p><p id="19808e45-560e-805e-b4a6-f04301e628a6" class="">
+</p><figure id="19808e45-560e-80f9-b2e0-d00657eb8ce9" class="image"><a href="Static_Report_(1).png"><img style="width:100%" src="Static_Report_(1).png"/></a></figure><p id="19808e45-560e-80cb-a10f-ce10fafd91d2" class="">
+</p><div id="19808e45-560e-80f7-95d1-e02fddc6a1ed" class="column-list"><div id="19808e45-560e-8018-a071-f86b052ea42c" style="width:41.666666666666664%" class="column"><figure id="19808e45-560e-80a2-993f-f3a3773551da" class="image"><a href="PBI_static.png"><img style="width:384px" src="PBI_static.png"/></a></figure></div><div id="19808e45-560e-80d7-8b23-fec093bef0b8" style="width:37.5%" class="column"><p id="19808e45-560e-8069-a579-c945a4fbc32e" class="">
+</p></div><div id="19808e45-560e-802d-8e08-e282fbccff0e" style="width:20.833333333333336%" class="column"><p id="19808e45-560e-8020-8f47-eb1d7ac0b2de" class="">
+</p></div></div><p id="19808e45-560e-804c-b7ad-c0e1d99a1cca" class="">
+<footer>
+</p></div></div><div id="116c4f4e-6826-807a-aa3c-e50d0f2e38ad" class="column-list"><div id="1909ec7d-027b-444d-8b0a-20ced2a471fd" style="width:100%" class="column"><hr id="b1392b36-e0cd-49f1-9cf7-57d41ef4321d"/><h3 id="3bb0db47-a080-4428-ab4a-7dcafb91ea0b" class=""><strong>Contact Information:</strong></h3><p id="dcf03ecf-8c8d-45af-bbdd-a50fbed338c3" class="">Email: meryemkciftci@gmail.com</p><p id="6664cf3c-a1f5-42b2-9946-177e9a4ba7e3" class=""><a href="https://www.linkedin.com/in/meryack">LinkedIn: Meryack</a></p><p id="40eba58e-2f4e-4000-a66b-3bee37c17762" class="">
 </p><p id="8a3274f3-b050-44bb-b10b-cebf95b69d2b" class="">
 
 </p><p id="85326d47-4712-4082-a5c2-07845c06630d" class=""><strong>Other:</strong></p><ul id="92047618-5112-4151-a25e-796acf19dfac" class="bulleted-list"><li style="list-style-type:disc"><a href="https://calendly.com/meryemkciftci">Schedule a Meeting</a></li></ul><ul id="458397ce-e210-4484-91c3-c04d9435679f" class="bulleted-list"><li style="list-style-type:disc"><a href="https://docs.google.com/forms/d/e/1FAIpQLSeu9b5yhTAsPYNw7ri8wO1vmbrFLrJ120AA31ChqkBackIbiQ/viewform?pli=1">Send an Inquiry</a></li></ul><p id="116c4f4e-6826-8087-907c-f83266252f41" class="">
 </p><p id="1dd5ae69-7113-4e9f-8678-bf8804385c08" class="">
-</p><p id="ae83fa66-f222-475c-a976-09272446e9c1" class=""><strong>© 2024 Meryem Çiftçi. All rights reserved.</strong></p><p id="2da95e7d-f928-49f9-a488-03b11031e4d4" class="">Built with Notion and GitHub Pages.</p></div><div id="9cf9dc35-9e98-45e8-824e-6f5f795b40d4" style="width:77.41935483870968%" class="column"><hr id="a7b5fe30-da3d-4a80-aa97-1a7c0c8e35be"/><p id="b166972b-03b9-4eb7-8b50-977caa6e9527" class="">
-</p><p id="cefbc4be-5e6f-4a1a-9d46-773c7bc79c42" class=""><strong>Quick Links:</strong></p><ul id="6cb86668-dfbe-447f-b0f3-1f394ec2da20" class="bulleted-list"><li style="list-style-type:disc"><a href="https://meryemciftcialy.github.io/analyst-journal/">Home</a></li></ul><ul id="b06a7c65-5321-4887-a4cd-c88544f23c1f" class="bulleted-list"><li style="list-style-type:disc"><a href="https://meryemciftcialy.github.io/analyst-journal/AboutMe.html">About</a></li></ul><ul id="9151001e-94ac-4e39-8faa-2e9a75cb7abf" class="bulleted-list"><li style="list-style-type:disc"><a href="https://meryemciftcialy.github.io/analyst-journal/">Portfolio</a></li></ul><ul id="cc44fd9a-7573-4830-8c06-fefde7e0d817" class="bulleted-list"><li style="list-style-type:disc"><a href="https://meryemciftcialy.github.io/analyst-journal/">Data Visualization</a></li></ul><ul id="7d38bebc-990e-4e3c-9afc-b4f813e51fa4" class="bulleted-list"><li style="list-style-type:disc"><a href="https://meryemciftcialy.github.io/analyst-journal/">Scenarios and Problem Solving</a></li></ul><p id="2f4b3270-8c34-420f-aa7b-7f9fd6c0513c" class="">
+</p><p id="ae83fa66-f222-475c-a976-09272446e9c1" class=""><strong>© 2025 Meryem Çiftçi. All rights reserved.</strong></p><p id="2da95e7d-f928-49f9-a488-03b11031e4d4" class="">Built with Notion and GitHub Pages.</p></div><div id="9cf9dc35-9e98-45e8-824e-6f5f795b40d4" style="width:77.41935483870968%" class="column"><hr id="a7b5fe30-da3d-4a80-aa97-1a7c0c8e35be"/><p id="b166972b-03b9-4eb7-8b50-977caa6e9527" class="">
+</p><p id="cefbc4be-5e6f-4a1a-9d46-773c7bc79c42" class=""><strong>Quick Links:</strong></p><ul id="6cb86668-dfbe-447f-b0f3-1f394ec2da20" class="bulleted-list"><li style="list-style-type:disc"><a href="https://meryemciftcialy.github.io/analyst-journal/">Home</a></li></ul><ul id="b06a7c65-5321-4887-a4cd-c88544f23c1f" class="bulleted-list"><li style="list-style-type:disc"><a href="https://meryemciftcialy.github.io/analyst-journal/AboutMe.html">About</a></li></ul><ul id="9151001e-94ac-4e39-8faa-2e9a75cb7abf" class="bulleted-list"><li style="list-style-type:disc"><a href="https://meryemciftcialy.github.io/analyst-journal/">Presentation and Reports</a></li></ul><ul id="cc44fd9a-7573-4830-8c06-fefde7e0d817" class="bulleted-list"><li style="list-style-type:disc"><a href="https://meryemciftcialy.github.io/analyst-journal/">Data Visualization</a></li></ul><p id="2f4b3270-8c34-420f-aa7b-7f9fd6c0513c" class="">
 </p></div><div id="7b733f7b-d887-4ec6-964b-28dff566ae97" style="width:77.41935483870968%" class="column"><hr id="3d5c2c81-41fe-40cb-8202-813888c35978"/><p id="35fe0b2a-30b0-40af-94cc-1cf68e39538e" class="">
-</p><p id="e55722a5-6639-4dc6-8cba-8df11cdbb05b" class=""><strong>Tools and Technologies:</strong></p><ul id="bc557f33-cf72-4f8a-8d22-783d96573922" class="bulleted-list"><li style="list-style-type:disc"><strong><a href="https://meryemciftcialy.github.io/analyst-journal/">SQL</a></strong></li></ul><ul id="f8563ac5-cf10-4383-949a-043ba4b6c34f" class="bulleted-list"><li style="list-style-type:disc"><strong><a href="https://meryemciftcialy.github.io/analyst-journal/tableau.html">Tableau</a></strong></li></ul><ul id="8340e3e8-f218-4b0a-96ce-533f35f491f3" class="bulleted-list"><li style="list-style-type:disc"><strong><a href="https://meryemciftcialy.github.io/analyst-journal/">Google Sheets</a></strong></li></ul><ul id="3521fdb0-15b6-465c-9685-93f8577015e8" class="bulleted-list"><li style="list-style-type:disc"><strong><a href="https://meryemciftcialy.github.io/analyst-journal/rproject_fr.html">R</a></strong></li></ul><ul id="1fee132e-9bb1-4f5c-b304-f58c37bbf4c0" class="bulleted-list"><li style="list-style-type:disc"><strong><a href="https://github.com/MeryemCiftciAly/Portfolio-Hub">GitHub</a></strong></li></ul></div></div><p id="116c4f4e-6826-8092-a1bf-cd9edd32af1e" class="">
-</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
+</p><p id="e55722a5-6639-4dc6-8cba-8df11cdbb05b" class=""><strong>Tools and Technologies:</strong></p><ul id="f8563ac5-cf10-4383-949a-043ba4b6c34f" class="bulleted-list"><li style="list-style-type:disc"><strong><a href="https://meryemciftcialy.github.io/analyst-journal/tableau.html">Tableau</a></strong></li></ul><ul id="8340e3e8-f218-4b0a-96ce-533f35f491f3" class="bulleted-list"><li style="list-style-type:disc"><strong><a href=https://meryemciftcialy.github.io/analyst-journal/sheets.html>Excel/Google Sheets</a></strong></li></ul><ul id="3521fdb0-15b6-465c-9685-93f8577015e8" class="bulleted-list"><li style="list-style-type:disc"><strong><a href=https://meryemciftcialy.github.io/analyst-journal/rmain.html>R</a></strong></li></ul><ul id="1fee132e-9bb1-4f5c-b304-f58c37bbf4c0" class="bulleted-list"><li style="list-style-type:disc"><strong><a href="https://meryemciftcialy.github.io/analyst-journal/sqlmain.html">SQL</a></strong></li></ul><p id="116c4f4e-6826-8092-a1bf-cd9edd32af1e" class="">
+<ul id="1fee132e-9bb1-4f5c-b304-f58c37bbf4c0" class="bulleted-list"><li style="list-style-type:disc"><strong><a href="https://github.com/MeryemCiftciAly/Portfolio-Hub">GitHub</a></strong></li></ul></div></div><p id="116c4f4e-6826-8092-a1bf-cd9edd32af1e" class=""></div>
+</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></footer></body></html>
