@@ -6,64 +6,68 @@
     <title>Contact Me</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            text-align: center;
-            background-color: #f9f9f9;
-        }
-        h1 {
-            font-size: 3rem;
-            margin: 50px 0;
-        }
-	    .column-list {
-	display: flex;
-	justify-content: space-between;
+       body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background-color: #f9f9f9;
 }
 
-.column {
-	padding: 0 1em;
+.container {
+    max-width: 1380px;
+    margin: 0 auto;
+    padding: 20px;
 }
 
-.column:first-child {
-	padding-left: 0;
+h1 {
+    font-size: 3rem;
+    margin: 50px 0;
 }
 
-.column:last-child {
-	padding-right: 0;
+.contact-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
 }
-        .contact-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 20px;
-        }
-        .contact-button {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 250px;
-            max-width: 100%;
-            padding: 15px;
-            font-size: 1.2rem;
-            text-decoration: none;
-            color: white;
-            background-color: #333;
-            border-radius: 5px;
-            transition: background 0.3s;
-        }
-        .contact-button:hover {
-            background-color: #C8A2C8;
-        }
-        .contact-button i {
-            margin-right: 10px;
-        }
-        #map {
-            width: 100%;
-            height: 400px;
-            margin-top: 50px;
-        }
+
+.contact-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 250px;
+    max-width: 100%;
+    padding: 15px;
+    font-size: 1.2rem;
+    text-decoration: none;
+    color: white;
+    background-color: #333;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.contact-button:hover {
+    background-color: #C8A2C8;
+}
+
+.contact-button i {
+    margin-right: 10px;
+}
+
+/* Map should stretch full width */
+.map-container {
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#map {
+    width: 100%;
+    height: 400px;
+}
+
       /* Navigation Bar Styling */
     .nav-table {
         width: 100%;
@@ -123,7 +127,7 @@
     <div id="map"></div>
     
     <footer>
-       </p></div></div><div id="116c4f4e-6826-807a-aa3c-e50d0f2e38ad" class="column-list"><div id="1909ec7d-027b-444d-8b0a-20ced2a471fd" style="width:100%" class="column"><hr id="b1392b36-e0cd-49f1-9cf7-57d41ef4321d"/><h3 id="3bb0db47-a080-4428-ab4a-7dcafb91ea0b" class=""><strong>Contact Information:</strong></h3><p id="dcf03ecf-8c8d-45af-bbdd-a50fbed338c3" class="">Email: meryemkciftci@gmail.com</p><p id="6664cf3c-a1f5-42b2-9946-177e9a4ba7e3" class=""><a href="https://www.linkedin.com/in/meryack">LinkedIn: Meryack</a></p><p id="40eba58e-2f4e-4000-a66b-3bee37c17762" class="">
+</p></div></div><div id="116c4f4e-6826-807a-aa3c-e50d0f2e38ad" class="column-list"><div id="1909ec7d-027b-444d-8b0a-20ced2a471fd" style="width:100%" class="column"><hr id="b1392b36-e0cd-49f1-9cf7-57d41ef4321d"/><h3 id="3bb0db47-a080-4428-ab4a-7dcafb91ea0b" class=""><strong>Contact Information:</strong></h3><p id="dcf03ecf-8c8d-45af-bbdd-a50fbed338c3" class="">Email: meryemkciftci@gmail.com</p><p id="6664cf3c-a1f5-42b2-9946-177e9a4ba7e3" class=""><a href="https://www.linkedin.com/in/meryack">LinkedIn: Meryack</a></p><p id="40eba58e-2f4e-4000-a66b-3bee37c17762" class="">
 </p><p id="8a3274f3-b050-44bb-b10b-cebf95b69d2b" class="">
 
 </p><p id="85326d47-4712-4082-a5c2-07845c06630d" class=""><strong>Other:</strong></p><ul id="92047618-5112-4151-a25e-796acf19dfac" class="bulleted-list"><li style="list-style-type:disc"><a href="https://calendly.com/meryemkciftci">Schedule a Meeting</a></li></ul><ul id="458397ce-e210-4484-91c3-c04d9435679f" class="bulleted-list"><li style="list-style-type:disc"><a href="https://docs.google.com/forms/d/e/1FAIpQLSeu9b5yhTAsPYNw7ri8wO1vmbrFLrJ120AA31ChqkBackIbiQ/viewform?pli=1">Send an Inquiry</a></li></ul><p id="116c4f4e-6826-8087-907c-f83266252f41" class="">
@@ -135,7 +139,8 @@
 <ul id="1fee132e-9bb1-4f5c-b304-f58c37bbf4c0" class="bulleted-list"><li style="list-style-type:disc"><strong><a href="https://github.com/MeryemCiftciAly/Portfolio-Hub">GitHub</a></strong></li></ul></div></div><p id="116c4f4e-6826-8092-a1bf-cd9edd32af1e" class=""></div>
 </p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span>
     </footer>
-    
+    <div class="map-container">
+    <div id="map"></div>
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
     <script>
         var map = L.map('map').setView([40.7128, -74.0060], 10);
@@ -148,6 +153,6 @@
             fillOpacity: 0.5,
             radius: 7000
         }).addTo(map).bindPopup("I'm located in New York");
-    </script>
+    </script></div>
 </body>
 </html>
