@@ -800,37 +800,11 @@ blockquote {
 <!-- The Modal -->
 <div id="myModal" class="modal">
     <div class="modal-content"> <span class="close">&times;</span><h3>Irish Dataset </h3>
-    <p><h2>Data Visualizations</h2><h3 id="16bc4f4e-6826-8017-a0c1-e6063e987bb6" class="">Scatterplot: Sepal Width vs. Sepal Length</h3><p id="173c4f4e-6826-80e6-a6c4-cc21615dbd69" class="">A scatterplot was used to visualize the relationship between two variables in the dataset to identify patterns, trends, or correlations. Each data point represents an individual observation, helping to capture the overall distribution and relationship between variables.</p><p id="173c4f4e-6826-802e-b146-d999e9df1b15" class="">
-</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="16bc4f4e-6826-80b8-b52c-cd985d1ec594" class="code"><code class="language-R" style="white-space:pre-wrap;word-break:break-all"> ```{r echo=TRUE, message=FALSE, warning=FALSE, error=FALSE}
-library(ggplot2)
 
-#Custom color pallette
+</code></pre><figure id="19bc4f4e-6826-80c7-b051-d75a6c488e7d" class="image"><a href="https://meryemciftcialy.github.io/analyst-journal/iris_scatterplot.png"><img style="width:700px" src="https://meryemciftcialy.github.io/analyst-journal/iris_scatterplot.png"/></a></figure><h3 id="19bc4f4e-6826-8018-a9b3-df7994a70b9a" class=""><strong>Boxplot: Petal Length</strong></h3><p id="19bc4f4e-6826-8007-afbd-e4e1effdbb7c" class=""><strong>Box Plot:</strong></p><p id="19bc4f4e-6826-8006-9909-cc8e5fb16605" class="">A box plot is a simple chart that gives you a quick snapshot of one set of measurements. It shows where most of the data points lie by highlighting the middle 50% of the data and also points out any values that are much higher or lower than the rest… these are the outliers.</p><p id="19bc4f4e-6826-80d8-8480-df48a5e701b0" class="">For example, when looking at iris flowers, this box plot can show you the typical range for sepal width, while also making it easy to spot any unusual measurements.</p><p id="19bc4f4e-6826-8050-9598-f0a12c5207a4" class="">
+</p><p id="19bc4f4e-6826-80b2-b807-d75678031a97" class=""><strong>Below is an example of R code that creates this visual for the iris flower&#x27;s sepal width.</strong></p><p id="19bc4f4e-6826-80ac-929c-f23eae9b61c5" class="">
+</p><figure id="19bc4f4e-6826-8038-bfdc-f97dffd411d3" class="image"><a href="https://meryemciftcialy.github.io/analyst-journal/iris_boxplot4.png"><img src="https://meryemciftcialy.github.io/analyst-journal/iris_boxplot4.png"/></a></figure><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="19bc4f4e-6826-806c-ab6f-eff6b9b566b4" class="code"><code class="language-R" style="white-space:pre-wrap;word-break:break-all"> # R Code for the above box plot
 
-custom_colors &lt;- c(&quot;setosa&quot; = &quot;purple&quot;, &quot;versicolor&quot; = &quot;orange&quot;, &quot;virginica&quot; = &quot;green&quot;)
-my_plot &lt;- ggplot(iris, aes(x = Sepal.Length, y = Sepal.Width, color = Species))+
-  geom_point(size = 4) +
-  labs(title = &quot;Sepal Length vs Sepal Width by Species&quot;,
-       x= &quot;Sepal Length (cm)&quot;,
-       y= &quot;Sepal Width (cm)&quot;) +
-  scale_color_manual(values = custom_colors) +
-theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(), 
-      panel.background = element_blank()) +
-        theme_classic()
-
-## View the plot to show in the output
-print(my_plot)
-
-ggsave(&quot;Sepal_LvWScatterplot.png&quot;, plot = my_plot, width = 4, height = 6)
-```
-
-
-</code></pre><p id="171c4f4e-6826-80b3-bc64-ef511ce95c28" class="">
-	</p><figure id="171c4f4e-6826-8012-b210-eb6384b0cb74" class="image"><a href="iris_scatterplot.png"><img style="width:960px" src="iris_scatterplot.png"/></a></figure><p id="171c4f4e-6826-80ff-a66e-d65987430e15" class="">
-</p><p id="173c4f4e-6826-805f-b335-f827e3bde42f" class="">
-</p><h3 id="173c4f4e-6826-80b7-8cda-cd3ff328ba97" class="">Boxplot: Petal Length</h3><p id="173c4f4e-6826-8031-b284-e96406378e36" class=""><strong>Box Plot:</strong> A box plot was used to summarize the distribution of a single variable, showing key statistical measures such as the median, quartiles, and range. It highlights the concentration of data within the values that fall in the middle 50% of the data, not too high and not too low—just the main chunk of the data. It also identifies outliers which are data points that stand out because they are much higher or lower than the rest of the data set and noticeably stand out.</p><p id="173c4f4e-6826-8034-a008-dabf5676881a" class="">
-</p><figure id="173c4f4e-6826-8039-9712-e2fb54a4d6a8" class="image"><a href="iris_boxplot4.png"><img style="width:829.5px" src="iris_boxplot4.png"/></a></figure><p id="173c4f4e-6826-80e5-acbf-d6ebede938ef" class="">
-</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="173c4f4e-6826-80ff-9edb-c9b6f7f8c64f" class="code"><code class="language-R" style="white-space:pre-wrap;word-break:break-all"> # R Code for the above box plot
- 
  ```{r echo=TRUE, message=FALSE, warning=FALSE, error=FALSE}
 library(ggplot2)
 
@@ -843,7 +817,7 @@ my_plot &lt;- ggplot(iris, aes(x = Sepal.Length, y = Sepal.Width, color = Specie
        x= &quot;Sepal Length (cm)&quot;,
        y= &quot;Sepal Width (cm)&quot;) +
   scale_color_manual(values = custom_colors) +
-theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(), 
+theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
       panel.background = element_blank()) +
         theme_classic()
 
@@ -851,9 +825,7 @@ theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
 print(my_plot)
 
 ggsave(&quot;Sepal_LvWScatterplot.png&quot;, plot = my_plot, width = 4, height = 6)
-```
-</code></pre><p id="173c4f4e-6826-80cf-991f-ed278810e5bb" class="">	
-.</p>
+```</code></pre></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span>
     <p></p>
   </div>
 </div>
