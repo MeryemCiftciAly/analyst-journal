@@ -715,7 +715,7 @@ blockquote {
   line-height: 1.6;
 }text-block
 
-   /* The Modal (background) */
+    /* The Modal (background) */
     .modal {
       display: none; /* Hidden by default */
       position: fixed; /* Stay in place */
@@ -724,17 +724,22 @@ blockquote {
       top: 0;
       width: 100%; /* Full width */
       height: 100%; /* Full height */
-      overflow: auto; /* Enable scroll if needed */
-      background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+      background-color: rgba(0,0,0,0.4); /* Black with opacity */
+      /* Use Flexbox to center horizontally and align near the top */
+      display: flex;
+      justify-content: center; /* Centers horizontally */
+      align-items: flex-start;  /* Aligns at the top */
+      padding-top: 50px; /* Adds space from the top */
     }
     
     /* Modal Content/Box */
     .modal-content {
       background-color: #fefefe;
-      margin: 15% auto; /* Center the modal */
       padding: 20px;
       border: 1px solid #888;
       width: 80%; /* Adjust as needed */
+      max-width: 600px; /* Limits the width on larger screens */
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
     }
     
     /* Close Button */
@@ -797,7 +802,7 @@ blockquote {
   <!-- Modal Content -->
   <div class="modal-content">
     <span class="close">&times;</span>
-    <h3>Modal Title</h3>
+    <h3>Irish Dataset </h3>
     <p><h2>Data Visualizations</h2><h3 id="16bc4f4e-6826-8017-a0c1-e6063e987bb6" class="">Scatterplot: Sepal Width vs. Sepal Length</h3><p id="173c4f4e-6826-80e6-a6c4-cc21615dbd69" class="">A scatterplot was used to visualize the relationship between two variables in the dataset to identify patterns, trends, or correlations. Each data point represents an individual observation, helping to capture the overall distribution and relationship between variables.</p><p id="173c4f4e-6826-802e-b146-d999e9df1b15" class="">
 </p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="16bc4f4e-6826-80b8-b52c-cd985d1ec594" class="code"><code class="language-R" style="white-space:pre-wrap;word-break:break-all"> ```{r echo=TRUE, message=FALSE, warning=FALSE, error=FALSE}
 library(ggplot2)
@@ -852,7 +857,7 @@ ggsave(&quot;Sepal_LvWScatterplot.png&quot;, plot = my_plot, width = 4, height =
 ```
 </code></pre><p id="173c4f4e-6826-80cf-991f-ed278810e5bb" class="">	
 .</p>
-    <p>You can include images, graphs, or any other content you'd like.</p>
+    <p></p>
   </div>
 </div>
 	
@@ -876,7 +881,7 @@ ggsave(&quot;Sepal_LvWScatterplot.png&quot;, plot = my_plot, width = 4, height =
   // When the user clicks the link, open the modal
   openModal.onclick = function(e) {
     e.preventDefault();
-    modal.style.display = "block";
+    modal.style.display = "flex";
   }
 
   // When the user clicks on the close button, close the modal
