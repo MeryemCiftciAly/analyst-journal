@@ -21,7 +21,34 @@ body {
 		color: rgb(55, 53, 47);
 	}
 }
+	
+// Breadcrumbs code
+	
+.breadcrumb {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0.5rem 1rem;
+  background-color: #f8f9fa;
+  border-radius: 0.25rem;
+}
 
+.breadcrumb-item + .breadcrumb-item::before {
+  content: ">";
+  padding: 0 0.5rem;
+  color: #6c757d;
+}
+
+.breadcrumb-item a {
+  text-decoration: none;
+  color: #007bff;
+}
+
+.breadcrumb-item a:hover {
+  text-decoration: underline;
+}
+
+	
 body {
 	line-height: 1.5;
 	white-space: pre-wrap;
@@ -763,7 +790,12 @@ blockquote {
 .checkbox-off {
 	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
 }	
-</style></head><body><article id="19a08e45-560e-80b7-811e-e8394293b12e" class="page sans"><header><h1 class="page-title"></h1><p class="page-description"></p></header>
+</style></head><body> <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="/">Home</a></li>
+      <li class="breadcrumb-item"><a href="/section">Section</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Current Page</li>
+    </ol><article id="19a08e45-560e-80b7-811e-e8394293b12e" class="page sans"><header><h1 class="page-title"></h1><p class="page-description"></p></header>
 	
 	 <h1 class="page-title"><strong>The Story Behind The Data</strong></h1><p class="page-description"></p></header><div class="page-body"><h3 id="15b08e45-560e-80b6-9a2d-c1c4748518b2" class=""></h3> <table id="18708e45-560e-8130-ae65-e91d3cc09167" class="nav-table">
         <tbody>
