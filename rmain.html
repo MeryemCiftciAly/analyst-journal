@@ -22,32 +22,39 @@ body {
 	}
 }
 	
-// Breadcrumbs code
-	
-.breadcrumb {
-  list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-  padding: 0.5rem 1rem;
-  background-color: #f8f9fa;
-  border-radius: 0.25rem;
-}
-
-.breadcrumb-item + .breadcrumb-item::before {
-  content: ">";
-  padding: 0 0.5rem;
-  color: #6c757d;
-}
-
-.breadcrumb-item a {
-  text-decoration: none;
-  color: #007bff;
-}
-
-.breadcrumb-item a:hover {
-  text-decoration: underline;
-}
-
+/* Regular navigation styling (example) */
+    header nav {
+      background-color: #333;
+      color: white;
+      padding: 10px;
+    }
+    
+    /* Breadcrumbs styling */
+    .breadcrumb {
+      list-style: none;
+      display: flex;
+      padding: 8px 16px;
+      background-color: #f8f9fa;
+      margin: 0;
+    }
+    
+    .breadcrumb li {
+      margin-right: 10px;
+    }
+    
+    .breadcrumb li+li::before {
+      content: '>';
+      margin-right: 10px;
+      color: #6c757d;
+    }
+    
+    .breadcrumb li a {
+      text-decoration: none;
+      color: #007bff;
+    }
+    
+    .breadcrumb li a:hover {
+      text-decoration: underline;
 	
 body {
 	line-height: 1.5;
@@ -770,18 +777,19 @@ blockquote {
     }
 
     /* Modal content: fixed position near the top and centered horizontally */
-    .modal-content {
-      position: fixed;
-      top: 50px;         /* Adjust as needed for spacing from the top */
-      left: 50%;
-      transform: translateX(-50%);
-      background-color: #fefefe;
-      padding: 20px;
-      border: 1px solid #888;
-      width: 80%;
-      max-width: 600px;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-    }
+   .modal-content {
+  position: fixed;
+  top: 50px; /* Adjust as needed for spacing from the top */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1258px;
+  height: 944px;
+  background-color: #fefefe;
+  padding: 20px;
+  border: 1px solid #888;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  overflow-y: auto; /* Enables scrolling if content overflows */
+}
 
     /* Close Button */
     .close {
@@ -819,7 +827,14 @@ blockquote {
         </tbody>
     </table>
 <p id="15e08e45-560e-8015-b4af-c98c55e3fa6d" class="">
-
+<!-- Breadcrumbs placed directly below the header -->
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="/">Home</a></li>
+      <li class="breadcrumb-item"><a href="/projects">Projects</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Current Project</li>
+    </ol>
+  </nav>
 <div class="page-body"><h2 id="19a08e45-560e-8069-8126-c868bba426a7" class=""><strong>R Programming</strong></h2><h3 id="19a08e45-560e-808f-a3aa-e5c63f9d85e4" class=""><strong>Welcome to My R Programming Portfolio</strong></h3><p id="19a08e45-560e-8017-b947-eb04eef35972" class=""><div class="text-block">Here, I showcase my skills in R programming through various projects that demonstrate data analysis, visualization, and insights extraction. I frequently use popular R packages such as <strong>dplyr</strong>, <strong>ggplot2</strong>, <strong>tidyr</strong>, and <strong>shiny</strong> to clean, manipulate, and visualize data effectively.</p><p id="19a08e45-560e-8069-b0f4-c5145cfe2a3a" class="">This portfolio highlights my ability to:</p><p id="19a08e45-560e-80e8-a142-c9883968887d" class="">✅ <strong>Process and analyze datasets</strong> to uncover meaningful insights</p><p id="19a08e45-560e-8016-813a-f1281a3f0cb1" class="">✅ <strong>Create compelling visualizations</strong> to communicate findings clearly</p><p id="19a08e45-560e-8069-aa59-d74707e4f334" class="">✅ <strong>Write clean, efficient R code</strong> for data-driven decision-making</p><p id="19a08e45-560e-80f0-af91-f64c177cda32" class="">✅ <strong>Develop reports and dashboards</strong> that provide actionable intelligence</p></div><p id="19a08e45-560e-802e-8732-c1b9510fd2de" class="">
 </p><p id="19a08e45-560e-80f5-9836-e2ce910b280d" class="">
 </p><h2 id="19a08e45-560e-8097-8a20-fa58cd947f48" class=""><strong>The Iris Dataset</strong></h2><p id="19a08e45-560e-80e0-87a3-f59d1f229b12" class="">
