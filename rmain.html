@@ -715,41 +715,41 @@ blockquote {
   line-height: 1.6;
 }text-block
 
-    / /* The Modal (background) */
+   /* Modal overlay: hidden by default and scrollable if content overflows */
     .modal {
       display: none; /* Hidden by default */
       position: fixed;
-      z-index: 1;
+      z-index: 9999;
       left: 0;
       top: 0;
       width: 100%;
       height: 100%;
-      background-color: rgba(0,0,0,0.4);
+      overflow-y: auto; /* Allows vertical scrolling */
+      background-color: rgba(0, 0, 0, 0.4);
     }
-    
-    /* Modal Content/Box: Fixed position near the top of the viewport */
+
+    /* Modal content: fixed position near the top and centered horizontally */
     .modal-content {
       position: fixed;
-      top: 50px; /* 50px from the top */
-      left: 50%; /* Center horizontally */
+      top: 50px;         /* Adjust as needed for spacing from the top */
+      left: 50%;
       transform: translateX(-50%);
       background-color: #fefefe;
       padding: 20px;
       border: 1px solid #888;
       width: 80%;
       max-width: 600px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
     }
-    
+
     /* Close Button */
     .close {
       color: #aaa;
-      float: right;
       font-size: 28px;
       font-weight: bold;
+      float: right;
       cursor: pointer;
     }
-    
     .close:hover,
     .close:focus {
       color: black;
@@ -872,27 +872,33 @@ ggsave(&quot;Sepal_LvWScatterplot.png&quot;, plot = my_plot, width = 4, height =
 <ul id="1fee132e-9bb1-4f5c-b304-f58c37bbf4c0" class="bulleted-list"><li style="list-style-type:disc"><strong><a href="https://github.com/MeryemCiftciAly/Portfolio-Hub">GitHub</a></strong></li></ul></div></div><p id="116c4f4e-6826-8092-a1bf-cd9edd32af1e" class=""></div>
 </p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></footer>
 <script>
-  // Get the modal and elements
-  var modal = document.getElementById("myModal");
-  var openModal = document.getElementById("openModal");
-  var closeBtn = modal.getElementsByClassName("close")[0];
+ <script>
+  // Wait until the DOM is fully loaded
+  document.addEventListener('DOMContentLoaded', function() {
+    var modal = document.getElementById('myModal');
+    var openModal = document.getElementById('openModal');
+    var closeBtn = modal.querySelector('.close');
 
-  // When the user clicks the link, open the modal
-  openModal.onclick = function(e) {
-    e.preventDefault();
-    modal.style.display = "flex";
-  }
+    // Ensure the modal is hidden on page load (should be by CSS)
+    modal.style.display = 'none';
 
-  // When the user clicks on the close button, close the modal
-  closeBtn.onclick = function() {
-    modal.style.display = "none";
-  }
+    // Open the modal when the trigger is clicked
+    openModal.addEventListener('click', function(e) {
+      e.preventDefault();
+      modal.style.display = 'block';
+    });
 
-  // Close the modal if the user clicks outside of it
-  window.onclick = function(event) {
-    if (event.target == modal) {
-      modal.style.display = "none";
-    }
-  }
+    // Close the modal when the close button is clicked
+    closeBtn.addEventListener('click', function() {
+      modal.style.display = 'none';
+    });
+
+    // Close the modal if the user clicks outside the modal content
+    window.addEventListener('click', function(e) {
+      if (e.target === modal) {
+        modal.style.display = 'none';
+      }
+    });
+  });
 </script>
 </body></html>
