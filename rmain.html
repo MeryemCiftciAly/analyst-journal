@@ -715,30 +715,29 @@ blockquote {
   line-height: 1.6;
 }text-block
 
-    /* The Modal (background) */
+    / /* The Modal (background) */
     .modal {
       display: none; /* Hidden by default */
-      position: fixed; /* Stay in place */
-      z-index: 1; /* Sit on top */
+      position: fixed;
+      z-index: 1;
       left: 0;
       top: 0;
-      width: 100%; /* Full width */
-      height: 100%; /* Full height */
-      background-color: rgba(0,0,0,0.4); /* Black with opacity */
-      /* Use Flexbox to center horizontally and align near the top */
-      display: flex;
-      justify-content: center; /* Centers horizontally */
-      align-items: flex-start;  /* Aligns at the top */
-      padding-top: 50px; /* Adds space from the top */
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.4);
     }
     
-    /* Modal Content/Box */
+    /* Modal Content/Box: Fixed position near the top of the viewport */
     .modal-content {
+      position: fixed;
+      top: 50px; /* 50px from the top */
+      left: 50%; /* Center horizontally */
+      transform: translateX(-50%);
       background-color: #fefefe;
       padding: 20px;
       border: 1px solid #888;
-      width: 80%; /* Adjust as needed */
-      max-width: 600px; /* Limits the width on larger screens */
+      width: 80%;
+      max-width: 600px;
       box-shadow: 0 5px 15px rgba(0,0,0,0.3);
     }
     
