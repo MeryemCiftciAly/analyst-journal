@@ -799,7 +799,29 @@ blockquote {
 
 <!-- The Modal -->
 <div id="myModal" class="modal">
-    <div class="modal-content"> <span class="close">&times;</span><h3>Irish Dataset </h3>
+    <div class="modal-content"> <span class="close">&times;</span><h3>Irish Dataset </h3><article id="199c4f4e-6826-80de-8da6-edb7722ad584" class="page sans"><header><h1 class="page-title"></h1><p class="page-description"></p></header><div class="page-body"><h2 id="19bc4f4e-6826-80e3-9b29-c1533dd0fb79" class=""><strong>Data Visualization of The Iris Flower Dataset</strong></h2><h3 id="19bc4f4e-6826-804d-a698-fa0f29eaba4a" class=""><strong>Scatterplot: Sepal Width vs. Sepal Length</strong></h3><p id="19bc4f4e-6826-805d-84a5-d75bc31b0728" class="">A scatterplot is a simple graph that shows how two measurements relate to each other. In this case, each dot represents one iris flower, letting you see how the width and length of its sepal compare. This type of chart makes it easy to spot patterns or trends.</p><p id="19bc4f4e-6826-80cb-b643-f858614faa90" class=""><strong>Below is an example of R code that creates this visual, showing the relationship between the iris flower&#x27;s sepal width and sepal length.</strong></p><p id="19bc4f4e-6826-8004-b02b-c53e3c73a885" class="">
+</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="19bc4f4e-6826-8093-9104-e99d865cd7a1" class="code"><code class="language-R" style="white-space:pre-wrap;word-break:break-all"> ```{r echo=TRUE, message=FALSE, warning=FALSE, error=FALSE}
+library(ggplot2)
+
+#Custom color pallette
+
+custom_colors &lt;- c(&quot;setosa&quot; = &quot;purple&quot;, &quot;versicolor&quot; = &quot;orange&quot;, &quot;virginica&quot; = &quot;green&quot;)
+my_plot &lt;- ggplot(iris, aes(x = Sepal.Length, y = Sepal.Width, color = Species))+
+  geom_point(size = 4) +
+  labs(title = &quot;Sepal Length vs Sepal Width by Species&quot;,
+       x= &quot;Sepal Length (cm)&quot;,
+       y= &quot;Sepal Width (cm)&quot;) +
+  scale_color_manual(values = custom_colors) +
+theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
+      panel.background = element_blank()) +
+        theme_classic()
+
+## View the plot to show in the output
+print(my_plot)
+
+ggsave(&quot;Sepal_LvWScatterplot.png&quot;, plot = my_plot, width = 4, height = 6)
+```
+
 
 </code></pre><figure id="19bc4f4e-6826-80c7-b051-d75a6c488e7d" class="image"><a href="https://meryemciftcialy.github.io/analyst-journal/iris_scatterplot.png"><img style="width:700px" src="https://meryemciftcialy.github.io/analyst-journal/iris_scatterplot.png"/></a></figure><h3 id="19bc4f4e-6826-8018-a9b3-df7994a70b9a" class=""><strong>Boxplot: Petal Length</strong></h3><p id="19bc4f4e-6826-8007-afbd-e4e1effdbb7c" class=""><strong>Box Plot:</strong></p><p id="19bc4f4e-6826-8006-9909-cc8e5fb16605" class="">A box plot is a simple chart that gives you a quick snapshot of one set of measurements. It shows where most of the data points lie by highlighting the middle 50% of the data and also points out any values that are much higher or lower than the rest… these are the outliers.</p><p id="19bc4f4e-6826-80d8-8480-df48a5e701b0" class="">For example, when looking at iris flowers, this box plot can show you the typical range for sepal width, while also making it easy to spot any unusual measurements.</p><p id="19bc4f4e-6826-8050-9598-f0a12c5207a4" class="">
 </p><p id="19bc4f4e-6826-80b2-b807-d75678031a97" class=""><strong>Below is an example of R code that creates this visual for the iris flower&#x27;s sepal width.</strong></p><p id="19bc4f4e-6826-80ac-929c-f23eae9b61c5" class="">
@@ -826,9 +848,6 @@ print(my_plot)
 
 ggsave(&quot;Sepal_LvWScatterplot.png&quot;, plot = my_plot, width = 4, height = 6)
 ```</code></pre></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span>
-    <p></p>
-  </div>
-</div>
 </div>
 </div>
 	
