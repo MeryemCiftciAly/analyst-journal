@@ -123,5 +123,25 @@ ORDER BY avg_emission DESC;
 
         </div> <!-- End of Grid -->
     </div>
+    
+    <div class="sql-project">
+    <h2 class="sql-title">[Project Title]</h2>
+    <div class="sql-tags">
+        <span class="tag">[SQL Statement Type]</span>
+    </div>
+    <pre class="sql-code">
+-- Your SQL code snippet here
+    </pre>
+    <img src="your_image.png" alt="Project Image" class="sql-image">
+    <p class="sql-description">[Brief description of the SQL query]</p>
+    <div class="sql-links">
+        <a href="[Project Link]" class="sql-link">View Full Project</a>
+        <a href="[GitHub Link]" class="github-link">View Code on GitHub</a>
+    </div>
+</div>
+
 </body>
 </html>
+
+
+
