@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SQL Projects</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f9f9f9;
+        }
+        .sql-section {
+            max-width: 1100px;
+            margin: auto;
+        }
+        .sql-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 20px;
+        }
+        .sql-project {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        .sql-title {
+            font-size: 1.5em;
+            color: #6D4C41;
+        }
+        .sql-tags {
+            display: flex;
+            gap: 10px;
+            margin-top: 5px;
+        }
+        .tag {
+            background: #D8BFD8;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 0.9em;
+        }
+        .sql-code {
+            background: #272822;
+            color: #f8f8f2;
+            padding: 10px;
+            border-radius: 5px;
+            font-family: monospace;
+            overflow-x: auto;
+            margin-top: 10px;
+        }
+        .sql-image {
+            max-width: 100%;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        .sql-description {
+            margin-top: 10px;
+        }
+        .sql-links {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .sql-link, .github-link {
+            display: inline-block;
+            background: #6D4C41;
+            color: white;
+            padding: 8px 12px;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+        .sql-link:hover, .github-link:hover {
+            background: #543830;
+        }
+    </style>
+</head>
+<body>
+    <div class="sql-section">
+        <h1>SQL Projects</h1>
+        
+        <!-- SQL Projects Grid -->
+        <div class="sql-grid">
+
+            <!-- Example SQL Project -->
+            <div class="sql-project">
+                <h2 class="sql-title">CO2 Emission Analysis</h2>
+                <div class="sql-tags">
+                    <span class="tag">Aggregates</span>
+                    <span class="tag">Joins</span>
+                </div>
+                <pre class="sql-code">
+SELECT region, AVG(emission) AS avg_emission
+FROM co2_data
+GROUP BY region
+ORDER BY avg_emission DESC;
+                </pre>
+                <img src="co2_emission_snapshot.png" alt="CO2 Emission Data" class="sql-image">
+                <p class="sql-description">This query calculates the average CO2 emissions per region using aggregate functions. It helps analyze which regions have the highest emissions over time.</p>
+                <div class="sql-links">
+                    <a href="https://meryemciftcialy.github.io/analyst-journal/co2_emissions.html" class="sql-link">View Full Project</a>
+                    <a href="https://github.com/meryemciftcialy/sql-projects" class="github-link">View Code on GitHub</a>
+                </div>
+            </div>
+
+            <!-- Placeholder for Future SQL Project -->
+            <div class="sql-project">
+                <h2 class="sql-title">[Project Title]</h2>
+                <div class="sql-tags">
+                    <span class="tag">[SQL Statement Type]</span>
+                </div>
+                <pre class="sql-code">
+-- Your SQL code snippet here
+                </pre>
+                <img src="placeholder.png" alt="Project Image" class="sql-image">
+                <p class="sql-description">[Brief description of the SQL query]</p>
+                <div class="sql-links">
+                    <a href="#" class="sql-link">View Full Project</a>
+                    <a href="#" class="github-link">View Code on GitHub</a>
+                </div>
+            </div>
+
+        </div> <!-- End of Grid -->
+    </div>
+</body>
+</html>
